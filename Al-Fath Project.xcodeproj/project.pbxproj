@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E8BBD6D27186A5700AA1377 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD6C27186A5700AA1377 /* MainView.swift */; };
+		0E8BBD7027186B6E00AA1377 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD6F27186B6E00AA1377 /* LearnView.swift */; };
+		0E8BBD7327186E9700AA1377 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD7227186E9700AA1377 /* ChallengeView.swift */; };
+		0E8BBD7727186EFA00AA1377 /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD7627186EFA00AA1377 /* DictionaryView.swift */; };
+		0E8BBD7A27186F6C00AA1377 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD7927186F6C00AA1377 /* SettingsView.swift */; };
 		3F6FD470270ED21C000BC39D /* Al_Fath_ProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FD46F270ED21C000BC39D /* Al_Fath_ProjectApp.swift */; };
 		3F6FD472270ED21C000BC39D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FD471270ED21C000BC39D /* ContentView.swift */; };
 		3F6FD474270ED21F000BC39D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6FD473270ED21F000BC39D /* Assets.xcassets */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E8BBD6C27186A5700AA1377 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		0E8BBD6F27186B6E00AA1377 /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
+		0E8BBD7227186E9700AA1377 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
+		0E8BBD7627186EFA00AA1377 /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
+		0E8BBD7927186F6C00AA1377 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3F6FD46C270ED21C000BC39D /* Al-Fath Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Al-Fath Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6FD46F270ED21C000BC39D /* Al_Fath_ProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Al_Fath_ProjectApp.swift; sourceTree = "<group>"; };
 		3F6FD471270ED21C000BC39D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +47,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E8BBD67271869E000AA1377 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0E8BBD7827186F4000AA1377 /* Settings */,
+				0E8BBD7427186EDB00AA1377 /* Dictionary */,
+				0E8BBD7127186E6900AA1377 /* Challenge */,
+				0E8BBD6E27186B4A00AA1377 /* Learn */,
+				0E8BBD6C27186A5700AA1377 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0E8BBD68271869E900AA1377 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0E8BBD69271869F400AA1377 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0E8BBD6E27186B4A00AA1377 /* Learn */ = {
+			isa = PBXGroup;
+			children = (
+				0E8BBD6F27186B6E00AA1377 /* LearnView.swift */,
+			);
+			path = Learn;
+			sourceTree = "<group>";
+		};
+		0E8BBD7127186E6900AA1377 /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				0E8BBD7227186E9700AA1377 /* ChallengeView.swift */,
+			);
+			path = Challenge;
+			sourceTree = "<group>";
+		};
+		0E8BBD7427186EDB00AA1377 /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				0E8BBD7627186EFA00AA1377 /* DictionaryView.swift */,
+			);
+			path = Dictionary;
+			sourceTree = "<group>";
+		};
+		0E8BBD7827186F4000AA1377 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0E8BBD7927186F6C00AA1377 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		3F6FD463270ED21C000BC39D = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +124,9 @@
 		3F6FD46E270ED21C000BC39D /* Al-Fath Project */ = {
 			isa = PBXGroup;
 			children = (
+				0E8BBD69271869F400AA1377 /* Model */,
+				0E8BBD68271869E900AA1377 /* ViewModel */,
+				0E8BBD67271869E000AA1377 /* View */,
 				3F6FD46F270ED21C000BC39D /* Al_Fath_ProjectApp.swift */,
 				3F6FD471270ED21C000BC39D /* ContentView.swift */,
 				3F6FD473270ED21F000BC39D /* Assets.xcassets */,
@@ -144,9 +215,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E8BBD7727186EFA00AA1377 /* DictionaryView.swift in Sources */,
 				3F6FD479270ED21F000BC39D /* Persistence.swift in Sources */,
+				0E8BBD7027186B6E00AA1377 /* LearnView.swift in Sources */,
+				0E8BBD7A27186F6C00AA1377 /* SettingsView.swift in Sources */,
 				3F6FD47C270ED21F000BC39D /* Al_Fath_Project.xcdatamodeld in Sources */,
+				0E8BBD7327186E9700AA1377 /* ChallengeView.swift in Sources */,
 				3F6FD472270ED21C000BC39D /* ContentView.swift in Sources */,
+				0E8BBD6D27186A5700AA1377 /* MainView.swift in Sources */,
 				3F6FD470270ED21C000BC39D /* Al_Fath_ProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
