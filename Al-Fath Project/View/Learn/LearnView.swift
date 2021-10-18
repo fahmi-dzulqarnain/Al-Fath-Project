@@ -14,7 +14,7 @@ struct LearnView: View {
     }
     
     func gettabName() -> Text {
-        return Text("Learn")
+        return Text("Learn test")
     }
     
     var body: some View {
