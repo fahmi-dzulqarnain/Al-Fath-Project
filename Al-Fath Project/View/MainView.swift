@@ -30,6 +30,7 @@ struct MainView: View {
                 SettingsView().gettabName()
             }.tag(4)
         }
+        
     }
 }
 

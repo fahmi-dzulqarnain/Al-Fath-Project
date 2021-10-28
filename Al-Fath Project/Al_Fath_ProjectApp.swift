@@ -15,7 +15,8 @@ struct Al_Fath_ProjectApp: App {
         WindowGroup {
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            MainView()
+//            MainView()
+            OnboardingView()
         }
     }
 }

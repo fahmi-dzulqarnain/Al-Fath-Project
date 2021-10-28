@@ -28,6 +28,8 @@ struct LearnView: View {
                     })
             }
         }
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E63CF66272AA1A0008D129A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E63CF65272AA1A0008D129A /* OnboardingView.swift */; };
+		0E63CF69272AA3B0008D129A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E63CF68272AA3B0008D129A /* Extension.swift */; };
+		0E63CF6C272AABF8008D129A /* IndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E63CF6B272AABF8008D129A /* IndexView.swift */; };
 		0E8BBD6D27186A5700AA1377 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD6C27186A5700AA1377 /* MainView.swift */; };
 		0E8BBD7027186B6E00AA1377 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD6F27186B6E00AA1377 /* LearnView.swift */; };
 		0E8BBD7327186E9700AA1377 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD7227186E9700AA1377 /* ChallengeView.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E63CF65272AA1A0008D129A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		0E63CF68272AA3B0008D129A /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		0E63CF6B272AABF8008D129A /* IndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexView.swift; sourceTree = "<group>"; };
 		0E8BBD6C27186A5700AA1377 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0E8BBD6F27186B6E00AA1377 /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
 		0E8BBD7227186E9700AA1377 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
@@ -51,9 +57,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E63CF64272AA05B008D129A /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				0E63CF65272AA1A0008D129A /* OnboardingView.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		0E63CF67272AA39A008D129A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0E63CF68272AA3B0008D129A /* Extension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0E63CF6A272AABB2008D129A /* UtilsView */ = {
+			isa = PBXGroup;
+			children = (
+				0E63CF6B272AABF8008D129A /* IndexView.swift */,
+			);
+			path = UtilsView;
+			sourceTree = "<group>";
+		};
 		0E8BBD67271869E000AA1377 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0E63CF64272AA05B008D129A /* OnBoarding */,
 				0E8C11E8272806E00092D9B2 /* Video */,
 				0E8BBD7827186F4000AA1377 /* Settings */,
 				0E8BBD7427186EDB00AA1377 /* Dictionary */,
@@ -145,6 +176,8 @@
 		3F6FD46E270ED21C000BC39D /* Al-Fath Project */ = {
 			isa = PBXGroup;
 			children = (
+				0E63CF6A272AABB2008D129A /* UtilsView */,
+				0E63CF67272AA39A008D129A /* Utils */,
 				0E8C11EC27280C200092D9B2 /* File */,
 				0E8BBD69271869F400AA1377 /* Model */,
 				0E8BBD68271869E900AA1377 /* ViewModel */,
@@ -241,6 +274,7 @@
 				0E8BBD7727186EFA00AA1377 /* DictionaryView.swift in Sources */,
 				3F6FD479270ED21F000BC39D /* Persistence.swift in Sources */,
 				0E8BBD7027186B6E00AA1377 /* LearnView.swift in Sources */,
+				0E63CF69272AA3B0008D129A /* Extension.swift in Sources */,
 				0E8BBD7A27186F6C00AA1377 /* SettingsView.swift in Sources */,
 				3F6FD47C270ED21F000BC39D /* Al_Fath_Project.xcdatamodeld in Sources */,
 				0E8BBD7327186E9700AA1377 /* ChallengeView.swift in Sources */,
@@ -248,6 +282,8 @@
 				3F6FD472270ED21C000BC39D /* ContentView.swift in Sources */,
 				0E8BBD6D27186A5700AA1377 /* MainView.swift in Sources */,
 				3F6FD470270ED21C000BC39D /* Al_Fath_ProjectApp.swift in Sources */,
+				0E63CF6C272AABF8008D129A /* IndexView.swift in Sources */,
+				0E63CF66272AA1A0008D129A /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
