@@ -12,6 +12,8 @@
 		0E8BBD7327186E9700AA1377 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD7227186E9700AA1377 /* ChallengeView.swift */; };
 		0E8BBD7727186EFA00AA1377 /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD7627186EFA00AA1377 /* DictionaryView.swift */; };
 		0E8BBD7A27186F6C00AA1377 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD7927186F6C00AA1377 /* SettingsView.swift */; };
+		0E8C11EA2728072F0092D9B2 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C11E92728072F0092D9B2 /* VideoView.swift */; };
+		0E8C11EE27280DF90092D9B2 /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0E8C11ED27280C2B0092D9B2 /* video1.mp4 */; };
 		3F6FD470270ED21C000BC39D /* Al_Fath_ProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FD46F270ED21C000BC39D /* Al_Fath_ProjectApp.swift */; };
 		3F6FD472270ED21C000BC39D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FD471270ED21C000BC39D /* ContentView.swift */; };
 		3F6FD474270ED21F000BC39D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6FD473270ED21F000BC39D /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 		0E8BBD7227186E9700AA1377 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
 		0E8BBD7627186EFA00AA1377 /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
 		0E8BBD7927186F6C00AA1377 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0E8C11E92728072F0092D9B2 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		0E8C11ED27280C2B0092D9B2 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
 		3F6FD46C270ED21C000BC39D /* Al-Fath Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Al-Fath Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6FD46F270ED21C000BC39D /* Al_Fath_ProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Al_Fath_ProjectApp.swift; sourceTree = "<group>"; };
 		3F6FD471270ED21C000BC39D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +54,7 @@
 		0E8BBD67271869E000AA1377 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0E8C11E8272806E00092D9B2 /* Video */,
 				0E8BBD7827186F4000AA1377 /* Settings */,
 				0E8BBD7427186EDB00AA1377 /* Dictionary */,
 				0E8BBD7127186E6900AA1377 /* Challenge */,
@@ -105,6 +110,22 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		0E8C11E8272806E00092D9B2 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				0E8C11E92728072F0092D9B2 /* VideoView.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		0E8C11EC27280C200092D9B2 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				0E8C11ED27280C2B0092D9B2 /* video1.mp4 */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
 		3F6FD463270ED21C000BC39D = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +145,7 @@
 		3F6FD46E270ED21C000BC39D /* Al-Fath Project */ = {
 			isa = PBXGroup;
 			children = (
+				0E8C11EC27280C200092D9B2 /* File */,
 				0E8BBD69271869F400AA1377 /* Model */,
 				0E8BBD68271869E900AA1377 /* ViewModel */,
 				0E8BBD67271869E000AA1377 /* View */,
@@ -203,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E8C11EE27280DF90092D9B2 /* video1.mp4 in Resources */,
 				3F6FD477270ED21F000BC39D /* Preview Assets.xcassets in Resources */,
 				3F6FD474270ED21F000BC39D /* Assets.xcassets in Resources */,
 			);
@@ -221,6 +244,7 @@
 				0E8BBD7A27186F6C00AA1377 /* SettingsView.swift in Sources */,
 				3F6FD47C270ED21F000BC39D /* Al_Fath_Project.xcdatamodeld in Sources */,
 				0E8BBD7327186E9700AA1377 /* ChallengeView.swift in Sources */,
+				0E8C11EA2728072F0092D9B2 /* VideoView.swift in Sources */,
 				3F6FD472270ED21C000BC39D /* ContentView.swift in Sources */,
 				0E8BBD6D27186A5700AA1377 /* MainView.swift in Sources */,
 				3F6FD470270ED21C000BC39D /* Al_Fath_ProjectApp.swift in Sources */,

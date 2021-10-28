@@ -18,7 +18,16 @@ struct LearnView: View {
     }
     
     var body: some View {
-        gettabName()
+        NavigationView{
+            VStack{
+                gettabName()
+                NavigationLink(
+                    destination: VideoView(),
+                    label: {
+                        Text("Video")
+                    })
+            }
+        }
     }
 }
 
