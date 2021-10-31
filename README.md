@@ -15,3 +15,8 @@ Its created with Love ❤️ using Swift
 - release/* -> a candidate release branch. used for regression and for hotfix release 
 - feature/(backlog title) -> Feature branch for develop any feature or functionality
 - master -> the most stable branch, pulled from latest release branch
+
+## Tech Stack
+- SwiftUI
+- Core Data
+- Vision + CoreML
