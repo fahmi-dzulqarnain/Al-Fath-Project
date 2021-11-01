@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E1BEF17273004150058D9EE /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1BEF16273004150058D9EE /* UserViewModel.swift */; };
 		0E63CF66272AA1A0008D129A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E63CF65272AA1A0008D129A /* OnboardingView.swift */; };
 		0E63CF69272AA3B0008D129A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E63CF68272AA3B0008D129A /* Extension.swift */; };
 		0E63CF6C272AABF8008D129A /* IndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E63CF6B272AABF8008D129A /* IndexView.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E1BEF16273004150058D9EE /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		0E63CF65272AA1A0008D129A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		0E63CF68272AA3B0008D129A /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		0E63CF6B272AABF8008D129A /* IndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		0E8BBD68271869E900AA1377 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0E1BEF16273004150058D9EE /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				0E8BBD7027186B6E00AA1377 /* LearnView.swift in Sources */,
 				0E63CF69272AA3B0008D129A /* Extension.swift in Sources */,
 				0E8BBD7A27186F6C00AA1377 /* SettingsView.swift in Sources */,
+				0E1BEF17273004150058D9EE /* UserViewModel.swift in Sources */,
 				3F6FD47C270ED21F000BC39D /* Al_Fath_Project.xcdatamodeld in Sources */,
 				0E8BBD7327186E9700AA1377 /* ChallengeView.swift in Sources */,
 				0E8C11EA2728072F0092D9B2 /* VideoView.swift in Sources */,
@@ -413,6 +417,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Al-Fath Project/Preview Content\"";
+				DEVELOPMENT_TEAM = Z8L38KRZAK;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Al-Fath Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -434,6 +439,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Al-Fath Project/Preview Content\"";
+				DEVELOPMENT_TEAM = Z8L38KRZAK;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Al-Fath Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

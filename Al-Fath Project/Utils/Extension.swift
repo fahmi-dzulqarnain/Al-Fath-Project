@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import CoreHaptics
+
 
 extension UserDefaults{
 
@@ -16,8 +18,19 @@ extension UserDefaults{
     func isFirstTime()-> Bool {
         return bool(forKey: UserDefaultsKeys.isFirstTime.rawValue)
     }
+    
+    func setHaptic(value: Bool) {
+        set(value, forKey: UserDefaultsKeys.isHaptic.rawValue)
+    }
+
+    func isHaptic()-> Bool {
+        return bool(forKey: UserDefaultsKeys.isHaptic.rawValue)
+    }
 }
 
 enum UserDefaultsKeys : String {
     case isFirstTime
+    case isHaptic
 }
+
+

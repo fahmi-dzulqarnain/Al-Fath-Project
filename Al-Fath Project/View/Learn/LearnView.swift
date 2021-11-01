@@ -25,11 +25,25 @@ struct LearnView: View {
                     destination: VideoView(),
                     label: {
                         Text("Video")
-                    })
+                    }).padding()
+                
+                Button(action: {
+                    simpleSuccess()
+                }, label: {
+                    Text("Test Getar")
+                }).padding()
             }
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
+    }
+    
+    func simpleSuccess() {
+        if !UserDefaults.standard.isHaptic() {
+            return
+        }
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
     }
 }
 
