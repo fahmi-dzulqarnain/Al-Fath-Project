@@ -10,6 +10,7 @@ import Foundation
 struct GamesModel {
     var name: String
     var code: Int
-    var isChoose: Bool
-    var isHidden: Bool
+    var isChoose: Bool = false
+    var isHidden: Bool = false
+    var index: Int? = nil
 }

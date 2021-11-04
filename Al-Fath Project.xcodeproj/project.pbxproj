@@ -20,6 +20,8 @@
 		0E8BBD7A27186F6C00AA1377 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD7927186F6C00AA1377 /* SettingsView.swift */; };
 		0E8C11EA2728072F0092D9B2 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C11E92728072F0092D9B2 /* VideoView.swift */; };
 		0E8C11EE27280DF90092D9B2 /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0E8C11ED27280C2B0092D9B2 /* video1.mp4 */; };
+		0EF2BA852733C654006A797C /* ChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2BA842733C654006A797C /* ChallengeViewModel.swift */; };
+		0EF2BA872733DE5E006A797C /* ChallengeDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2BA862733DE5E006A797C /* ChallengeDoneView.swift */; };
 		3F6FD470270ED21C000BC39D /* Al_Fath_ProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FD46F270ED21C000BC39D /* Al_Fath_ProjectApp.swift */; };
 		3F6FD472270ED21C000BC39D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FD471270ED21C000BC39D /* ContentView.swift */; };
 		3F6FD474270ED21F000BC39D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6FD473270ED21F000BC39D /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 		0E8BBD7927186F6C00AA1377 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0E8C11E92728072F0092D9B2 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		0E8C11ED27280C2B0092D9B2 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
+		0EF2BA842733C654006A797C /* ChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewModel.swift; sourceTree = "<group>"; };
+		0EF2BA862733DE5E006A797C /* ChallengeDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDoneView.swift; sourceTree = "<group>"; };
 		3F6FD46C270ED21C000BC39D /* Al-Fath Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Al-Fath Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6FD46F270ED21C000BC39D /* Al_Fath_ProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Al_Fath_ProjectApp.swift; sourceTree = "<group>"; };
 		3F6FD471270ED21C000BC39D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 			children = (
 				0E3B1F1D27329214006A991D /* Challenge3 */,
 				0E8BBD7227186E9700AA1377 /* ChallengeView.swift */,
+				0EF2BA842733C654006A797C /* ChallengeViewModel.swift */,
+				0EF2BA862733DE5E006A797C /* ChallengeDoneView.swift */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -293,10 +299,12 @@
 				0E8BBD7027186B6E00AA1377 /* LearnView.swift in Sources */,
 				0E63CF69272AA3B0008D129A /* Extension.swift in Sources */,
 				0E8BBD7A27186F6C00AA1377 /* SettingsView.swift in Sources */,
+				0EF2BA852733C654006A797C /* ChallengeViewModel.swift in Sources */,
 				0E1BEF17273004150058D9EE /* UserViewModel.swift in Sources */,
 				0E3B1F1F27329238006A991D /* Challenge3View.swift in Sources */,
 				3F6FD47C270ED21F000BC39D /* Al_Fath_Project.xcdatamodeld in Sources */,
 				0E8BBD7327186E9700AA1377 /* ChallengeView.swift in Sources */,
+				0EF2BA872733DE5E006A797C /* ChallengeDoneView.swift in Sources */,
 				0E3B1F2227329870006A991D /* GamesModel.swift in Sources */,
 				0E8C11EA2728072F0092D9B2 /* VideoView.swift in Sources */,
 				3F6FD472270ED21C000BC39D /* ContentView.swift in Sources */,

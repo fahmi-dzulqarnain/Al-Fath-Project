@@ -18,24 +18,20 @@ struct LearnView: View {
     }
     
     var body: some View {
-        NavigationView{
-            VStack{
-                gettabName()
-                NavigationLink(
-                    destination: VideoView(),
-                    label: {
-                        Text("Video")
-                    }).padding()
-                
-                Button(action: {
-                    simpleSuccess()
-                }, label: {
-                    Text("Test Getar")
+        VStack{
+            gettabName()
+            NavigationLink(
+                destination: VideoView(),
+                label: {
+                    Text("Video")
                 }).padding()
-            }
+            
+            Button(action: {
+                simpleSuccess()
+            }, label: {
+                Text("Test Getar")
+            }).padding()
         }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
     }
     
     func simpleSuccess() {

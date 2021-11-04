@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ChallengeView: View {
     
+    @ObservedObject var viewModel = ChallengeViewModel()
+    
     func getIconName() -> Image {
         return Image(systemName: "house.fill")
     }
@@ -18,17 +20,13 @@ struct ChallengeView: View {
     }
     
     var body: some View {
-        NavigationView {
-            VStack {
+        VStack {
+            menu
+            menu
+            NavigationLink(destination: Challenge3View(viewModel: viewModel)){
                 menu
-                menu
-                NavigationLink(destination: Challenge3View()){
-                    menu
-                }
             }
         }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
     }
     
     var menu: some View {
@@ -52,6 +50,9 @@ struct ChallengeView: View {
         .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
         .padding(.horizontal)
         .padding(.vertical, 4)
+        .onAppear(perform: {
+            viewModel.randomQuiz()
+        })
     }
 }
 
