@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct OnboardingView: View {
+    
+    @Environment(\.managedObjectContext) private var viewContext
     
     @State var isFirstTime = UserDefaults.standard.isFirstTime()
     @State private var selection = 0
@@ -64,6 +67,9 @@ struct OnboardingView: View {
                 if images.count-1 == selection {
                     Text("Get Started")
                         .onTapGesture{
+                            for i in 0...5 {
+                                setData(pos: i)
+                            }
                             UserDefaults.standard.setFirstTime(value: true)
                             isShow = true
                         }
@@ -72,8 +78,17 @@ struct OnboardingView: View {
             
                 
         }
-        
-       
+
+    }
+    
+    func setData(pos: Int) {
+        let journey = JourneyEntity(context: viewContext)
+        journey.id = Int16(pos)
+        journey.isLocked = !(pos == 0)
+        journey.title = String(pos)
+        journey.image = ""
+        journey.points = 0
+        PersistneceController.shared.save()
     }
 }
 
