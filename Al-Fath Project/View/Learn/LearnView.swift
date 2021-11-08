@@ -9,6 +9,10 @@ import SwiftUI
 
 struct LearnView: View {
     
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: [])
+    private var journey: FetchedResults<JourneyEntity>
+    
     func getIconName() -> Image {
         return Image(systemName: "house.fill")
     }
@@ -18,21 +22,33 @@ struct LearnView: View {
     }
     
     var body: some View {
-        NavigationView{
-            VStack{
-                gettabName()
-                NavigationLink(
-                    destination: VideoView(),
-                    label: {
-                        Text("Video")
-                    }).padding()
-                
-                Button(action: {
-                    simpleSuccess()
-                }, label: {
-                    Text("Test Getar")
+        VStack{
+            gettabName()
+            NavigationLink(
+                destination: VideoView(),
+                label: {
+                    Text("Video")
                 }).padding()
+            
+            Button(action: {
+                simpleSuccess()
+            }, label: {
+                Text("Test Getar")
+            }).padding()
+            
+            ForEach(journey){ data in
+                
+                NavigationLink(destination: Learn1View(journey: data)){
+                    ZStack{
+                        Text(data.title ?? "")
+                            .foregroundColor(data.isLocked ? Color.blue : Color.red)
+                            .onAppear(perform: {
+                               
+                            })
+                    }
+                }
             }
+            
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
@@ -47,8 +63,8 @@ struct LearnView: View {
     }
 }
 
-struct LearnView_Previews: PreviewProvider {
-    static var previews: some View {
-        LearnView()
-    }
-}
+//struct LearnView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LearnView()
+//    }
+//}
