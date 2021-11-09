@@ -13,17 +13,8 @@ struct LearnView: View {
     @FetchRequest(sortDescriptors: [])
     private var journey: FetchedResults<JourneyEntity>
     
-    func getIconName() -> Image {
-        return Image(systemName: "house.fill")
-    }
-    
-    func gettabName() -> Text {
-        return Text("Learn test")
-    }
-    
     var body: some View {
         VStack{
-            gettabName()
             NavigationLink(
                 destination: VideoView(),
                 label: {
@@ -37,18 +28,15 @@ struct LearnView: View {
             }).padding()
             
             ForEach(journey){ data in
-                
                 NavigationLink(destination: Learn1View(journey: data)){
                     ZStack{
                         Text(data.title ?? "")
                             .foregroundColor(data.isLocked ? Color.blue : Color.red)
                             .onAppear(perform: {
-                               
                             })
                     }
                 }
             }
-            
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)

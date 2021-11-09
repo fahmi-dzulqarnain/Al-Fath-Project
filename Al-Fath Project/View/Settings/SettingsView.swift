@@ -13,20 +13,13 @@ struct SettingsView: View {
     @State private var isNotifyPractice : Bool = false
     @ObservedObject var viewModel = UserViewModel()
     
-    func getIconName() -> Image {
-        return Image(systemName: "house.fill")
-    }
-    
-    func gettabName() -> Text {
-        return Text("Settings")
-    }
-    
     var body: some View {
         ScrollView {
             VStack(alignment: .center) {
                 Image(systemName: "person.circle.fill")
                     .resizable()
                     .frame(width: 70, height: 70)
+                    .padding(.top, 32)
                 Text("Abdullah")
                     .font(.system(size: 18))
                     .bold()
@@ -68,6 +61,8 @@ struct SettingsView: View {
             }
             .padding(.all, 16)
         }
+        .background(Color.secondary)
+        .edgesIgnoringSafeArea(.top)
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
     }

@@ -3,28 +3,34 @@
 //  Al-Fath Project
 //
 //  Created by Rio Sudarsono on 08/11/21.
-//
 
 import SwiftUI
 
 struct Learn1View: View {
     @Environment(\.managedObjectContext) private var viewContext
-    var journey: JourneyEntity
+    @FetchRequest(sortDescriptors: [])
+    private var journeyData: FetchedResults<JourneyEntity>
+    @State var journeyNext = JourneyEntity()
+    @State var journey: JourneyEntity
     
     var body: some View {
         ZStack {
             VStack {
                 Button(action: {
-                    journey.isLocked = false
-                    PersistneceController.shared.save()
+                    
                 }, label: {
-                    Text("Unlock Next Journey")
+                    Text(journey.title ?? "")
+                }).onAppear(perform: {
+                    
                 })
             }
         }
         
+    }
+    
+    func unlock() {
         
-        
+        PersistneceController.shared.save()
     }
 }
 
