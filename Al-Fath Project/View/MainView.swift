@@ -10,28 +10,48 @@ import SwiftUI
 struct MainView: View {
     
     @State private var selectedTab = 1
+    @ObservedObject var learnVM = LearnViewModel()
+    
+    
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor(Color.primary)
+    }
     
     var body: some View {
-        TabView(selection: $selectedTab) {
-            LearnView().tabItem {
-                LearnView().getIconName()
-                LearnView().gettabName()
-            }.tag(1)
-            ChallengeView().tabItem {
-                ChallengeView().getIconName()
-                ChallengeView().gettabName()
-            }.tag(2)
-            DictionaryView().tabItem {
-                DictionaryView().getIconName()
-                DictionaryView().gettabName()
-            }.tag(3)
-            SettingsView().tabItem {
-                SettingsView().getIconName()
-                SettingsView().gettabName()
-            }.tag(4)
+        ZStack {
+            HStack {
+            }
+            .frame(height: 40)
+            .cornerRadius(15)
+            .background(Color.secondary)
+            NavigationLink(destination: Learn1View( viewModel: learnVM), isActive: $learnVM.learn1Show) {
+                Text("").hidden()
+            }
+            
+            TabView(selection: $selectedTab) {
+                LearnView(viewModel: learnVM).tabItem {
+                    if selectedTab == 1 { Image("ic_learn_") }
+                    else { Image("ic_learn") }
+                }.tag(1)
+    //            ChallengeView().tabItem {
+    //                ChallengeView().getIconName()
+    //                ChallengeView().gettabName()
+    //            }.tag(2)
+                DictionaryView().tabItem {
+                    if selectedTab == 2 { Image("ic_dictionary_") }
+                    else { Image("ic_dictionary") }
+                }.tag(2)
+                SettingsView().tabItem {
+                    if selectedTab == 3 { Image("ic_settings_") }
+                    else { Image("ic_settings") }
+                }.tag(3)
+            }
+            
         }
-        
+        .background(Color.secondary)
     }
+    
+    
 }
 
 struct MainView_Previews: PreviewProvider {

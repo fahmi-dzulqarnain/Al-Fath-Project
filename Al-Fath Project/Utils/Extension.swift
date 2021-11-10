@@ -44,4 +44,11 @@ extension View {
     }
 }
 
+extension Color {
+    public static var primary = Color("ColorPrimary")
+    public static var secondary = Color("ColorSecondary")
+    public static var third = Color("ColorThird")
+    public static var text = Color("ColorText")
+}
+
 
