@@ -10,7 +10,21 @@ import SwiftUI
 struct DictionaryView: View {
     
     var body: some View {
-        Text("Kamus")
+        ScrollView {
+            VStack {
+                HStack{
+                    Spacer()
+                    Text("Kamus")
+                    Spacer()
+                }
+                
+            }
+        }
+        .background(Color.secondary)
+        .edgesIgnoringSafeArea(.top)
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
+        
     }
 }
 

@@ -10,6 +10,8 @@ import SwiftUI
 struct MainView: View {
     
     @State private var selectedTab = 1
+    @ObservedObject var learnVM = LearnViewModel()
+    
     
     init() {
         UITabBar.appearance().backgroundColor = UIColor(Color.primary)
@@ -22,9 +24,12 @@ struct MainView: View {
             .frame(height: 40)
             .cornerRadius(15)
             .background(Color.secondary)
+            NavigationLink(destination: Learn1View( viewModel: learnVM), isActive: $learnVM.learn1Show) {
+                Text("").hidden()
+            }
             
             TabView(selection: $selectedTab) {
-                LearnView().tabItem {
+                LearnView(viewModel: learnVM).tabItem {
                     if selectedTab == 1 { Image("ic_learn_") }
                     else { Image("ic_learn") }
                 }.tag(1)

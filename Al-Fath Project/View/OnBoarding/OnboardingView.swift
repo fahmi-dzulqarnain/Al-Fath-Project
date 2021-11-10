@@ -28,6 +28,8 @@ struct OnboardingView: View {
                 }
             }
         }
+        .accentColor(.text) 
+        .background(Color.secondary)
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
     }

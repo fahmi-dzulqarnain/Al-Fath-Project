@@ -12,6 +12,7 @@ struct LearnView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [])
     private var journey: FetchedResults<JourneyEntity>
+    @ObservedObject var viewModel: LearnViewModel
     
     var body: some View {
         VStack{
@@ -28,18 +29,23 @@ struct LearnView: View {
             }).padding()
             
             ForEach(journey){ data in
-                NavigationLink(destination: Learn1View(journey: data)){
-                    ZStack{
-                        Text(data.title ?? "")
-                            .foregroundColor(data.isLocked ? Color.blue : Color.red)
-                            .onAppear(perform: {
-                            })
-                    }
+                ZStack{
+                    Text(data.title ?? "")
+                        .foregroundColor(data.isLocked ? Color.blue : Color.red)
+                        .onTapGesture {
+                            viewModel.learn1Show = true
+                        }
                 }
             }
+            
+            Spacer()
+            HStack {Spacer()}
         }
+        .background(Color.secondary)
+        .edgesIgnoringSafeArea(.top)
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
+        .navigationBarTitle("Menghafal", displayMode: .inline)
     }
     
     func simpleSuccess() {
