@@ -59,7 +59,7 @@ struct Learn1View: View {
                 }
                 
             }
-            .padding(.top, 48)
+            
             
             HStack {
                 Button(action: {
@@ -91,9 +91,10 @@ struct Learn1View: View {
             .padding(.bottom, 48)
             
         }
+//        .padding(.top, 48)
         .background(Color.third)
-        .edgesIgnoringSafeArea(.vertical)
-        .navigationBarTitle("Menghafal", displayMode: .inline)
+        .edgesIgnoringSafeArea(.bottom)
+//        .navigationBarTitle("Menghafal", displayMode: .inline)
 //        .navigationBarHidden(true)
 //        .navigationBarBackButtonHidden(true)
         
