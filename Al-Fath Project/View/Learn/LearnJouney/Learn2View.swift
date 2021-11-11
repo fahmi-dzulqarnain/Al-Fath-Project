@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct Learn2View: View {
+    @State private var overlayPoints: [CGPoint] = []
+    
     var body: some View {
-        Text("Learn 2")
+        ZStack {
+          CameraView {
+            overlayPoints = $0
+          }
+
+        }
     }
 }
 

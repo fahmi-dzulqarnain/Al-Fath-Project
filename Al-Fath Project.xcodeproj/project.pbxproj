@@ -34,6 +34,11 @@
 		3F6FD477270ED21F000BC39D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6FD476270ED21F000BC39D /* Preview Assets.xcassets */; };
 		3F6FD479270ED21F000BC39D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FD478270ED21F000BC39D /* Persistence.swift */; };
 		3F6FD47C270ED21F000BC39D /* Al_Fath_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FD47A270ED21F000BC39D /* Al_Fath_Project.xcdatamodeld */; };
+		E7D88382273BD632006E80E8 /* HandDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D88381273BD632006E80E8 /* HandDetection.swift */; };
+		E7D88385273BDEE6006E80E8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D88384273BDEE6006E80E8 /* CameraViewController.swift */; };
+		E7D88387273BDFF1006E80E8 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D88386273BDFF1006E80E8 /* CameraPreview.swift */; };
+		E7D88389273BE0A0006E80E8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D88388273BE0A0006E80E8 /* CameraView.swift */; };
+		E7D8838B273BE166006E80E8 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D8838A273BE166006E80E8 /* AppError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +71,11 @@
 		3F6FD478270ED21F000BC39D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		3F6FD47B270ED21F000BC39D /* Al_Fath_Project.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Al_Fath_Project.xcdatamodel; sourceTree = "<group>"; };
 		3F6FD47D270ED21F000BC39D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7D88381273BD632006E80E8 /* HandDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandDetection.swift; sourceTree = "<group>"; };
+		E7D88384273BDEE6006E80E8 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		E7D88386273BDFF1006E80E8 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		E7D88388273BE0A0006E80E8 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		E7D8838A273BE166006E80E8 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +110,7 @@
 			children = (
 				0E63CF68272AA3B0008D129A /* Extension.swift */,
 				0EC81E902738C4D800AAC6A8 /* Constans.swift */,
+				E7D8838A273BE166006E80E8 /* AppError.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -115,6 +126,7 @@
 		0E8BBD67271869E000AA1377 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E7D88380273BD581006E80E8 /* HandposeDetection */,
 				0E63CF64272AA05B008D129A /* OnBoarding */,
 				0E8C11E8272806E00092D9B2 /* Video */,
 				0E8BBD7827186F4000AA1377 /* Settings */,
@@ -266,6 +278,25 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E7D88380273BD581006E80E8 /* HandposeDetection */ = {
+			isa = PBXGroup;
+			children = (
+				E7D88383273BDEB3006E80E8 /* CameraView */,
+				E7D88381273BD632006E80E8 /* HandDetection.swift */,
+			);
+			path = HandposeDetection;
+			sourceTree = "<group>";
+		};
+		E7D88383273BDEB3006E80E8 /* CameraView */ = {
+			isa = PBXGroup;
+			children = (
+				E7D88384273BDEE6006E80E8 /* CameraViewController.swift */,
+				E7D88386273BDFF1006E80E8 /* CameraPreview.swift */,
+				E7D88388273BE0A0006E80E8 /* CameraView.swift */,
+			);
+			path = CameraView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -339,6 +370,7 @@
 				0E8BBD7727186EFA00AA1377 /* DictionaryView.swift in Sources */,
 				3F6FD479270ED21F000BC39D /* Persistence.swift in Sources */,
 				0E8BBD7027186B6E00AA1377 /* LearnView.swift in Sources */,
+				E7D88387273BDFF1006E80E8 /* CameraPreview.swift in Sources */,
 				0E63CF69272AA3B0008D129A /* Extension.swift in Sources */,
 				0E8BBD7A27186F6C00AA1377 /* SettingsView.swift in Sources */,
 				0EC81E912738C4D800AAC6A8 /* Constans.swift in Sources */,
@@ -347,11 +379,14 @@
 				0E1BEF17273004150058D9EE /* UserViewModel.swift in Sources */,
 				0EC81E942738C97D00AAC6A8 /* Learn1View.swift in Sources */,
 				0E3B1F1F27329238006A991D /* Challenge3View.swift in Sources */,
+				E7D88382273BD632006E80E8 /* HandDetection.swift in Sources */,
 				0EC81E8F2738C47E00AAC6A8 /* Presistence.swift in Sources */,
 				0E7052F7273AAA0D002ABCE3 /* LearnViewModel.swift in Sources */,
+				E7D88389273BE0A0006E80E8 /* CameraView.swift in Sources */,
 				3F6FD47C270ED21F000BC39D /* Al_Fath_Project.xcdatamodeld in Sources */,
 				0E8BBD7327186E9700AA1377 /* ChallengeView.swift in Sources */,
 				0EF2BA872733DE5E006A797C /* ChallengeDoneView.swift in Sources */,
+				E7D88385273BDEE6006E80E8 /* CameraViewController.swift in Sources */,
 				0E3B1F2227329870006A991D /* GamesModel.swift in Sources */,
 				0E8C11EA2728072F0092D9B2 /* VideoView.swift in Sources */,
 				0E202900273B977300CF291B /* Learn2View.swift in Sources */,
@@ -359,6 +394,7 @@
 				0E8BBD6D27186A5700AA1377 /* MainView.swift in Sources */,
 				3F6FD470270ED21C000BC39D /* Al_Fath_ProjectApp.swift in Sources */,
 				0E63CF6C272AABF8008D129A /* IndexView.swift in Sources */,
+				E7D8838B273BE166006E80E8 /* AppError.swift in Sources */,
 				0E63CF66272AA1A0008D129A /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
