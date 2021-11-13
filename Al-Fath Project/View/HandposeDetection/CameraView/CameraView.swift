@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct CameraView: UIViewControllerRepresentable {
-  var pointsProcessorHandler: (([CGPoint]) -> Void)?
-
-  func makeUIViewController(context: Context) -> CameraViewController {
-    let cvc = CameraViewController()
-    cvc.pointsProcessorHandler = pointsProcessorHandler
-    return cvc
-  }
-
-  func updateUIViewController(
-    _ uiViewController: CameraViewController,
-    context: Context
-  ) {
-  }
+    
+    var sharedVM: SharedViewModel
+    
+    var pointsProcessorHandler: (([CGPoint]) -> Void)?
+    
+    func makeUIViewController(context: Context) -> CameraViewController {
+        let cvc = CameraViewController(vm: sharedVM)
+        cvc.pointsProcessorHandler = pointsProcessorHandler
+        return cvc
+    }
+    
+    func updateUIViewController(
+        _ uiViewController: CameraViewController,
+        context: Context
+    ) {
+    }
 }
