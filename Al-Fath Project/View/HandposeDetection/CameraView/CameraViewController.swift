@@ -10,15 +10,14 @@ import UIKit
 import AVFoundation
 import Vision
 
-
-class SharedViewModel: ObservableObject{
-    @Published var labelHurufPredict = ""
+protocol CustomDelegate {
+    func didUpdateWithValue(_ value: String)
 }
+
 
 final class CameraViewController: UIViewController {
     
-    // swiftlint:disable:next force_cast
-    let sharedVM: SharedViewModel
+    var customDelegate: CustomDelegate?
     
     private var cameraView: CameraPreview { view as! CameraPreview }
     
@@ -34,39 +33,17 @@ final class CameraViewController: UIViewController {
     }()
     
     var pointsProcessorHandler: (([CGPoint]) -> Void)?
-    // Tampung label hasil prediction
-//    var predictionLabel = "Huruf"
+    
     // Core ML model
-    private let model: HandPose_Cobacoba = {
+    private let model: HandPose_SignLangAr = {
         do {
             let config = MLModelConfiguration()
-            return try HandPose_Cobacoba(configuration: config)
+            return try HandPose_SignLangAr(configuration: config)
         } catch {
             print(error)
             fatalError("Couldn't create SleepCalculator")
         }
     }()
-    
-    init(vm: SharedViewModel) {
-        self.sharedVM = vm
-        super.init(nibName: nil, bundle: nil)
-        //Sample update mimics the work of a Delegate or IBAction, etc
-        //        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-        //            self.runCount += 1
-        //            self.methodThatChangeValueOfString()
-        //            if self.runCount == 10 {
-        //                timer.invalidate()
-        //            }
-        //        }
-    }
-    
-    func methodThatChangeValueOfString(){
-        sharedVM.labelHurufPredict = "Huruf \(predictionLabel)"
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func loadView() {
         view = CameraPreview()
@@ -147,8 +124,7 @@ final class CameraViewController: UIViewController {
     }
 }
 
-extension
-CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(
         _ output: AVCaptureOutput,
         didOutput sampleBuffer: CMSampleBuffer,
@@ -218,9 +194,11 @@ CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             
             // 2. Masukin joints dari ke prediction model
             
+            
             if let output = try? self.model.prediction(poses: jointsFinger) {
 //                self.predictionLabel = output.label
-                self.sharedVM.labelHurufPredict = output.label
+//                self.sharedVM.labelHurufPredict = output.label
+                self.customDelegate?.didUpdateWithValue(output.label)
                 print("Hasil prediksi: \(output.label)")
             }
             

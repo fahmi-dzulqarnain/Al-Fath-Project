@@ -10,13 +10,13 @@ import SwiftUI
 struct Learn2View: View {
     @State private var overlayPoints: [CGPoint] = []
     @State private var huruf: String = ""
-    @StateObject var sharedVM: SharedViewModel = SharedViewModel()
+    @State private var comingFromUIKitVC = ""
     
 
     var body: some View {
         ZStack(alignment: .bottom) {
             VStack {
-                CameraView(sharedVM: sharedVM) {
+                CameraView(bindedValue: $comingFromUIKitVC) {
                     overlayPoints = $0;
                 }
                 Spacer()
@@ -30,10 +30,10 @@ struct Learn2View: View {
             
             
             VStack {
-                Text("\(sharedVM.labelHurufPredict)")
+                Text("\(comingFromUIKitVC)")
                     .foregroundColor(.text)
                     .bold()
-                    .font(.system(size: 72))
+                    .font(.system(size: 24))
                 Text("")
                     .foregroundColor(.text)
                     .bold()

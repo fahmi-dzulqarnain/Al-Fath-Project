@@ -39,6 +39,7 @@
 		E7D88387273BDFF1006E80E8 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D88386273BDFF1006E80E8 /* CameraPreview.swift */; };
 		E7D88389273BE0A0006E80E8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D88388273BE0A0006E80E8 /* CameraView.swift */; };
 		E7D8838B273BE166006E80E8 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D8838A273BE166006E80E8 /* AppError.swift */; };
+		E7DE2EDF273FD36800090DE6 /* HandPose_SignLangAr.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E7DE2EDE273FD36800090DE6 /* HandPose_SignLangAr.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		E7D88386273BDFF1006E80E8 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		E7D88388273BE0A0006E80E8 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		E7D8838A273BE166006E80E8 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		E7DE2EDE273FD36800090DE6 /* HandPose_SignLangAr.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HandPose_SignLangAr.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +283,7 @@
 		E7D88380273BD581006E80E8 /* HandposeDetection */ = {
 			isa = PBXGroup;
 			children = (
+				E7DE2EDE273FD36800090DE6 /* HandPose_SignLangAr.mlmodel */,
 				E7ACE39B273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel */,
 				E7D88383273BDEB3006E80E8 /* CameraView */,
 			);
@@ -371,6 +374,7 @@
 				3F6FD479270ED21F000BC39D /* Persistence.swift in Sources */,
 				0E8BBD7027186B6E00AA1377 /* LearnView.swift in Sources */,
 				E7D88387273BDFF1006E80E8 /* CameraPreview.swift in Sources */,
+				E7DE2EDF273FD36800090DE6 /* HandPose_SignLangAr.mlmodel in Sources */,
 				0E63CF69272AA3B0008D129A /* Extension.swift in Sources */,
 				0E8BBD7A27186F6C00AA1377 /* SettingsView.swift in Sources */,
 				0EC81E912738C4D800AAC6A8 /* Constans.swift in Sources */,
