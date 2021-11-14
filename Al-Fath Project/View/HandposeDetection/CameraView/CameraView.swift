@@ -8,17 +8,34 @@
 import SwiftUI
 
 struct CameraView: UIViewControllerRepresentable {
-  var pointsProcessorHandler: (([CGPoint]) -> Void)?
+    
+    @Binding var bindedValue: String
+    var pointsProcessorHandler: (([CGPoint]) -> Void)?
+    
+    func makeUIViewController(context: Context) -> CameraViewController {
+        let vc = CameraViewController()
+        vc.customDelegate = context.coordinator
+        vc.pointsProcessorHandler = pointsProcessorHandler
+        return vc
+    }
+    
+    func updateUIViewController(_ vc: CameraViewController, context: Context) {
+        print("the bindedValue updated: \(bindedValue)")
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(customView: self)
+    }
+    
+    class Coordinator: NSObject, CustomDelegate {
+           var parent: CameraView
 
-  func makeUIViewController(context: Context) -> CameraViewController {
-    let cvc = CameraViewController()
-    cvc.pointsProcessorHandler = pointsProcessorHandler
-    return cvc
-  }
+           init(customView: CameraView) {
+               self.parent = customView
+           }
 
-  func updateUIViewController(
-    _ uiViewController: CameraViewController,
-    context: Context
-  ) {
-  }
+           func didUpdateWithValue(_ value: String) {
+               parent.bindedValue = value
+           }
+       }
 }
