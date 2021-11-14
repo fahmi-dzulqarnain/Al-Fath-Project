@@ -13,6 +13,7 @@ struct LearnView: View {
     @FetchRequest(sortDescriptors: [])
     private var journey: FetchedResults<JourneyEntity>
     @ObservedObject var viewModel: LearnViewModel
+    @State var showCheckPoint = false
     
     var body: some View {
         VStack{
@@ -23,10 +24,14 @@ struct LearnView: View {
                 }).padding()
             
             Button(action: {
-                simpleSuccess()
+                showCheckPoint = true
             }, label: {
-                Text("Test Getar")
+                Text("Checkpoint")
             }).padding()
+            
+            NavigationLink(destination: CheckpointView(isShow: $showCheckPoint), isActive: $showCheckPoint){
+                Text("")
+            }
             
             ForEach(journey){ data in
                 ZStack{

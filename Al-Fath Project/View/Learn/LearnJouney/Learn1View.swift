@@ -16,7 +16,7 @@ struct Learn1View: View {
     
     @ObservedObject var viewModel: LearnViewModel
     
-    let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "video1", ofType: "mp4")!))
+    let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "alif", ofType: "mp4")!))
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -34,7 +34,7 @@ struct Learn1View: View {
 //                    Spacer()
 //                }
 //                .padding(.top, 36)
-                VideoPlayer(player: player).frame(height: 450)
+                VideoPlayer(player: player).frame(height: 520)
                     .onAppear(perform: {
                         player.play()
                     })
@@ -91,12 +91,9 @@ struct Learn1View: View {
             .padding(.bottom, 48)
             
         }
-//        .padding(.top, 48)
         .background(Color.third)
         .edgesIgnoringSafeArea(.bottom)
-//        .navigationBarTitle("Menghafal", displayMode: .inline)
-//        .navigationBarHidden(true)
-//        .navigationBarBackButtonHidden(true)
+        .navigationBarTitle("Menghafal", displayMode: .inline)
         
     }
     

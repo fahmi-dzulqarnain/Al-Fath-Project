@@ -12,6 +12,27 @@ struct Al_Fath_ProjectApp: App {
     let persistenceController = PersistneceController.shared
     @Environment(\.scenePhase) var scenePhase
     
+    init() {
+        //navigation bar
+        let coloredNavAppearance = UINavigationBarAppearance()
+        coloredNavAppearance.configureWithTransparentBackground()
+        coloredNavAppearance.backgroundColor = UIColor(Color.primary)
+        coloredNavAppearance.backgroundEffect = nil
+        coloredNavAppearance.backgroundImage = UIImage()
+        coloredNavAppearance.shadowImage = UIImage()
+        coloredNavAppearance.shadowColor = .clear
+        coloredNavAppearance.titleTextAttributes = [
+            .foregroundColor: UIColor.black
+        ]
+        coloredNavAppearance.largeTitleTextAttributes = [
+            .foregroundColor: UIColor.black
+        ]
+        
+        UINavigationBar.appearance().standardAppearance = coloredNavAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredNavAppearance
+        UINavigationBar.appearance().compactAppearance = coloredNavAppearance
+        
+    }
     var body: some Scene {
         WindowGroup {
 //            ContentView()
