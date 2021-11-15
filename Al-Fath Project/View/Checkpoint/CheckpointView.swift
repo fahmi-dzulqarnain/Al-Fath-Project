@@ -8,29 +8,48 @@
 import SwiftUI
 
 struct CheckpointView: View {
-    @Binding var isShow:Bool
+//    @Binding var isShow:Bool
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State var progress: CGFloat = 33
+    @State private var selection = 0
     
     var body: some View {
         ZStack {
             VStack {
-                HStack {
-                    Image("ic_close")
-                        .resizable()
-                        .frame(width: 16, height: 16)
-                        .onTapGesture {
-                            isShow = false
-                        }
-                    Spacer()
-                }
-                .padding()
+                VStack{
+                    HStack {
+                        Image("ic_close")
+                            .resizable()
+                            .frame(width: 16, height: 16)
+                            .onTapGesture {
+    //                            isShow = false
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                        Spacer()
+                    }
+                    ProgressBarView(percent: progress)
+                }.padding()
                 
-                Spacer()
-                Text("ب")
-                    .foregroundColor(.text)
-                    .bold()
-                    .font(.custom(Constans.textArab, size: 84))
+                if selection == 0 {
+                    HurufView(selected: $selection, progress: $progress)
+                } else if selection == 1 {
+                    KataView(selected: $selection, progress: $progress)
+                } else if selection == 2 {
+                    PencocokanView()
+                }
+                
+//                TabView(selection : $selection){
+//                    HurufView(selected: $selection, progress: $progress).tag(0)
+//                    KataView(selected: $selection, progress: $progress).tag(1)
+//                    PencocokanView().tag(2)
+//                }
+//                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+//                .animation(.easeInOut)
+//                .transition(.slide)
             }
             .padding(.top, 48)
+            
+            
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
@@ -39,8 +58,8 @@ struct CheckpointView: View {
     }
 }
 
-struct CheckpointView_Previews: PreviewProvider {
-    static var previews: some View {
-        CheckpointView(isShow: .constant(true))
-    }
-}
+//struct CheckpointView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CheckpointView(isShow: .constant(true))
+//    }
+//}

@@ -24,13 +24,13 @@ struct LearnView: View {
                 }).padding()
             
             Button(action: {
-                showCheckPoint = true
+                simpleSuccess()
             }, label: {
-                Text("Checkpoint")
+                Text("Test Getar")
             }).padding()
             
-            NavigationLink(destination: CheckpointView(isShow: $showCheckPoint), isActive: $showCheckPoint){
-                Text("")
+            NavigationLink(destination: CheckpointView()){
+                Text("Checkpoint")
             }
             
             ForEach(journey){ data in

@@ -50,6 +50,7 @@ extension Color {
     public static var third = Color("ColorThird")
     public static var text = Color("ColorText")
     public static var colorGreen = Color("ColorGreen")
+    public static var blue = Color("ColorBlue")
 }
 
 
