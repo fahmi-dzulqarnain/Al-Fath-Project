@@ -11,7 +11,7 @@ struct Learn2View: View {
     @State private var overlayPoints: [CGPoint] = []
     @State private var huruf: String = ""
     @State private var comingFromUIKitVC = ""
-    
+    @State var isShow = false
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -42,6 +42,25 @@ struct Learn2View: View {
             }
             .padding(.horizontal)
             .padding(.bottom, 48)
+            
+            
+            HStack {
+                Spacer()
+                Image("ic_checklist")
+                    .resizable()
+                    .frame(width: 36, height: 36)
+                    .padding(.all, 30)
+                    .background(Color.secondary)
+                    .cornerRadius(99)
+                    .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
+                    .onTapGesture {
+                        isShow.toggle()
+                    }
+            }
+            .padding(.horizontal)
+            .padding(.bottom, 48)
+            
+            CorrectView(isShow: $isShow)
             
         }
     }

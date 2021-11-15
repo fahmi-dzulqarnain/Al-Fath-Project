@@ -12,3 +12,9 @@ enum Path {
     public static let db_name = "GamesDB"
     public static let entityJourney = "JourneyEntity"
 }
+
+enum Constans {
+    public static let text = "MPLUSRounded1c-Regular"
+    public static let textBold = "MPLUSRounded1c-Bold"
+    public static let textArab = "ScheherazadeNew-Regular"
+}
