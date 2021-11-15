@@ -58,7 +58,7 @@ struct LearnView: View {
                  })
                 .background(Image("home_bg"), alignment: .topLeading)
                 .environment(\.layoutDirection, .rightToLeft)
-                .padding(.bottom, 100)
+                .padding(.bottom, 180)
         }
        .background(Color(red: 0.97, green: 0.80, blue: 0.50))
        .edgesIgnoringSafeArea(.all)
