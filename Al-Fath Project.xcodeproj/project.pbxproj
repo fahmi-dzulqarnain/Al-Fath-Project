@@ -122,6 +122,7 @@
 		0E5A39C027414B9B00C5380F /* Checkpoint */ = {
 			isa = PBXGroup;
 			children = (
+				0EF2BA842733C654006A797C /* ChallengeViewModel.swift */,
 				0E5A39C127414BCB00C5380F /* CheckpointView.swift */,
 				0E4ADCE42741FB0100C23D11 /* HurufView.swift */,
 				0E4ADCE62741FB1800C23D11 /* KataView.swift */,
@@ -215,7 +216,6 @@
 			children = (
 				0E3B1F1D27329214006A991D /* Challenge3 */,
 				0E8BBD7227186E9700AA1377 /* ChallengeView.swift */,
-				0EF2BA842733C654006A797C /* ChallengeViewModel.swift */,
 				0EF2BA862733DE5E006A797C /* ChallengeDoneView.swift */,
 			);
 			path = Challenge;
