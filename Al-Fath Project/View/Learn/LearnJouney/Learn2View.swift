@@ -16,33 +16,30 @@ struct Learn2View: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             VStack {
-                CameraView(bindedValue: $comingFromUIKitVC) {
-                    overlayPoints = $0;
+                ZStack(alignment: .topTrailing){
+                    CameraView(bindedValue: $comingFromUIKitVC) {
+                        overlayPoints = $0;
+                    }
+                    Image("ic_camera")
+                        .resizable()
+                        .frame(width: 48, height: 36)
+                        .padding()
                 }
-                Spacer()
-                HStack(alignment: .bottom){
-                    Image("img_cactus1")
-                    Image("img_cactus2")
-                    Image("img_cactus3")
-                }
-                
-            }
-            
-            
-            VStack {
-                Text("\(comingFromUIKitVC)")
-                    .foregroundColor(.text)
-                    .bold()
-                    .font(.system(size: 24))
-                Text("")
+                Text("ب")
                     .foregroundColor(.text)
                     .bold()
                     .font(.system(size: 72))
-
+                    .padding()
+                Spacer()
+                HStack(alignment: .bottom){
+                    Image("img_cactus1")
+                    Spacer()
+                    Image("img_cactus3")
+                    Image("img_cactus2")
+                    
+                }.padding(.horizontal)
+                
             }
-            .padding(.horizontal)
-            .padding(.bottom, 48)
-            
             
             HStack {
                 Spacer()
@@ -63,7 +60,11 @@ struct Learn2View: View {
             CorrectView(isShow: $isShow)
             
         }
+        .background(Color.third)
+        .edgesIgnoringSafeArea(.bottom)
+        .navigationBarTitle("Latihan", displayMode: .inline)
     }
+    
 }
 
 struct Learn2View_Previews: PreviewProvider {

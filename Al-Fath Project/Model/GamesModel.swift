@@ -13,4 +13,6 @@ struct GamesModel {
     var isChoose: Bool = false
     var isHidden: Bool = false
     var index: Int? = nil
+    var type: Int = 0
+    var image: String = ""
 }
