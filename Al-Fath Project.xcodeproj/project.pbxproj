@@ -44,6 +44,7 @@
 		3F6FD477270ED21F000BC39D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6FD476270ED21F000BC39D /* Preview Assets.xcassets */; };
 		3F6FD479270ED21F000BC39D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FD478270ED21F000BC39D /* Persistence.swift */; };
 		3F6FD47C270ED21F000BC39D /* Al_Fath_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FD47A270ED21F000BC39D /* Al_Fath_Project.xcdatamodeld */; };
+		440CF2FB2743BD4D00D38241 /* DictionaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CF2FA2743BD4D00D38241 /* DictionaryViewModel.swift */; };
 		E7ACE39C273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E7ACE39B273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel */; };
 		E7D88385273BDEE6006E80E8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D88384273BDEE6006E80E8 /* CameraViewController.swift */; };
 		E7D88387273BDFF1006E80E8 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D88386273BDFF1006E80E8 /* CameraPreview.swift */; };
@@ -92,6 +93,7 @@
 		3F6FD478270ED21F000BC39D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		3F6FD47B270ED21F000BC39D /* Al_Fath_Project.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Al_Fath_Project.xcdatamodel; sourceTree = "<group>"; };
 		3F6FD47D270ED21F000BC39D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		440CF2FA2743BD4D00D38241 /* DictionaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewModel.swift; sourceTree = "<group>"; };
 		E7ACE39B273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HandPose_Cobacoba.mlmodel; sourceTree = "<group>"; };
 		E7D88384273BDEE6006E80E8 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		E7D88386273BDFF1006E80E8 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				0E8BBD7627186EFA00AA1377 /* DictionaryView.swift */,
+				440CF2FA2743BD4D00D38241 /* DictionaryViewModel.swift */,
 			);
 			path = Dictionary;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				3F6FD472270ED21C000BC39D /* ContentView.swift in Sources */,
 				0E8BBD6D27186A5700AA1377 /* MainView.swift in Sources */,
 				3F6FD470270ED21C000BC39D /* Al_Fath_ProjectApp.swift in Sources */,
+				440CF2FB2743BD4D00D38241 /* DictionaryViewModel.swift in Sources */,
 				0E63CF6C272AABF8008D129A /* IndexView.swift in Sources */,
 				E7D8838B273BE166006E80E8 /* AppError.swift in Sources */,
 				0E63CF66272AA1A0008D129A /* OnboardingView.swift in Sources */,
@@ -585,7 +589,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Al-Fath Project/Preview Content\"";
-				DEVELOPMENT_TEAM = Z8L38KRZAK;
+				DEVELOPMENT_TEAM = HAAFQ8F93S;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Al-Fath Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -607,7 +611,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Al-Fath Project/Preview Content\"";
-				DEVELOPMENT_TEAM = Z8L38KRZAK;
+				DEVELOPMENT_TEAM = HAAFQ8F93S;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Al-Fath Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

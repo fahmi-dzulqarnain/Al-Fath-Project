@@ -2,25 +2,37 @@
 //  DictionaryView.swift
 //  Al-Fath Project
 //
-//  Created by Rio Sudarsono on 14/10/21.
+//  Created by Fahmi Dzulqarnain on 16/11/21.
 //
 
 import SwiftUI
 
+struct DictionaryData {
+    let id = UUID()
+    let letter: String
+}
+
 struct DictionaryView: View {
     
+    let datas = [
+        DictionaryData(letter: "ب"),
+        DictionaryData(letter: "ا"),
+        DictionaryData(letter: "ت")
+    ]
+    
+    let gridItems: [GridItem] = [
+        GridItem(.adaptive(minimum: 110))
+    ]
+    
     var body: some View {
-        ScrollView {
-            VStack {
-                HStack{
-                    Spacer()
-                    Text("Kamus")
-                    Spacer()
+        ScrollView(showsIndicators: false) {
+            LazyVGrid(columns: gridItems) {
+                ForEach (datas, id: \.id) {data in
+                    Text(data.letter).foregroundColor(Color.primary)
                 }
-                
             }
         }
-        .background(Color.secondary)
+        .background(Color.white)
         .edgesIgnoringSafeArea(.top)
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
