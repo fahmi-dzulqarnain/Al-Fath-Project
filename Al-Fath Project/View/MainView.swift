@@ -24,8 +24,12 @@ struct MainView: View {
             .frame(height: 40)
             .cornerRadius(15)
             .background(Color.secondary)
-            NavigationLink(destination: Learn1View( viewModel: learnVM), isActive: $learnVM.learn1Show) {
+            
+            NavigationLink(destination: Learn1View(viewModel: learnVM), isActive: $learnVM.learn1Show) {
                 Text("").hidden()
+            }
+            
+            NavigationLink(destination: DictionaryView(vm: dictionaryVM), isActive: $dictionaryVM.showDictionary) {
             }
             
             TabView(selection: $selectedTab) {

@@ -10,6 +10,8 @@ import SwiftUI
 struct DictionaryData {
     let id = UUID()
     let letter: String
+    let latin: String
+    let videoName: String
 }
 
 struct DictionaryListView: View {
@@ -26,35 +28,44 @@ struct DictionaryListView: View {
         ScrollView(showsIndicators: false) {
             LazyVGrid(columns: gridItems) {
                 ForEach (vm.datas, id: \.id) {data in
-                    Button(action: {
-                        
-                    }) {
-                        ZStack {
-                            Circle()
-                                .foregroundColor(Color("ColorBlue"))
-                                .frame(minWidth: 80, idealWidth: 110, maxWidth: 330, minHeight: 80, idealHeight: 110, maxHeight: 330, alignment: .center)
-                            Text(data.letter)
-                                .foregroundColor(Color.white)
-                                .font(.custom("ScheherazadeNew-Regular", size: 34, relativeTo: .largeTitle))
-                        }
-                    }
-                    .padding(.bottom, 50)
+                    ButtonDictionary(vm: vm, data: data)
                 }
             }
             .padding(.top, 60)
             .environment(\.layoutDirection, .rightToLeft)
         }
         .padding()
-        .background(Color.white)
+        .background(Color("ColorSecondary"))
         .edgesIgnoringSafeArea(.top)
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
-        
     }
 }
 
-struct DictionaryView_Previews: PreviewProvider {
+struct DictionaryListView_Previews: PreviewProvider {
     static var previews: some View {
         DictionaryListView(vm: DictionaryListViewModel())
+    }
+}
+
+struct ButtonDictionary : View {
+    var vm: DictionaryListViewModel
+    var data: DictionaryData
+    
+    var body: some View {
+        Button(action: {
+            vm.showDictionary = true
+            vm.dictionaryData = data
+        }) {
+            ZStack {
+                Circle()
+                    .foregroundColor(Color("ColorBlue"))
+                    .frame(minWidth: 80, idealWidth: 110, maxWidth: 330, minHeight: 80, idealHeight: 110, maxHeight: 330, alignment: .center)
+                Text(data.letter)
+                    .foregroundColor(Color.white)
+                    .font(.custom("ScheherazadeNew-Regular", size: 34, relativeTo: .largeTitle))
+            }
+        }
+        .padding(.bottom, 50)
     }
 }

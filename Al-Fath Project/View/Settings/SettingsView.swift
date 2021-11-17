@@ -95,10 +95,11 @@ struct SettingsView: View {
                 .padding(.bottom, 80)
             
         }
-        .background(Color.secondary)
+        .background(Color("ColorSecondary"))
         .edgesIgnoringSafeArea(.top)
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
+        .navigationBarTitle("", displayMode: .inline)
     }
     
     var badge: some View {
