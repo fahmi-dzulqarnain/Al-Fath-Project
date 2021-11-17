@@ -8,6 +8,9 @@
 import Foundation
 
 class DictionaryListViewModel: ObservableObject {
+    
+    @Published var showDictionary: Bool = false
+    @Published var dictionaryData = DictionaryData(letter: "")
     let datas = [
         DictionaryData(letter: "ا"),
         DictionaryData(letter: "ب"),
@@ -39,4 +42,5 @@ class DictionaryListViewModel: ObservableObject {
         DictionaryData(letter: "ي"),
         DictionaryData(letter: "ة"),
     ]
+    
 }
