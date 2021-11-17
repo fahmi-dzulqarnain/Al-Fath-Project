@@ -10,6 +10,8 @@ import SwiftUI
 struct DictionaryData {
     let id = UUID()
     let letter: String
+    let latin: String
+    let videoName: String
 }
 
 struct DictionaryListView: View {
