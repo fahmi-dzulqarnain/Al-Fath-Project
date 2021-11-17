@@ -4,9 +4,9 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>MPLUSRounded1c-Regular</string>
-		<string>ScheherazadeNew-Regular</string>
-		<string>MPLUSRounded1c-Bold</string>
+		<string>m_plus_rounded_regular.ttf</string>
+		<string>ScheherazadeNew-Regular.ttf</string>
+		<string>m_plus_rounded_bold.ttf</string>
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>

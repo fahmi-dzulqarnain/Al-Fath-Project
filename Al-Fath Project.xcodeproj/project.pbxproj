@@ -18,8 +18,8 @@
 		0E5A39BD2741499300C5380F /* alif.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0E5A39BC2741499300C5380F /* alif.mp4 */; };
 		0E5A39BF27414AC600C5380F /* CorrectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5A39BE27414AC600C5380F /* CorrectView.swift */; };
 		0E5A39C227414BCB00C5380F /* CheckpointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5A39C127414BCB00C5380F /* CheckpointView.swift */; };
-		0E5A39C527414C2C00C5380F /* MPLUSRounded1c-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E5A39C427414C2C00C5380F /* MPLUSRounded1c-Regular.ttf */; };
-		0E5A39C727414C3800C5380F /* MPLUSRounded1c-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E5A39C627414C3800C5380F /* MPLUSRounded1c-Bold.ttf */; };
+		0E5A39C527414C2C00C5380F /* m_plus_rounded_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E5A39C427414C2C00C5380F /* m_plus_rounded_regular.ttf */; };
+		0E5A39C727414C3800C5380F /* m_plus_rounded_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E5A39C627414C3800C5380F /* m_plus_rounded_bold.ttf */; };
 		0E5A39C927414C4100C5380F /* ScheherazadeNew-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E5A39C827414C4100C5380F /* ScheherazadeNew-Regular.ttf */; };
 		0E63CF66272AA1A0008D129A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E63CF65272AA1A0008D129A /* OnboardingView.swift */; };
 		0E63CF69272AA3B0008D129A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E63CF68272AA3B0008D129A /* Extension.swift */; };
@@ -28,7 +28,7 @@
 		0E8BBD6D27186A5700AA1377 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD6C27186A5700AA1377 /* MainView.swift */; };
 		0E8BBD7027186B6E00AA1377 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD6F27186B6E00AA1377 /* LearnView.swift */; };
 		0E8BBD7327186E9700AA1377 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD7227186E9700AA1377 /* ChallengeView.swift */; };
-		0E8BBD7727186EFA00AA1377 /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD7627186EFA00AA1377 /* DictionaryView.swift */; };
+		0E8BBD7727186EFA00AA1377 /* DictionaryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD7627186EFA00AA1377 /* DictionaryListView.swift */; };
 		0E8BBD7A27186F6C00AA1377 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD7927186F6C00AA1377 /* SettingsView.swift */; };
 		0E8C11EA2728072F0092D9B2 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C11E92728072F0092D9B2 /* VideoView.swift */; };
 		0E8C11EE27280DF90092D9B2 /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0E8C11ED27280C2B0092D9B2 /* video1.mp4 */; };
@@ -44,6 +44,8 @@
 		3F6FD477270ED21F000BC39D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6FD476270ED21F000BC39D /* Preview Assets.xcassets */; };
 		3F6FD479270ED21F000BC39D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FD478270ED21F000BC39D /* Persistence.swift */; };
 		3F6FD47C270ED21F000BC39D /* Al_Fath_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FD47A270ED21F000BC39D /* Al_Fath_Project.xcdatamodeld */; };
+		440CF2FB2743BD4D00D38241 /* DictionaryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CF2FA2743BD4D00D38241 /* DictionaryListViewModel.swift */; };
+		445670DC2744991900CFC99F /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445670DB2744991900CFC99F /* DictionaryView.swift */; };
 		E7ACE39C273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E7ACE39B273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel */; };
 		E7D88385273BDEE6006E80E8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D88384273BDEE6006E80E8 /* CameraViewController.swift */; };
 		E7D88387273BDFF1006E80E8 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D88386273BDFF1006E80E8 /* CameraPreview.swift */; };
@@ -64,8 +66,8 @@
 		0E5A39BC2741499300C5380F /* alif.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = alif.mp4; sourceTree = "<group>"; };
 		0E5A39BE27414AC600C5380F /* CorrectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectView.swift; sourceTree = "<group>"; };
 		0E5A39C127414BCB00C5380F /* CheckpointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckpointView.swift; sourceTree = "<group>"; };
-		0E5A39C427414C2C00C5380F /* MPLUSRounded1c-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Regular.ttf"; sourceTree = "<group>"; };
-		0E5A39C627414C3800C5380F /* MPLUSRounded1c-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Bold.ttf"; sourceTree = "<group>"; };
+		0E5A39C427414C2C00C5380F /* m_plus_rounded_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = m_plus_rounded_regular.ttf; sourceTree = "<group>"; };
+		0E5A39C627414C3800C5380F /* m_plus_rounded_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = m_plus_rounded_bold.ttf; sourceTree = "<group>"; };
 		0E5A39C827414C4100C5380F /* ScheherazadeNew-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScheherazadeNew-Regular.ttf"; sourceTree = "<group>"; };
 		0E63CF65272AA1A0008D129A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		0E63CF68272AA3B0008D129A /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -74,7 +76,7 @@
 		0E8BBD6C27186A5700AA1377 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0E8BBD6F27186B6E00AA1377 /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
 		0E8BBD7227186E9700AA1377 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
-		0E8BBD7627186EFA00AA1377 /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
+		0E8BBD7627186EFA00AA1377 /* DictionaryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryListView.swift; sourceTree = "<group>"; };
 		0E8BBD7927186F6C00AA1377 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0E8C11E92728072F0092D9B2 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		0E8C11ED27280C2B0092D9B2 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
@@ -92,6 +94,8 @@
 		3F6FD478270ED21F000BC39D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		3F6FD47B270ED21F000BC39D /* Al_Fath_Project.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Al_Fath_Project.xcdatamodel; sourceTree = "<group>"; };
 		3F6FD47D270ED21F000BC39D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		440CF2FA2743BD4D00D38241 /* DictionaryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryListViewModel.swift; sourceTree = "<group>"; };
+		445670DB2744991900CFC99F /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
 		E7ACE39B273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HandPose_Cobacoba.mlmodel; sourceTree = "<group>"; };
 		E7D88384273BDEE6006E80E8 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		E7D88386273BDFF1006E80E8 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
@@ -135,8 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				0E5A39C827414C4100C5380F /* ScheherazadeNew-Regular.ttf */,
-				0E5A39C627414C3800C5380F /* MPLUSRounded1c-Bold.ttf */,
-				0E5A39C427414C2C00C5380F /* MPLUSRounded1c-Regular.ttf */,
+				0E5A39C627414C3800C5380F /* m_plus_rounded_bold.ttf */,
+				0E5A39C427414C2C00C5380F /* m_plus_rounded_regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -224,7 +228,9 @@
 		0E8BBD7427186EDB00AA1377 /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
-				0E8BBD7627186EFA00AA1377 /* DictionaryView.swift */,
+				0E8BBD7627186EFA00AA1377 /* DictionaryListView.swift */,
+				440CF2FA2743BD4D00D38241 /* DictionaryListViewModel.swift */,
+				445670DB2744991900CFC99F /* DictionaryView.swift */,
 			);
 			path = Dictionary;
 			sourceTree = "<group>";
@@ -403,13 +409,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E5A39C527414C2C00C5380F /* MPLUSRounded1c-Regular.ttf in Resources */,
+				0E5A39C527414C2C00C5380F /* m_plus_rounded_regular.ttf in Resources */,
 				0E8C11EE27280DF90092D9B2 /* video1.mp4 in Resources */,
 				3F6FD477270ED21F000BC39D /* Preview Assets.xcassets in Resources */,
 				3F6FD474270ED21F000BC39D /* Assets.xcassets in Resources */,
 				0E5A39C927414C4100C5380F /* ScheherazadeNew-Regular.ttf in Resources */,
 				0E5A39BD2741499300C5380F /* alif.mp4 in Resources */,
-				0E5A39C727414C3800C5380F /* MPLUSRounded1c-Bold.ttf in Resources */,
+				0E5A39C727414C3800C5380F /* m_plus_rounded_bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E8BBD7727186EFA00AA1377 /* DictionaryView.swift in Sources */,
+				0E8BBD7727186EFA00AA1377 /* DictionaryListView.swift in Sources */,
 				3F6FD479270ED21F000BC39D /* Persistence.swift in Sources */,
 				0E8BBD7027186B6E00AA1377 /* LearnView.swift in Sources */,
 				E7D88387273BDFF1006E80E8 /* CameraPreview.swift in Sources */,
@@ -428,6 +434,7 @@
 				0E63CF69272AA3B0008D129A /* Extension.swift in Sources */,
 				0E8BBD7A27186F6C00AA1377 /* SettingsView.swift in Sources */,
 				0EC81E912738C4D800AAC6A8 /* Constans.swift in Sources */,
+				445670DC2744991900CFC99F /* DictionaryView.swift in Sources */,
 				0EF2BA852733C654006A797C /* ChallengeViewModel.swift in Sources */,
 				0EC81E8D2738C35C00AAC6A8 /* GamesDB.xcdatamodeld in Sources */,
 				0E1BEF17273004150058D9EE /* UserViewModel.swift in Sources */,
@@ -450,6 +457,7 @@
 				3F6FD472270ED21C000BC39D /* ContentView.swift in Sources */,
 				0E8BBD6D27186A5700AA1377 /* MainView.swift in Sources */,
 				3F6FD470270ED21C000BC39D /* Al_Fath_ProjectApp.swift in Sources */,
+				440CF2FB2743BD4D00D38241 /* DictionaryListViewModel.swift in Sources */,
 				0E63CF6C272AABF8008D129A /* IndexView.swift in Sources */,
 				E7D8838B273BE166006E80E8 /* AppError.swift in Sources */,
 				0E63CF66272AA1A0008D129A /* OnboardingView.swift in Sources */,
@@ -585,7 +593,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Al-Fath Project/Preview Content\"";
-				DEVELOPMENT_TEAM = Z8L38KRZAK;
+				DEVELOPMENT_TEAM = HAAFQ8F93S;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Al-Fath Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -607,7 +615,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Al-Fath Project/Preview Content\"";
-				DEVELOPMENT_TEAM = Z8L38KRZAK;
+				DEVELOPMENT_TEAM = HAAFQ8F93S;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Al-Fath Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
