@@ -38,7 +38,7 @@ struct Al_Fath_ProjectApp: App {
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
 //            MainView()
-            OnboardingView().environment(\.managedObjectContext, persistenceController.container.viewContext)
+            OnboardingView(viewModel: OnBoardingViewModel()).environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .onChange(of: scenePhase) { (newScenePhase) in
             switch newScenePhase {

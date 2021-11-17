@@ -1,19 +1,20 @@
 //
-//  LearnViewModel.swift
+//  OnBoardingViewModel.swift
 //  Al-Fath Project
 //
-//  Created by Rio Sudarsono on 09/11/21.
+//  Created by Muhammad Firdaus on 17/11/21.
 //
 
 import Foundation
-import CoreData
 
-class LearnViewModel: ObservableObject {
-    
-    @Published var learn1Show: Bool = false
+class OnBoardingViewModel: ObservableObject  {
     @Published var dataLearn: [LearnModel] = []
     @Published var isFinishLock: Bool = true
-        
+    
+    init() {
+        fetchDataJourney()
+    }
+    
     func fetchDataJourney() {
         dataLearn = [
             LearnModel(isLock: false, isCheckpoint: false, points: 1, title: "ا"),
@@ -91,5 +92,4 @@ class LearnViewModel: ObservableObject {
             }
         }
     }
-   
 }
