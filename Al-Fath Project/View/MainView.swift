@@ -11,7 +11,7 @@ struct MainView: View {
     
     @State private var selectedTab = 1
     @ObservedObject var learnVM = LearnViewModel()
-    
+    @ObservedObject var dictionaryVM = DictionaryListViewModel()
     
     init() {
         UITabBar.appearance().backgroundColor = UIColor(Color.primary)
@@ -33,11 +33,7 @@ struct MainView: View {
                     if selectedTab == 1 { Image("ic_learn_") }
                     else { Image("ic_learn") }
                 }.tag(1)
-    //            ChallengeView().tabItem {
-    //                ChallengeView().getIconName()
-    //                ChallengeView().gettabName()
-    //            }.tag(2)
-                DictionaryView().tabItem {
+                DictionaryListView(vm: dictionaryVM).tabItem {
                     if selectedTab == 2 { Image("ic_dictionary_") }
                     else { Image("ic_dictionary") }
                 }.tag(2)
