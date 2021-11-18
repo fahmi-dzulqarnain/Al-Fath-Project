@@ -89,7 +89,7 @@ struct OnboardingView: View {
         let journey = JourneyEntity(context: viewContext)
         journey.isLock = item.isLock
         journey.isCheckpoint = item.isCheckpoint
-        journey.title = item.dictionary.letter
+        journey.title = item.title
         journey.points = Int16(item.points ?? 0)
         PersistneceController.shared.save()
     }
