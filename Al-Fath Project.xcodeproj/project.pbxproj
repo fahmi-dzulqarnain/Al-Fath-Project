@@ -51,6 +51,9 @@
 		3F6FD477270ED21F000BC39D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6FD476270ED21F000BC39D /* Preview Assets.xcassets */; };
 		3F6FD479270ED21F000BC39D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FD478270ED21F000BC39D /* Persistence.swift */; };
 		3F6FD47C270ED21F000BC39D /* Al_Fath_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FD47A270ED21F000BC39D /* Al_Fath_Project.xcdatamodeld */; };
+		3FB3DBF72744DB0B00F8EB3D /* LearnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3DBF62744DB0B00F8EB3D /* LearnModel.swift */; };
+		3FB3DBF92744F89100F8EB3D /* DictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3DBF82744F89100F8EB3D /* DictionaryModel.swift */; };
+		3FB3DBFB27450C2C00F8EB3D /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3DBFA27450C2C00F8EB3D /* OnBoardingViewModel.swift */; };
 		440CF2FB2743BD4D00D38241 /* DictionaryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CF2FA2743BD4D00D38241 /* DictionaryListViewModel.swift */; };
 		445670DC2744991900CFC99F /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445670DB2744991900CFC99F /* DictionaryView.swift */; };
 		E7ACE39C273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E7ACE39B273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel */; };
@@ -108,6 +111,9 @@
 		3F6FD478270ED21F000BC39D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		3F6FD47B270ED21F000BC39D /* Al_Fath_Project.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Al_Fath_Project.xcdatamodel; sourceTree = "<group>"; };
 		3F6FD47D270ED21F000BC39D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FB3DBF62744DB0B00F8EB3D /* LearnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnModel.swift; sourceTree = "<group>"; };
+		3FB3DBF82744F89100F8EB3D /* DictionaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryModel.swift; sourceTree = "<group>"; };
+		3FB3DBFA27450C2C00F8EB3D /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
 		440CF2FA2743BD4D00D38241 /* DictionaryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryListViewModel.swift; sourceTree = "<group>"; };
 		445670DB2744991900CFC99F /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
 		E7ACE39B273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HandPose_Cobacoba.mlmodel; sourceTree = "<group>"; };
@@ -163,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				0E63CF65272AA1A0008D129A /* OnboardingView.swift */,
+				3FB3DBFA27450C2C00F8EB3D /* OnBoardingViewModel.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -215,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				0E3B1F2127329870006A991D /* GamesModel.swift */,
+				3FB3DBF62744DB0B00F8EB3D /* LearnModel.swift */,
+				3FB3DBF82744F89100F8EB3D /* DictionaryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -466,6 +475,7 @@
 				0EF2BA852733C654006A797C /* ChallengeViewModel.swift in Sources */,
 				0EC81E8D2738C35C00AAC6A8 /* GamesDB.xcdatamodeld in Sources */,
 				0E1BEF17273004150058D9EE /* UserViewModel.swift in Sources */,
+				3FB3DBF72744DB0B00F8EB3D /* LearnModel.swift in Sources */,
 				0EC81E942738C97D00AAC6A8 /* Learn1View.swift in Sources */,
 				0E3B1F1F27329238006A991D /* Challenge3View.swift in Sources */,
 				0EC81E8F2738C47E00AAC6A8 /* Presistence.swift in Sources */,
@@ -483,6 +493,7 @@
 				0E8C11EA2728072F0092D9B2 /* VideoView.swift in Sources */,
 				0E202900273B977300CF291B /* Learn2View.swift in Sources */,
 				3F6FD472270ED21C000BC39D /* ContentView.swift in Sources */,
+				3FB3DBFB27450C2C00F8EB3D /* OnBoardingViewModel.swift in Sources */,
 				0E8BBD6D27186A5700AA1377 /* MainView.swift in Sources */,
 				3F6FD470270ED21C000BC39D /* Al_Fath_ProjectApp.swift in Sources */,
 				440CF2FB2743BD4D00D38241 /* DictionaryListViewModel.swift in Sources */,
@@ -492,6 +503,7 @@
 				E7ACE39C273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel in Sources */,
 				0E4ADCE52741FB0100C23D11 /* HurufView.swift in Sources */,
 				0E4ADCE92741FB3000C23D11 /* PencocokanView.swift in Sources */,
+				3FB3DBF92744F89100F8EB3D /* DictionaryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

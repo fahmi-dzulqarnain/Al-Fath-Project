@@ -10,6 +10,7 @@ import CoreData
 
 struct OnboardingView: View {
     
+    @ObservedObject var viewModel: OnBoardingViewModel
     @Environment(\.managedObjectContext) private var viewContext
     
     @State var isFirstTime = UserDefaults.standard.isFirstTime()
@@ -21,12 +22,15 @@ struct OnboardingView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                if isFirstTime {
-                    MainView()
-                } else {
-                    onBoard
+                MainView()
+            }.onAppear(perform: {
+                if (!isFirstTime) {
+                    for item in viewModel.dataLearn {
+                        setData(item: item)
+                    }
+                    UserDefaults.standard.setFirstTime(value: true)
                 }
-            }
+            })
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
         }
@@ -71,10 +75,6 @@ struct OnboardingView: View {
                 if images.count-1 == selection {
                     Text("Get Started")
                         .onTapGesture{
-                            for i in 0...5 {
-                                setData(pos: i)
-                            }
-                            UserDefaults.standard.setFirstTime(value: true)
                             isShow = true
                         }
                 }
@@ -85,19 +85,18 @@ struct OnboardingView: View {
 
     }
     
-    func setData(pos: Int) {
+    func setData(item: LearnModel) {
         let journey = JourneyEntity(context: viewContext)
-        journey.id = Int16(pos)
-        journey.isLocked = !(pos == 0)
-        journey.title = String(pos)
-        journey.image = ""
-        journey.points = 0
+        journey.isLock = item.isLock
+        journey.isCheckpoint = item.isCheckpoint
+        journey.title = item.dictionary.letter
+        journey.points = Int16(item.points ?? 0)
         PersistneceController.shared.save()
     }
 }
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView()
+        OnboardingView(viewModel: OnBoardingViewModel())
     }
 }
