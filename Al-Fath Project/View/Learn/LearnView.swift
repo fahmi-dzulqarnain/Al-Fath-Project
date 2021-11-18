@@ -52,7 +52,7 @@ struct LearnView: View {
                         if (!data.isCheckpoint) {
                             ButtonLearn(viewModel: viewModel, title: data.title ?? "", isLocked: data.isLock)
                         } else {
-                            ButtonCheckPointLearn(viewModel: viewModel, isLocked: data.isLock)
+                            ButtonCheckPointLearn(viewModel: viewModel, title: data.title ?? "", isLocked: data.isLock)
                         }
                     }
                     }
@@ -152,11 +152,7 @@ struct ButtonCheckPointLearn : View {
             .padding(.top, 78)
             .disabled(true)
         } else {
-            Button(action: {
-                let _ = print(title)
-                let _ = print("press")
-                viewModel.unlockNextLevel(title: title)
-            })
+            Button(action: {})
             {
             Image("ic_home_finish").resizable().frame(width: 42, height: 42)
                 .frame(width: 78, height: 78)
