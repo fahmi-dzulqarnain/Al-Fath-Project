@@ -27,6 +27,8 @@ struct OnboardingView: View {
                     onBoard
                 }
             }
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
         }
         .accentColor(.text) 
         .background(Color.secondary)

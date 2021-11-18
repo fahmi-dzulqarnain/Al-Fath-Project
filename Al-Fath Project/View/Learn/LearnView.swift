@@ -37,7 +37,7 @@ struct LearnView: View {
                     Text("").hidden()
                 }
                 
-            }.padding(.top, 24)
+            }.padding(.top, 48)
             LazyVGrid(columns: columns,
                  alignment: .center,
                  spacing: 0,

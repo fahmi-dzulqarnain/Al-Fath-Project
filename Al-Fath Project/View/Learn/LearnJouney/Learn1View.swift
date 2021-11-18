@@ -8,12 +8,6 @@ import SwiftUI
 import AVKit
 
 struct Learn1View: View {
-//    @Environment(\.managedObjectContext) private var viewContext
-//    @FetchRequest(sortDescriptors: [])
-//    private var journeyData: FetchedResults<JourneyEntity>
-//    @State var journeyNext = JourneyEntity()
-    
-    
     @ObservedObject var viewModel: LearnViewModel
     @ObservedObject var vm: DictionaryListViewModel
     

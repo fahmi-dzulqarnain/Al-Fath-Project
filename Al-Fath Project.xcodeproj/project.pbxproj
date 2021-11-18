@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0E1BEF17273004150058D9EE /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1BEF16273004150058D9EE /* UserViewModel.swift */; };
 		0E202900273B977300CF291B /* Learn2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2028FF273B977300CF291B /* Learn2View.swift */; };
-		0E3914712745D3A9002ABB75 /* ra.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0E3914672745D3A8002ABB75 /* ra.mp4 */; };
 		0E3914722745D3A9002ABB75 /* alif.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0E3914682745D3A8002ABB75 /* alif.mp4 */; };
 		0E3914732745D3A9002ABB75 /* ha.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0E3914692745D3A8002ABB75 /* ha.mp4 */; };
 		0E3914742745D3A9002ABB75 /* ba.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0E39146A2745D3A8002ABB75 /* ba.mp4 */; };
@@ -65,7 +64,6 @@
 /* Begin PBXFileReference section */
 		0E1BEF16273004150058D9EE /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		0E2028FF273B977300CF291B /* Learn2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn2View.swift; sourceTree = "<group>"; };
-		0E3914672745D3A8002ABB75 /* ra.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ra.mp4; sourceTree = "<group>"; };
 		0E3914682745D3A8002ABB75 /* alif.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = alif.mp4; sourceTree = "<group>"; };
 		0E3914692745D3A8002ABB75 /* ha.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ha.mp4; sourceTree = "<group>"; };
 		0E39146A2745D3A8002ABB75 /* ba.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ba.mp4; sourceTree = "<group>"; };
@@ -277,7 +275,6 @@
 				0E3914692745D3A8002ABB75 /* ha.mp4 */,
 				0E39146B2745D3A9002ABB75 /* jim.mp4 */,
 				0E39146D2745D3A9002ABB75 /* kha.mp4 */,
-				0E3914672745D3A8002ABB75 /* ra.mp4 */,
 				0E39146F2745D3A9002ABB75 /* ta.mp4 */,
 				0E3914702745D3A9002ABB75 /* tsa.mp4 */,
 			);
@@ -439,7 +436,6 @@
 				0E3914782745D3A9002ABB75 /* dal.mp4 in Resources */,
 				0E3914752745D3A9002ABB75 /* jim.mp4 in Resources */,
 				3F6FD477270ED21F000BC39D /* Preview Assets.xcassets in Resources */,
-				0E3914712745D3A9002ABB75 /* ra.mp4 in Resources */,
 				0E3914772745D3A9002ABB75 /* kha.mp4 in Resources */,
 				3F6FD474270ED21F000BC39D /* Assets.xcassets in Resources */,
 				0E39147A2745D3A9002ABB75 /* tsa.mp4 in Resources */,
