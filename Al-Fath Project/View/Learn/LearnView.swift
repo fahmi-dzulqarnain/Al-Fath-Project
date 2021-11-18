@@ -17,14 +17,14 @@ struct LearnView: View {
     @State var showCheckPoint = false
     @ObservedObject var vm = DictionaryListViewModel()
 
-            GridItem(.flexible(), spacing: -180, alignment: nil),
-            GridItem(.flexible(), spacing: -180, alignment: nil)
-        ]
+    let columns: [GridItem] = [
+        GridItem(.flexible(), spacing: -180, alignment: nil),
+        GridItem(.flexible(), spacing: -180, alignment: nil),
+        GridItem(.flexible(), spacing: -180, alignment: nil)
+    ]
     
     var body: some View {
-            }.padding(.top, 48)
-            LazyVGrid(columns: columns,
-                 alignment: .center,
+        ScrollView(showsIndicators: false) {
             VStack{
                 ForEach (vm.datas.indices, id: \.self) {i in
                     Text(vm.datas[i].letter).onTapGesture {
@@ -40,25 +40,44 @@ struct LearnView: View {
                 }
                 
             }.padding(.top, 48)
-                 )
+
+            LazyVGrid(columns: columns,
+                 alignment: .center,
+                 spacing: 0,
+                 content: {
+                   Section(footer:
+                            ButtonFinishLearn(viewModel: viewModel)
+                   )
+                   {
+                    ForEach(journey) { data in
+                        Text("")
+                        if (!data.isCheckpoint) {
+                            ButtonLearn(viewModel: viewModel, title: data.title ?? "", isLocked: data.isLock)
+                        } else {
+                            ButtonCheckPointLearn(viewModel: viewModel, isLocked: data.isLock)
+                        }
+                    }
+                    }
+                   }
                  )
                 .background(Image("home_bg"), alignment: .topLeading)
                 .environment(\.layoutDirection, .rightToLeft)
+                .padding(.bottom, 180)
         }.onAppear(perform: {
             if (!isFirstTime) {
                 viewModel.fetchDataJourney()
-                for item in viewModel.dataLearn {
+                for item in viewModel.dataLearnDummy {
                     setData(item: item)
                 }
             }
             UserDefaults.standard.setFirstTime(value: true)
-        })
         })
        .background(Color(red: 0.97, green: 0.80, blue: 0.50))
        .edgesIgnoringSafeArea(.all)
        .navigationBarHidden(true)
        .navigationBarTitle("", displayMode: .inline)
     }
+    
     func setData(item: LearnModel) {
         let journey = JourneyEntity(context: viewContext)
         journey.isLock = item.isLock
@@ -87,12 +106,12 @@ struct LearnView_Previews: PreviewProvider {
 
 // ----------------------- Sub View ------------------------ //
 struct ButtonLearn : View {
-struct ButtonLearn : View {
     
     var viewModel : LearnViewModel
     var title : String
     var isLocked : Bool
     
+    var body: some View {
         if isLocked {
             Button(action: {
             })
@@ -126,9 +145,8 @@ struct ButtonLearn : View {
                             .stroke(Color.white.opacity(0.48), lineWidth: 8)
                     )
             }.padding(.top, 78)
-            }.padding(.top, 78)
-        }
     }
+}
 }
 
 struct ButtonCheckPointLearn : View {
@@ -141,7 +159,6 @@ struct ButtonCheckPointLearn : View {
             Button(action: {
             })
             {
-            {
             Image("ic_home_finish").resizable().frame(width: 42, height: 42)
                 .frame(width: 78, height: 78)
                 .foregroundColor(.white)
@@ -149,6 +166,7 @@ struct ButtonCheckPointLearn : View {
                 .clipShape(Circle())
                 .overlay(Image("ic_padlock")
                             .resizable()
+                            .frame(width: 18, height: 24, alignment: .top)
                             .offset(x: 0, y: -40))
             }
             .padding(.top, 78)
@@ -202,7 +220,6 @@ struct ButtonFinishLearn : View {
             }
             .padding(.top, 234)
         }
-        
-        
     }
 }
+

@@ -14,11 +14,11 @@ class LearnViewModel: ObservableObject {
     @Published var checkPointShow: Bool = false
     @Published var dataLearn = DictionaryData(letter: "", latin: "", videoName: "", code: 0)
     @Published var nextLearn = DictionaryData(letter: "", latin: "", videoName: "", code: 0)
-    @Published var dataLearn: [LearnModel] = []
+    @Published var dataLearnDummy: [LearnModel] = []
     @Published var isFinishLock: Bool = true
         
     func fetchDataJourney() {
-        dataLearn = [
+        dataLearnDummy = [
             LearnModel(isLock: false, isCheckpoint: false, points: 1, title: "ا"),
             LearnModel(isLock: true, isCheckpoint: false, points: 1, title: "ب"),
             LearnModel(isLock: true, isCheckpoint: false, points: 1, title: "ت"),
@@ -84,13 +84,13 @@ class LearnViewModel: ObservableObject {
         
         // Add data dictionary to dataLearn
         for (index, value) in datas.enumerated() {
-            dataLearn[index].dictionary = value
+            dataLearnDummy[index].dictionary = value
         }
         
         // Add CheckPoint after 5 hijaiyah to dataLearn
-        for (index, _) in dataLearn.enumerated() {
+        for (index, _) in dataLearnDummy.enumerated() {
             if index % 5 == 0 && index != 0 {
-                dataLearn.insert(LearnModel(isLock: true, isCheckpoint: true, points: 1, title: ""), at: index)
+                dataLearnDummy.insert(LearnModel(isLock: true, isCheckpoint: true, points: 1, title: ""), at: index)
             }
         }
     }
