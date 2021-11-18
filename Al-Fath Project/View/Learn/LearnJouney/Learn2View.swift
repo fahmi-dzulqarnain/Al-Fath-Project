@@ -62,9 +62,6 @@ struct Learn2View: View {
                             viewModel.checkPointShow = true
                         }
                 } else {
-                    NavigationLink(destination: Learn1View(viewModel: viewModel, vm: vm)) {
-                        Text("").hidden()
-                    }
                     Image("ic_checklist")
                         .resizable()
                         .frame(width: 36, height: 36)
@@ -74,6 +71,8 @@ struct Learn2View: View {
                         .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
                         .onTapGesture {
                             viewModel.dataLearn = nextLearn
+                            viewModel.learn1Show = false
+                            viewModel.learn1Show = true
                         }
                 }
             }

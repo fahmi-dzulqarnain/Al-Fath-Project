@@ -46,9 +46,11 @@ struct MainView: View {
                     else { Image("ic_settings") }
                 }.tag(3)
             }
+            .navigationBarHidden(true)
             
         }
         .background(Color.secondary)
+        .navigationBarHidden(true)
     }
     
     
