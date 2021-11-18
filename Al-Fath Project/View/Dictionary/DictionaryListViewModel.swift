@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import AVFoundation
 
 class DictionaryListViewModel: ObservableObject {
     
     @Published var showDictionary: Bool = false
     @Published var dictionaryData = DictionaryData(letter: "", latin: "", videoName: "", code: 0)
+    @Published var player = AVPlayer()
     let datas = [
         DictionaryData(letter: "ا", latin: "Alif", videoName: "alif", code: 1),
         DictionaryData(letter: "ب", latin: "Ba", videoName: "ba", code: 2),

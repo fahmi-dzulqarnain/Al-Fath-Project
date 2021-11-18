@@ -12,7 +12,9 @@ import AVKit
 struct DictionaryView: View {
     
     var vm: DictionaryListViewModel
-    let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "alif", ofType: "mp4")!))
+    let player: AVPlayer
+    let noFirstPositionLetter = ["ة" ,"و" ,"ز" ,"ر" , "ذ" ,"د" ,"ا"]
+    let differentPositionLetter = ["ة" ,"و" ,"ز" ,"ر" , "ذ" ,"د"]
     let gridItems = [
         GridItem(.adaptive(minimum: 110, maximum: 330)),
         GridItem(.adaptive(minimum: 110, maximum: 330))
@@ -23,52 +25,78 @@ struct DictionaryView: View {
             AVPlayerControllerRepresented(player: player)
                 .onAppear {
                     player.play()
-                    player.isMuted
                 }
+                .frame(height: 500)
                 .cornerRadius(15)
             
+            Spacer(minLength: 20)
             Text(vm.dictionaryData.latin)
                 .foregroundColor(.text)
                 .bold()
                 .font(.custom("Rounded Mplus 1c Bold", size: 41, relativeTo: .largeTitle))
-                .padding(.top, 10)
             
             LazyVGrid (columns: gridItems) {
                 ForEach (1..<5) {number in
                     switch number {
                         case 1:
-                            Text(vm.dictionaryData.letter)
-                            .font(.custom("ScheherazadeNew-Regular", size: 41, relativeTo: .largeTitle))
-                            .padding(.bottom, 2)
+                            ShowLetter(vm: vm, position: .individual)
                         case 2:
-                            Text(vm.dictionaryData.letter + "ـ")
-                            .font(.custom("ScheherazadeNew-Regular", size: 41, relativeTo: .largeTitle))
-//                            .padding(.bottom, 5)
+                        if (noFirstPositionLetter.contains(vm.dictionaryData.letter)){
+                                ShowLetter(vm: vm, position: .individual)
+                            } else {
+                                ShowLetter(vm: vm, position: .first)
+                            }
                         case 3:
-                            Text("ـ\(vm.dictionaryData.letter)ـ")
-                            .font(.custom("ScheherazadeNew-Regular", size: 41, relativeTo: .largeTitle))
-                            .padding(.bottom, 5)
+                            if (vm.dictionaryData.letter == "ا"){
+                                ShowLetter(vm: vm, position: .individual)
+                            } else if (differentPositionLetter.contains(vm.dictionaryData.letter)) {
+                                ShowLetter(vm: vm, position: .last)
+                            } else {
+                                ShowLetter(vm: vm, position: .middle)
+                            }
                         case 4:
-                            Text("ـ\(vm.dictionaryData.letter)")
-                            .font(.custom("ScheherazadeNew-Regular", size: 41, relativeTo: .largeTitle))
-                            .padding(.bottom, 5)
+                            ShowLetter(vm: vm, position: .last)
                         default:
                             Text(vm.dictionaryData.letter)
                     }
                 }
             }
+            .padding(.top, -40)
             .environment(\.layoutDirection, .rightToLeft)
             
             Spacer()
         }
         .background(Color("ColorPrimary"))
-        .ignoresSafeArea(.container)
+        .ignoresSafeArea()
     }
 }
 
 struct DictionaryView_Previews: PreviewProvider {
     static var previews: some View {
-        DictionaryView(vm: DictionaryListViewModel())
+        DictionaryView(vm: DictionaryListViewModel(),
+                       player: AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: DictionaryListViewModel().dictionaryData.videoName, ofType: "mp4")!)))
+    }
+}
+
+struct ShowLetter : View {
+    let vm: DictionaryListViewModel
+    let position: LetterPosition
+    
+    var body: some View {
+        switch position {
+        case .individual:
+            Text(vm.dictionaryData.letter)
+                .font(.custom("ScheherazadeNew-Regular", size: 50, relativeTo: .largeTitle))
+        case .first:
+            Text(vm.dictionaryData.letter + "ـــ")
+                .font(.custom("ScheherazadeNew-Regular", size: 50, relativeTo: .largeTitle))
+        case .middle:
+            Text("ـــ\(vm.dictionaryData.letter)ـــ")
+                .font(.custom("ScheherazadeNew-Regular", size: 50, relativeTo: .largeTitle))
+        case .last:
+            Text("ــ\(vm.dictionaryData.letter)")
+                .font(.custom("ScheherazadeNew-Regular", size: 50, relativeTo: .largeTitle))
+        }
     }
 }
 
@@ -85,4 +113,8 @@ struct AVPlayerControllerRepresented : UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: AVPlayerViewController, context: Context) {
         
     }
+}
+
+enum LetterPosition {
+    case individual, first, middle, last
 }
