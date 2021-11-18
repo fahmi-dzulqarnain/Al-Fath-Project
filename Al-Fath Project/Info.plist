@@ -2,16 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>m_plus_rounded_regular.ttf</string>
-		<string>ScheherazadeNew-Regular.ttf</string>
-		<string>m_plus_rounded_bold.ttf</string>
-	</array>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Isyara</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -30,6 +24,12 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>This application uses the camera to demonstrate Vision Hand Detection APIs.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>m_plus_rounded_regular.ttf</string>
+		<string>ScheherazadeNew-Regular.ttf</string>
+		<string>m_plus_rounded_bold.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -56,5 +56,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>
