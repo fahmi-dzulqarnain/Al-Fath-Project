@@ -87,8 +87,12 @@ class OnBoardingViewModel: ObservableObject  {
         
         // Add CheckPoint after 5 hijaiyah to dataLearn
         for (index, _) in dataLearn.enumerated() {
-            if index % 5 == 0 && index != 0 {
+            if index == 5 {
                 dataLearn.insert(LearnModel(isLock: true, isCheckpoint: true, points: 1, title: ""), at: index)
+            } else if((index + 1) % 6 == 0 && index != 0 && index > 6 ) {
+                dataLearn.insert(LearnModel(isLock: true, isCheckpoint: true, points: 1, title: ""), at: index)
+            } else if(index == 28) {
+                dataLearn.insert(LearnModel(isLock: true, isCheckpoint: true, points: 1, title: ""), at: 29)
             }
         }
     }
