@@ -48,4 +48,46 @@ struct PersistneceController {
         save(completion: completion)
     }
     
+    func unlockNextLearn(title : String) {
+        let context = container.viewContext
+        var nextTitle = ""
+        
+        // Get all data learn
+        let request : NSFetchRequest<JourneyEntity> = JourneyEntity.fetchRequest()
+        request.sortDescriptors = []
+        var learn: [JourneyEntity] = []
+        do {
+            learn = try context.fetch(request)
+        }
+        catch {
+            print("Error fetching data learn")
+        }
+        // search next learn want to unlock
+        for (index, item) in learn.enumerated() {
+            if item.title == title {
+                nextTitle = learn[index+1].title ?? ""
+            }
+        }
+        
+        // Do update data isLock for next learn in coredata
+        request.predicate = NSPredicate(format: "title = %@", nextTitle)
+        do
+        {
+            let nextLearn = try context.fetch(request)
+   
+            let objectUpdate = nextLearn[0] as NSManagedObject
+                objectUpdate.setValue(false, forKey: "isLock")
+                do{
+                    try context.save()
+                }
+                catch
+                {
+                    print(error)
+                }
+            }
+        catch
+        {
+            print(error)
+        }
+    }
 }
