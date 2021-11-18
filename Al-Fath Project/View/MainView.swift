@@ -6,15 +6,18 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct MainView: View {
     
     @State private var selectedTab = 1
     @ObservedObject var learnVM = LearnViewModel()
     @ObservedObject var dictionaryVM = DictionaryListViewModel()
+    var player: AVPlayer
     
     init() {
         UITabBar.appearance().backgroundColor = UIColor(Color.primary)
+        player = AVPlayer()
     }
     
     var body: some View {
@@ -29,7 +32,9 @@ struct MainView: View {
 //                Text("").hidden()
 //            }
             
-            NavigationLink(destination: DictionaryView(vm: dictionaryVM), isActive: $dictionaryVM.showDictionary) {
+            NavigationLink(destination: DictionaryView(vm: dictionaryVM,
+                                                       player: player),
+                           isActive: $dictionaryVM.showDictionary) {
             }
             
             TabView(selection: $selectedTab) {
