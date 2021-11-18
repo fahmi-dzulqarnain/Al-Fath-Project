@@ -25,9 +25,9 @@ struct MainView: View {
             .cornerRadius(15)
             .background(Color.secondary)
             
-            NavigationLink(destination: Learn1View(viewModel: learnVM), isActive: $learnVM.learn1Show) {
-                Text("").hidden()
-            }
+//            NavigationLink(destination: Learn1View(viewModel: learnVM), isActive: $learnVM.learn1Show) {
+//                Text("").hidden()
+//            }
             
             NavigationLink(destination: DictionaryView(vm: dictionaryVM), isActive: $dictionaryVM.showDictionary) {
             }
@@ -46,9 +46,11 @@ struct MainView: View {
                     else { Image("ic_settings") }
                 }.tag(3)
             }
+            .navigationBarHidden(true)
             
         }
         .background(Color.secondary)
+        .navigationBarHidden(true)
     }
     
     

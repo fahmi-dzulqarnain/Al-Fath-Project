@@ -8,58 +8,35 @@ import SwiftUI
 import AVKit
 
 struct Learn1View: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: [])
-    private var journeyData: FetchedResults<JourneyEntity>
-    @State var journeyNext = JourneyEntity()
-//    @State var journey: JourneyEntity
-    
     @ObservedObject var viewModel: LearnViewModel
+    @ObservedObject var vm: DictionaryListViewModel
     
-    let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "alif", ofType: "mp4")!))
+    @State var player = AVPlayer()
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            VStack {
+//            VStack {
 //                HStack {
-//                    Image(systemName: "chevron.left")
-//                        .foregroundColor(.text)
-//                        .padding()
-//                        .onTapGesture {
-//                            viewModel.learn1Show = false
-//                        }
+//                    Button {
+//                        viewModel.learn1Show = false
+//                    } label: {
+//                        Image(systemName: "chevron.left")
+//                            .foregroundColor(.text)
+//                            .padding()
+//                    }
+//
 //                    Text("Menghafal")
 //                        .foregroundColor(.text)
 //                        .bold()
 //                    Spacer()
 //                }
 //                .padding(.top, 36)
-                VideoPlayer(player: player).frame(height: 520)
-                    .onAppear(perform: {
-                        player.play()
-                    })
-                
-                Text("ب")
-                    .foregroundColor(.text)
-                    .bold()
-                    .font(.system(size: 72))
-                
-                Text("Ba")
-                    .foregroundColor(.text)
-                    .bold()
-                    .font(.system(size: 36))
-                
-                
-                
-                Spacer()
-                HStack(alignment: .bottom){
-                    Image("img_cactus1")
-                    Image("img_cactus2")
-                    Image("img_cactus3")
-                }
-                
-            }
+//            }
             
+            content(data: viewModel.dataLearn).onAppear {
+                player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: viewModel.dataLearn.videoName, ofType: "mp4")!))
+                player.play()
+            }
             
             HStack {
                 Button(action: {
@@ -77,7 +54,7 @@ struct Learn1View: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: Learn2View()) {
+                NavigationLink(destination: Learn2View(viewModel: viewModel, vm: vm)) {
                     Image("ic_checklist")
                         .resizable()
                         .frame(width: 36, height: 36)
@@ -94,7 +71,31 @@ struct Learn1View: View {
         .background(Color.third)
         .edgesIgnoringSafeArea(.bottom)
         .navigationBarTitle("Menghafal", displayMode: .inline)
-        
+//        .navigationBarHidden(true)
+    }
+    
+    func content(data: DictionaryData) -> some View {
+        VStack {
+            VideoPlayer(player: player).frame(height: 520)
+            
+            Text(data.letter)
+                .foregroundColor(.text)
+                .bold()
+                .font(.system(size: 72))
+            
+            Text(data.latin)
+                .foregroundColor(.text)
+                .bold()
+                .font(.system(size: 36))
+            
+            Spacer()
+            HStack(alignment: .bottom){
+                Image("img_cactus1")
+                Image("img_cactus2")
+                Image("img_cactus3")
+            }
+            
+        }
     }
     
     func unlock() {

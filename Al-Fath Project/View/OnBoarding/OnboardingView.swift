@@ -24,6 +24,8 @@ struct OnboardingView: View {
             ZStack {
                 MainView()
             }
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
         }
         .accentColor(.text) 
         .background(Color.secondary)

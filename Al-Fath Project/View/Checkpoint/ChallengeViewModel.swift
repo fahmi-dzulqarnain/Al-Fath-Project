@@ -12,6 +12,10 @@ class ChallengeViewModel: ObservableObject {
     @Published var data: [GamesModel] = []
     @Published var data2: [GamesModel] = []
     
+    init(){
+        randomQuiz()
+    }
+    
     func randomQuiz() {
         let number = Int.random(in: 1...3)
         switch number {
