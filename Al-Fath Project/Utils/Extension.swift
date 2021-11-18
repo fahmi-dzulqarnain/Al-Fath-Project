@@ -53,4 +53,10 @@ extension Color {
     public static var blue = Color("ColorBlue")
 }
 
+extension Array {
+    public subscript (safe index: Int) -> Element? {
+        return self.indices ~= index ? self[index] : nil
+    }
+}
+
 

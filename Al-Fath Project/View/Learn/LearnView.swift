@@ -131,6 +131,7 @@ struct ButtonLearn : View {
 struct ButtonCheckPointLearn : View {
     
     var viewModel : LearnViewModel
+    var title : String
     var isLocked : Bool
     
     var body: some View {
@@ -151,6 +152,12 @@ struct ButtonCheckPointLearn : View {
             .padding(.top, 78)
             .disabled(true)
         } else {
+            Button(action: {
+                let _ = print(title)
+                let _ = print("press")
+                viewModel.unlockNextLevel(title: title)
+            })
+            {
             Image("ic_home_finish").resizable().frame(width: 42, height: 42)
                 .frame(width: 78, height: 78)
                 .foregroundColor(.white)
@@ -159,7 +166,9 @@ struct ButtonCheckPointLearn : View {
                 .overlay(
                     Circle()
                         .stroke(Color.white.opacity(0.48), lineWidth: 8)
-                ).padding(.top, 78)
+                )
+            }
+            .padding(.top, 78)
         }
     }
 }
