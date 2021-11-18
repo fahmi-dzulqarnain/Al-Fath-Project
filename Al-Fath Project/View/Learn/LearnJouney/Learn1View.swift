@@ -33,6 +33,14 @@ struct Learn1View: View {
 //                .padding(.top, 36)
 //            }
             
+            ForEach(vm.datas.indices, id:\.self) { i in
+                Text("").onAppear {
+                    if vm.datas[i].letter == viewModel.title{
+                        viewModel.dataLearn = vm.datas[i]
+                    }
+                }
+            }
+            
             content(data: viewModel.dataLearn).onAppear {
                 player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: viewModel.dataLearn.videoName, ofType: "mp4")!))
                 player.play()

@@ -36,7 +36,6 @@ struct PencocokanView: View {
                             }
                             .background(viewModel.data[index].isChoose ? Color.blue : Color.primary)
                             .cornerRadius(8)
-                            .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
                             .padding(.horizontal, 8)
                             .padding(.vertical, 8)
                             .onTapGesture {
@@ -67,7 +66,8 @@ struct PencocokanView: View {
                                                     onDefault()
                                                     isDone = isDone + 1
                                                     if isDone == 5 {
-                                                       isShow = true
+                                                        isShow = true
+                                                        PersistneceController.shared.unlockNextLearn(title: viewModel.title)
                                                     }
                                                 }
                                                 onDefault()
@@ -97,7 +97,6 @@ struct PencocokanView: View {
                             }
                             .background(viewModel.data2[index].isChoose ? Color.blue : Color.primary)
                             .cornerRadius(8)
-                            .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
                             .padding(.horizontal, 2)
                             .padding(.vertical, 4)
                             .onTapGesture {
@@ -127,7 +126,8 @@ struct PencocokanView: View {
                                                     onDefault()
                                                     isDone = isDone + 1
                                                     if isDone == 6 {
-                                                       isShow = true
+                                                        isShow = true
+                                                        PersistneceController.shared.unlockNextLearn(title: viewModel.title)
                                                     }
                                                 }
                                                 onDefault()

@@ -9,6 +9,7 @@ import Foundation
 
 class ChallengeViewModel: ObservableObject {
     
+    @Published var title = ""
     @Published var data: [GamesModel] = []
     @Published var data2: [GamesModel] = []
     

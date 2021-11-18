@@ -12,7 +12,7 @@ struct CheckpointView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var progress: CGFloat = 33
     @State private var selection = 0
-    @ObservedObject var viewModel = ChallengeViewModel()
+    @ObservedObject var viewModel: ChallengeViewModel
     
     var body: some View {
         ZStack {

@@ -10,6 +10,7 @@ import CoreData
 
 class LearnViewModel: ObservableObject {
     
+    @Published var title = ""
     @Published var learn1Show: Bool = false
     @Published var checkPointShow: Bool = false
     @Published var dataLearn = DictionaryData(letter: "", latin: "", videoName: "", code: 0)

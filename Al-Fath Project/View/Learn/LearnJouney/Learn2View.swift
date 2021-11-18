@@ -58,6 +58,7 @@ struct Learn2View: View {
                         .cornerRadius(99)
                         .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
                         .onTapGesture {
+                            PersistneceController.shared.unlockNextLearn(title: viewModel.title)
                             viewModel.learn1Show = false
                             viewModel.checkPointShow = true
                         }
@@ -70,6 +71,8 @@ struct Learn2View: View {
                         .cornerRadius(99)
                         .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
                         .onTapGesture {
+                            PersistneceController.shared.unlockNextLearn(title: viewModel.title)
+                            viewModel.title = nextLearn.letter
                             viewModel.dataLearn = nextLearn
                             viewModel.learn1Show = false
                             viewModel.learn1Show = true
