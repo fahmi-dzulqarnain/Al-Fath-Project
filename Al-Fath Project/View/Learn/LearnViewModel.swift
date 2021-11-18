@@ -10,4 +10,7 @@ import Foundation
 class LearnViewModel: ObservableObject {
     
     @Published var learn1Show: Bool = false
+    @Published var checkPointShow: Bool = false
+    @Published var dataLearn = DictionaryData(letter: "", latin: "", videoName: "", code: 0)
+    @Published var nextLearn = DictionaryData(letter: "", latin: "", videoName: "", code: 0)
 }
