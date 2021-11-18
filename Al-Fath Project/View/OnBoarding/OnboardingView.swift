@@ -23,7 +23,14 @@ struct OnboardingView: View {
         NavigationView {
             ZStack {
                 MainView()
-            }
+            }.onAppear(perform: {
+                if (!isFirstTime) {
+                    for item in viewModel.dataLearn {
+                        setData(item: item)
+                    }
+                    UserDefaults.standard.setFirstTime(value: true)
+                }
+            })
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
         }
@@ -68,10 +75,6 @@ struct OnboardingView: View {
                 if images.count-1 == selection {
                     Text("Get Started")
                         .onTapGesture{
-//                            for item in viewModel.dataLearn {
-//                                setData(item: item)
-//                            }
-//                            UserDefaults.standard.setFirstTime(value: true)
                             isShow = true
                         }
                 }

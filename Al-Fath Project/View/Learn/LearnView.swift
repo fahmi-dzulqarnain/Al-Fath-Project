@@ -12,9 +12,7 @@ struct LearnView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [])
     private var journey: FetchedResults<JourneyEntity>
-    var isFirstTime = UserDefaults.standard.isFirstTime()
     @ObservedObject var viewModel: LearnViewModel
-    @State var showCheckPoint = false
     @ObservedObject var vm = DictionaryListViewModel()
 
     let columns: [GridItem] = [
@@ -63,30 +61,11 @@ struct LearnView: View {
                 .background(Image("home_bg"), alignment: .topLeading)
                 .environment(\.layoutDirection, .rightToLeft)
                 .padding(.bottom, 180)
-        }.onAppear(perform: {
-            if (!isFirstTime) {
-                viewModel.fetchDataJourney()
-                for item in viewModel.dataLearnDummy {
-                    setData(item: item)
-                }
-            }
-            UserDefaults.standard.setFirstTime(value: true)
-        })
-       .background(Color(red: 0.97, green: 0.80, blue: 0.50))
+        }       .background(Color(red: 0.97, green: 0.80, blue: 0.50))
        .edgesIgnoringSafeArea(.all)
        .navigationBarHidden(true)
        .navigationBarTitle("", displayMode: .inline)
     }
-    
-    func setData(item: LearnModel) {
-        let journey = JourneyEntity(context: viewContext)
-        journey.isLock = item.isLock
-        journey.isCheckpoint = item.isCheckpoint
-        journey.title = item.dictionary.letter
-        journey.points = Int16(item.points ?? 0)
-        PersistneceController.shared.save()
-    }
-        
         
     func simpleSuccess() {
         if !UserDefaults.standard.isHaptic() {
