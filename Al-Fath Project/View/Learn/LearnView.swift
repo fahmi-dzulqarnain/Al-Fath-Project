@@ -12,9 +12,9 @@ struct LearnView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [])
     private var journey: FetchedResults<JourneyEntity>
-    @ObservedObject var viewModel: LearnViewModel
-    @State var showCheckPoint = false
-
+    @ObservedObject var viewModel = LearnViewModel()
+    @ObservedObject var vm = DictionaryListViewModel()
+    
     let columns: [GridItem] = [
             GridItem(.flexible(), spacing: -180, alignment: nil),
             GridItem(.flexible(), spacing: -180, alignment: nil),
@@ -23,6 +23,21 @@ struct LearnView: View {
     
     var body: some View {
         ScrollView(showsIndicators: false) {
+            VStack{
+                ForEach (vm.datas.indices, id: \.self) {i in
+                    Text(vm.datas[i].letter).onTapGesture {
+                        viewModel.dataLearn = vm.datas[i]
+                        viewModel.learn1Show = true
+                    }
+                }
+                NavigationLink(destination: Learn1View(viewModel: viewModel, vm: vm), isActive: $viewModel.learn1Show) {
+                    Text("").hidden()
+                }
+                NavigationLink(destination: CheckpointView(), isActive: $viewModel.checkPointShow) {
+                    Text("").hidden()
+                }
+                
+            }.padding(.top, 24)
             LazyVGrid(columns: columns,
                  alignment: .center,
                  spacing: 0,

@@ -25,9 +25,9 @@ struct MainView: View {
             .cornerRadius(15)
             .background(Color.secondary)
             
-            NavigationLink(destination: Learn1View(viewModel: learnVM), isActive: $learnVM.learn1Show) {
-                Text("").hidden()
-            }
+//            NavigationLink(destination: Learn1View(viewModel: learnVM), isActive: $learnVM.learn1Show) {
+//                Text("").hidden()
+//            }
             
             NavigationLink(destination: DictionaryView(vm: dictionaryVM), isActive: $dictionaryVM.showDictionary) {
             }

@@ -20,7 +20,7 @@ struct PencocokanView: View {
         ZStack {
             ScrollView {
                 LazyVGrid(columns: items, spacing: 4) {
-                    ForEach(0..<viewModel.data.count) { index in
+                    ForEach(viewModel.data.indices, id:\.self) { index in
                         ZStack{
                             HStack {
                                 Spacer()
@@ -88,7 +88,7 @@ struct PencocokanView: View {
                 }
                 
                 LazyVGrid(columns: items, spacing: 4) {
-                    ForEach(0..<viewModel.data2.count) { index in
+                    ForEach(viewModel.data.indices, id:\.self) { index in
                         ZStack{
                             HStack {
                                 ZStack {

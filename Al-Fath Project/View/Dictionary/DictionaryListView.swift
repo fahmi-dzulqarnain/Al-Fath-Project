@@ -12,6 +12,7 @@ struct DictionaryData {
     let letter: String
     let latin: String
     let videoName: String
+    let code: Int
 }
 
 struct DictionaryListView: View {
