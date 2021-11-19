@@ -91,7 +91,7 @@ struct Challenge3View: View {
                     }
                 }
             }
-            NavigationLink(destination: ChallengeDoneView(), isActive: $isShow) {
+            NavigationLink(destination: ChallengeDoneView(viewModel: viewModel), isActive: $isShow) {
                 Text("")
             }
         }

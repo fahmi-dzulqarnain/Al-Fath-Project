@@ -14,6 +14,7 @@ struct LearnView: View {
     private var journey: FetchedResults<JourneyEntity>
     @ObservedObject var viewModel: LearnViewModel
     @ObservedObject var vm = DictionaryListViewModel()
+    @ObservedObject var challengeVM = ChallengeViewModel()
 
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: -180, alignment: nil),
@@ -24,17 +25,23 @@ struct LearnView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack{
-                ForEach (vm.datas.indices, id: \.self) {i in
-                    Text(vm.datas[i].letter).onTapGesture {
-                        viewModel.dataLearn = vm.datas[i]
-                        viewModel.learn1Show = true
-                    }
-                }
+//                ForEach (vm.datas.indices, id: \.self) {i in
+//                    Text(vm.datas[i].letter).onTapGesture {
+//                        viewModel.dataLearn = vm.datas[i]
+//                        viewModel.learn1Show = true
+//                    }
+//                }
                 NavigationLink(destination: Learn1View(viewModel: viewModel, vm: vm), isActive: $viewModel.learn1Show) {
                     Text("").hidden()
                 }
-                NavigationLink(destination: CheckpointView(), isActive: $viewModel.checkPointShow) {
+                NavigationLink(destination: CheckpointView(viewModel: challengeVM), isActive: $viewModel.checkPointShow) {
                     Text("").hidden()
+                }
+                NavigationLink(destination: CheckpointView(viewModel: challengeVM), isActive: $challengeVM.show) {
+                    Text("").hidden()
+                }
+                NavigationLink(destination: ChallengeDoneView(viewModel: challengeVM), isActive: $challengeVM.showDone) {
+                    Text("")
                 }
                 
             }.padding(.top, 48)
@@ -52,7 +59,7 @@ struct LearnView: View {
                         if (!data.isCheckpoint) {
                             ButtonLearn(viewModel: viewModel, title: data.title ?? "", isLocked: data.isLock)
                         } else {
-                            ButtonCheckPointLearn(viewModel: viewModel, title: data.title ?? "", isLocked: data.isLock)
+                            ButtonCheckPointLearn(viewModel: challengeVM, title: data.title ?? "", isLocked: data.isLock)
                         }
                     }
                     }
@@ -110,6 +117,7 @@ struct ButtonLearn : View {
             .disabled(true)
         } else {
             Button(action: {
+                viewModel.title = title
                 viewModel.learn1Show = true
             })
             {
@@ -130,7 +138,7 @@ struct ButtonLearn : View {
 
 struct ButtonCheckPointLearn : View {
     
-    var viewModel : LearnViewModel
+    var viewModel: ChallengeViewModel
     var title : String
     var isLocked : Bool
     
@@ -152,8 +160,10 @@ struct ButtonCheckPointLearn : View {
             .padding(.top, 78)
             .disabled(true)
         } else {
-            Button(action: {})
-            {
+            Button(action: {
+                viewModel.title = title
+                viewModel.show = true
+            }){
             Image("ic_home_finish").resizable().frame(width: 42, height: 42)
                 .frame(width: 78, height: 78)
                 .foregroundColor(.white)
