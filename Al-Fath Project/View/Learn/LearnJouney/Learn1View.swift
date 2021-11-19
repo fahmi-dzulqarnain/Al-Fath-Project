@@ -84,7 +84,7 @@ struct Learn1View: View {
     
     func content(data: DictionaryData) -> some View {
         VStack {
-            VideoPlayer(player: player).frame(height: 520)
+            VideoPlayer(player: player).frame(height: 495)
             
             Text(data.letter)
                 .foregroundColor(.text)

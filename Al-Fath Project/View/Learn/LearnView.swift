@@ -37,6 +37,12 @@ struct LearnView: View {
                 NavigationLink(destination: CheckpointView(viewModel: challengeVM), isActive: $viewModel.checkPointShow) {
                     Text("").hidden()
                 }
+                NavigationLink(destination: CheckpointView(viewModel: challengeVM), isActive: $challengeVM.show) {
+                    Text("").hidden()
+                }
+                NavigationLink(destination: ChallengeDoneView(viewModel: challengeVM), isActive: $challengeVM.showDone) {
+                    Text("")
+                }
                 
             }.padding(.top, 48)
 
@@ -53,7 +59,7 @@ struct LearnView: View {
                         if (!data.isCheckpoint) {
                             ButtonLearn(viewModel: viewModel, title: data.title ?? "", isLocked: data.isLock)
                         } else {
-                            ButtonCheckPointLearn(viewModel: viewModel, vm: challengeVM, title: data.title ?? "", isLocked: data.isLock)
+                            ButtonCheckPointLearn(viewModel: challengeVM, title: data.title ?? "", isLocked: data.isLock)
                         }
                     }
                     }
@@ -132,8 +138,7 @@ struct ButtonLearn : View {
 
 struct ButtonCheckPointLearn : View {
     
-    var viewModel : LearnViewModel
-    var vm: ChallengeViewModel
+    var viewModel: ChallengeViewModel
     var title : String
     var isLocked : Bool
     
@@ -156,8 +161,8 @@ struct ButtonCheckPointLearn : View {
             .disabled(true)
         } else {
             Button(action: {
-                vm.title = title
-                viewModel.checkPointShow = true
+                viewModel.title = title
+                viewModel.show = true
             }){
             Image("ic_home_finish").resizable().frame(width: 42, height: 42)
                 .frame(width: 78, height: 78)

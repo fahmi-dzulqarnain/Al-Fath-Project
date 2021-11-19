@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="210px" height="210px" viewBox="0 0 210 210" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>trophy-award-svgrepo-com</title>
+    <g id="High-Fidelity" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Belajar:-Latihan-(Benar)" transform="translate(-90.000000, -260.000000)" fill-rule="nonzero">
+            <g id="trophy-award-svgrepo-com" transform="translate(90.000000, 260.000000)">
+                <rect id="Rectangle" fill="#5AA366" x="62" y="184" width="85" height="26"></rect>
+                <rect id="Rectangle" fill="#333333" x="88" y="140" width="33" height="44"></rect>
+                <polygon id="Path" fill="#000000" points="88 161.262225 104.499794 170 121 162.678249 121 146 88 146"></polygon>
+                <g id="Group" fill="#333333">
+                    <rect id="Rectangle" x="26.4546052" y="0" width="158.104858" height="13.1283847"></rect>
+                    <path d="M54.3506854,120 C-0.711803782,102.844483 0,40.9740988 0,40.3500903 L0.141324984,33.9270281 L39.0665554,33.9270281 L39.0665554,47.0554127 L13.4337274,47.0554127 C14.7790459,61.5487391 21.8436083,96.119058 58.2492378,107.445572 L54.3506854,120 Z" id="Path"></path>
+                    <path d="M155.649472,120 L151.754611,107.462393 C188.176647,96.1227504 195.224803,61.5528417 196.569712,47.0722335 L170.933192,47.0722335 L170.933192,33.9438488 L209.858423,33.9438488 L210,40.3505005 C210,40.9740988 210.711962,102.844483 155.649472,120 Z" id="Path"></path>
+                </g>
+                <g id="Group" transform="translate(34.000000, 13.000000)" fill="#D89E3A">
+                    <path d="M70.9981547,144 L70.9981547,0 L0,0 L0,49.269433 C0,69.8522558 8.67968454,118.941203 70.9981547,144 Z" id="Path"></path>
+                    <path d="M70.9981547,144 L70.9981547,0 L142,0 L142,49.269433 C142,69.8522558 133.320315,118.941203 70.9981547,144 Z" id="Path"></path>
+                </g>
+                <polygon id="Path" fill="#5AA366" points="136 13 136 113.481084 104.999796 87.2673964 74 114 74 13"></polygon>
+                <polygon id="Path" fill="#5AA366" points="74 13 74 114 105 87.2673964 105 13"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

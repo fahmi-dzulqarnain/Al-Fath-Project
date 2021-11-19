@@ -12,7 +12,7 @@ struct PencocokanView: View {
     @State var model1: GamesModel = GamesModel(name: "", code: 0)
     @State var model2: GamesModel = GamesModel(name: "", code: 0)
     @State var isDone = 0
-    @State var isShow = false
+    @State var showDone = false
     
     var items: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     
@@ -65,9 +65,10 @@ struct PencocokanView: View {
                                                     
                                                     onDefault()
                                                     isDone = isDone + 1
-                                                    if isDone == 5 {
-                                                        isShow = true
-                                                        PersistneceController.shared.unlockNextLearn(title: viewModel.title)
+                                                    if isDone == 6 {
+                                                        viewModel.show = false
+                                                        viewModel.showDone = true
+//                                                        PersistneceController.shared.unlockNextLearn(title: viewModel.title)
                                                     }
                                                 }
                                                 onDefault()
@@ -93,6 +94,8 @@ struct PencocokanView: View {
                             HStack {
                                 ZStack {
                                     Image(viewModel.data2[index].image)
+                                        .resizable()
+                                        .frame(width: 90, height: 150)
                                 }
                             }
                             .background(viewModel.data2[index].isChoose ? Color.blue : Color.primary)
@@ -126,8 +129,9 @@ struct PencocokanView: View {
                                                     onDefault()
                                                     isDone = isDone + 1
                                                     if isDone == 6 {
-                                                        isShow = true
-                                                        PersistneceController.shared.unlockNextLearn(title: viewModel.title)
+                                                        viewModel.show = false
+                                                        viewModel.showDone = true
+//                                                        PersistneceController.shared.unlockNextLearn(title: viewModel.title)
                                                     }
                                                 }
                                                 onDefault()
@@ -148,7 +152,7 @@ struct PencocokanView: View {
                 }
                 
             }
-            NavigationLink(destination: ChallengeDoneView(), isActive: $isShow) {
+            NavigationLink(destination: ChallengeDoneView(viewModel: viewModel), isActive: $showDone) {
                 Text("")
             }
         }
