@@ -27,11 +27,20 @@ extension UserDefaults{
     func isHaptic()-> Bool {
         return bool(forKey: UserDefaultsKeys.isHaptic.rawValue)
     }
+    
+    func setLockFinishLearn(value: Bool) {
+        set(value, forKey: UserDefaultsKeys.isLockFinishLearn.rawValue)
+    }
+
+    func isLockFinishLearn()-> Bool {
+        return bool(forKey: UserDefaultsKeys.isLockFinishLearn.rawValue)
+    }
 }
 
 enum UserDefaultsKeys : String {
     case isFirstTime
     case isHaptic
+    case isLockFinishLearn
 }
 
 extension View {
