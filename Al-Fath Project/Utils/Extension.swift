@@ -9,7 +9,6 @@ import Foundation
 import CoreHaptics
 import SwiftUI
 
-
 extension UserDefaults{
 
     func setFirstTime(value: Bool) {

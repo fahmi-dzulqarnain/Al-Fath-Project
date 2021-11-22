@@ -85,7 +85,8 @@ struct Learn1View: View {
     func content(data: DictionaryData) -> some View {
         VStack {
             VideoPlayer(player: player).frame(height: 495)
-            
+               
+            Spacer()
             Text(data.letter)
                 .foregroundColor(.text)
                 .bold()
@@ -104,6 +105,8 @@ struct Learn1View: View {
             }
             
         }
+        .background(Color.third)
+        .edgesIgnoringSafeArea(.bottom)
     }
     
     func unlock() {
