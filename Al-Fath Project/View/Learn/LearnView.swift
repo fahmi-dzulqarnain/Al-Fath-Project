@@ -22,6 +22,14 @@ struct LearnView: View {
         GridItem(.flexible(), spacing: -180, alignment: nil)
     ]
     
+    let colors = [
+        Gradient(colors: [Color(red: 0.95, green: 0.47, blue: 0.42), Color(red: 0.80, green: 0.34, blue: 0.26)]),
+        Gradient(colors: [Color(red: 0.31, green: 0.87, blue: 0.42), Color(red: 0.35, green: 0.64, blue: 0.40)]),
+        Gradient(colors: [Color(red: 0.17, green: 0.77, blue: 0.96), Color(red: 0.17, green: 0.59, blue: 0.84)]),
+        Gradient(colors: [Color(red: 0.72, green: 0.49, blue: 0.90), Color(red: 0.57, green: 0.24, blue: 0.94)]),
+        Gradient(colors: [Color(red: 0.95, green: 0.47, blue: 0.42), Color(red: 0.80, green: 0.34, blue: 0.26)])
+    ]
+    
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack{
@@ -54,10 +62,10 @@ struct LearnView: View {
                             ButtonFinishLearn(viewModel: viewModel)
                    )
                    {
-                    ForEach(journey) { data in
+                    ForEach(Array(journey.enumerated()), id: \.offset) { index, data in
                         Text("")
                         if (!data.isCheckpoint) {
-                            ButtonLearn(viewModel: viewModel, title: data.title ?? "", isLocked: data.isLock)
+                            ButtonLearn(viewModel: viewModel, title: data.title ?? "", isLocked: data.isLock, bgColor: selectButtonColor(index: index))
                         } else {
                             ButtonCheckPointLearn(viewModel: challengeVM, title: data.title ?? "", isLocked: data.isLock)
                         }
@@ -81,6 +89,28 @@ struct LearnView: View {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)
     }
+    
+    func selectButtonColor(index: Int) -> Gradient {
+        let currentIndex = index + 1
+        if ((currentIndex % 5) == 0) {
+            return colors[4]
+            }
+            else if ((currentIndex % 4) == 0) {
+                return colors[3]
+                }
+            else if ((currentIndex % 3) == 0) {
+                return colors[2]
+                }
+            else if ((currentIndex % 2) == 0) {
+                return colors[1]
+                }
+            else if ((currentIndex % 1) == 0) {
+                return colors[0]
+                }
+            else {
+                return colors[0]
+            }
+        }
 }
 
 struct LearnView_Previews: PreviewProvider {
@@ -96,6 +126,7 @@ struct ButtonLearn : View {
     var viewModel : LearnViewModel
     var title : String
     var isLocked : Bool
+    let bgColor : Gradient
     
     var body: some View {
         if isLocked {
@@ -125,11 +156,15 @@ struct ButtonLearn : View {
                     .font(.system(size: 36).bold())
                     .frame(width: 78, height: 78)
                     .foregroundColor(.white)
-                    .background(Color(red: 0.95, green: 0.47, blue: 0.42))
+                    .background(
+                        LinearGradient(gradient: bgColor, startPoint: .topLeading, endPoint: .bottom)
+                    )
                     .clipShape(Circle())
                     .overlay(
                         Circle()
-                            .stroke(Color.white.opacity(0.48), lineWidth: 8)
+                            .stroke(Color.white.opacity(0.48), lineWidth: 5)
+                            .padding(-2.5)
+                            .blur(radius: 1)
                     )
             }.padding(.top, 78)
     }
@@ -167,11 +202,15 @@ struct ButtonCheckPointLearn : View {
             Image("ic_home_finish").resizable().frame(width: 42, height: 42)
                 .frame(width: 78, height: 78)
                 .foregroundColor(.white)
-                .background(Color(red: 0.95, green: 0.47, blue: 0.42))
+                .background(
+                    LinearGradient(gradient: Gradient(colors: [Color(red: 0.99, green: 0.85, blue: 0.35), Color(red: 0.89, green: 0.58, blue: 0.05)]), startPoint: .topLeading, endPoint: .bottom)
+                )
                 .clipShape(Circle())
                 .overlay(
                     Circle()
-                        .stroke(Color.white.opacity(0.48), lineWidth: 8)
+                        .stroke(Color.white.opacity(0.48), lineWidth: 10)
+                        .padding(-4.5)
+                        .blur(radius: 1)
                 )
             }
             .padding(.top, 78)
@@ -209,8 +248,16 @@ struct ButtonFinishLearn : View {
                     .resizable()
                     .frame(width: 73, height: 73)
                     .frame(width: 110, height: 110)
-                    .background(Color(red: 0.78, green: 0.51, blue: 0.05))
+                    .background(
+                        LinearGradient(gradient: Gradient(colors: [Color(red: 0.99, green: 0.85, blue: 0.35), Color(red: 0.89, green: 0.58, blue: 0.05)]), startPoint: .topLeading, endPoint: .bottom)
+                    )
                     .clipShape(Circle())
+                    .overlay(
+                        Circle()
+                            .stroke(Color.white.opacity(0.48), lineWidth: 10)
+                            .padding(-4.5)
+                            .blur(radius: 1)
+                    )
             }
             .padding(.top, 234)
         }
