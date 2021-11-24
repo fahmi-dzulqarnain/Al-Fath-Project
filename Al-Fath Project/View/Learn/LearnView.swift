@@ -52,7 +52,7 @@ struct LearnView: View {
                     Text("")
                 }
                 
-            }.padding(.top, 48)
+            }
 
             LazyVGrid(columns: columns,
                  alignment: .center,
@@ -76,7 +76,7 @@ struct LearnView: View {
                 .background(Image("home_bg"), alignment: .topLeading)
                 .environment(\.layoutDirection, .rightToLeft)
                 .padding(.bottom, 180)
-        }       .background(Color(red: 0.97, green: 0.80, blue: 0.50))
+        }       .background(Color(red: 0.65, green: 0.85, blue: 0.38))
        .edgesIgnoringSafeArea(.all)
        .navigationBarHidden(true)
        .navigationBarTitle("", displayMode: .inline)
