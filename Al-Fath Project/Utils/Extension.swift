@@ -26,11 +26,20 @@ extension UserDefaults{
     func isHaptic()-> Bool {
         return bool(forKey: UserDefaultsKeys.isHaptic.rawValue)
     }
+    
+    func setNotifyPractice(value: Bool) {
+        set(value, forKey: UserDefaultsKeys.isNotifyPractice.rawValue)
+    }
+
+    func isNotifyPractice()-> Bool {
+        return bool(forKey: UserDefaultsKeys.isNotifyPractice.rawValue)
+    }
 }
 
 enum UserDefaultsKeys : String {
     case isFirstTime
     case isHaptic
+    case isNotifyPractice
 }
 
 extension View {
