@@ -10,8 +10,8 @@ import SwiftUI
 struct SettingsView: View {
     
     @State private var isNotifyPhone : Bool = false
-    @State private var isNotifyPractice : Bool = false
     @ObservedObject var viewModel = UserViewModel()
+    @ObservedObject var settingsViewModel = SettingsViewModel()
     
     let listBadges: [String] = [ "handmaster_badge", "newlight_badge", "best_badge", "fastlearner_badge"]
     let listBadgesName: [String] = ["Hand Master", "New Light", "The Best", "Fast Learner"]
@@ -45,22 +45,17 @@ struct SettingsView: View {
                     UserDefaults.standard.setHaptic(value: viewModel.isHaptic)
                 }
                 
-                Toggle(isOn: $isNotifyPhone, label: {
-                    VStack(alignment: .leading) {
-                        Text("Notifikasi")
-                            .font(.system(size: 16))
-                            .bold()
-                        Text("Pengingat Telpon")
-                            .font(.system(size: 12))
-                    }
-                }).toggleStyle(SwitchToggleStyle(tint: .orange))
+                Text("Notifikasi")
+                    .font(.system(size: 16))
+                    .bold().frame(maxWidth: .infinity, alignment: .leading)
                 
-                Toggle(isOn: $isNotifyPractice, label: {
+                Toggle(isOn: $settingsViewModel.isNotifyPractice, label: {
                     VStack(alignment: .leading) {
                         Text("Pengingat Latihan")
                             .font(.system(size: 12))
                     }
-                }).toggleStyle(SwitchToggleStyle(tint: .orange))
+                })
+                .toggleStyle(SwitchToggleStyle(tint: .orange))
                 
                 Text("Lencana")
                     .font(.system(size: 24))
