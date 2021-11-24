@@ -9,39 +9,55 @@ import SwiftUI
 
 struct CorrectView: View {
     @Binding var isShow: Bool
+    @Binding var isCheckpoint: Bool
+    @Binding var nextLearn: DictionaryData
+    @ObservedObject var viewModel: LearnViewModel
+    @ObservedObject var vm: DictionaryListViewModel
+    
     
     var body: some View {
         VStack{
             Spacer()
-            HStack {
+            VStack{
                 Spacer()
-                VStack{
-                    Image("ic_checklist_green")
+                Image("ic_trophy")
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                    .padding()
+                Text("Alhamdulillah Kamu bisa!")
+                    .bold()
+                    .font(.system(size: 20))
+                    .foregroundColor(.text)
+                Spacer()
+                HStack {
+                    Spacer()
+                    Image(systemName: "chevron.right.circle.fill")
                         .resizable()
                         .frame(width: 60, height: 60)
-                    Text("Benar")
-                        .bold()
-                        .font(.system(size: 24))
-                        .foregroundColor(Color.colorGreen)
+                        .foregroundColor(.colorGreen)
+                        .padding(.all, 36)
+                        .onTapGesture {
+                            if isCheckpoint {
+                                PersistneceController.shared.unlockNextLearn(title: viewModel.title)
+                                viewModel.learn1Show = false
+                                viewModel.checkPointShow = true
+                                viewModel.page = 1
+                            } else {
+                                PersistneceController.shared.unlockNextLearn(title: viewModel.title)
+                               viewModel.title = nextLearn.letter
+                               viewModel.dataLearn = nextLearn
+                               viewModel.page = 1
+                            }
+                        }
                 }
-                .padding(.vertical, 16)
-                .padding(.horizontal, 32)
-                .background(Color.white)
-                .cornerRadius(8)
-                .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
                 
-                Spacer()
             }
-            .padding(.bottom, (UIApplication.shared.windows.last?.safeAreaInsets.bottom)! + 10)
-            .padding(.horizontal)
-            .padding(.top, 15)
-            .background(Color.clear)
             .cornerRadius(25)
             .offset(y: isShow ? 0 : UIScreen.main.bounds.height)
             Spacer()
 
         }
-        .background(isShow ? Color.black.opacity(0.3) : Color.clear).edgesIgnoringSafeArea(.all)
+        .background(isShow ? Color.white.opacity(0.7) : Color.clear).edgesIgnoringSafeArea(.all)
         .edgesIgnoringSafeArea(.bottom)
         .onTapGesture {
             isShow.toggle()

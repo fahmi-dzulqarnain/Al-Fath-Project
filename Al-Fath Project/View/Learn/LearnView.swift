@@ -13,8 +13,8 @@ struct LearnView: View {
     @FetchRequest(sortDescriptors: [])
     private var journey: FetchedResults<JourneyEntity>
     @ObservedObject var viewModel: LearnViewModel
-    @ObservedObject var vm = DictionaryListViewModel()
-    @ObservedObject var challengeVM = ChallengeViewModel()
+    @ObservedObject var vm: DictionaryListViewModel
+    @ObservedObject var challengeVM: ChallengeViewModel
 
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: -180, alignment: nil),
@@ -39,18 +39,6 @@ struct LearnView: View {
 //                        viewModel.learn1Show = true
 //                    }
 //                }
-                NavigationLink(destination: Learn1View(viewModel: viewModel, vm: vm), isActive: $viewModel.learn1Show) {
-                    Text("").hidden()
-                }
-                NavigationLink(destination: CheckpointView(viewModel: challengeVM), isActive: $viewModel.checkPointShow) {
-                    Text("").hidden()
-                }
-                NavigationLink(destination: CheckpointView(viewModel: challengeVM), isActive: $challengeVM.show) {
-                    Text("").hidden()
-                }
-                NavigationLink(destination: ChallengeDoneView(viewModel: challengeVM), isActive: $challengeVM.showDone) {
-                    Text("")
-                }
                 
             }
 
@@ -113,11 +101,11 @@ struct LearnView: View {
         }
 }
 
-struct LearnView_Previews: PreviewProvider {
-    static var previews: some View {
-        LearnView(viewModel: LearnViewModel())
-    }
-}
+//struct LearnView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LearnView(viewModel: LearnViewModel())
+//    }
+//}
 
 
 // ----------------------- Sub View ------------------------ //

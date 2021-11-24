@@ -11,8 +11,9 @@ import AVFoundation
 struct MainView: View {
     
     @State private var selectedTab = 1
-    @ObservedObject var learnVM = LearnViewModel()
-    @ObservedObject var dictionaryVM = DictionaryListViewModel()
+    @ObservedObject var viewModel = LearnViewModel()
+    @ObservedObject var vm = DictionaryListViewModel()
+    @ObservedObject var challengeVM = ChallengeViewModel()
     var player: AVPlayer
     
     init() {
@@ -24,9 +25,9 @@ struct MainView: View {
         ZStack {
             ZStack(alignment: .bottom) {
                 if selectedTab == 1 {
-                    LearnView(viewModel: learnVM)
+                    LearnView(viewModel: viewModel, vm: vm, challengeVM: challengeVM)
                 } else if selectedTab == 2{
-                    DictionaryListView(vm: dictionaryVM)
+                    DictionaryListView(vm: vm)
                 } else if selectedTab == 3 {
                     SettingsView()
                 }
@@ -57,8 +58,8 @@ struct MainView: View {
                     } }
                     Spacer()
                 }
-                .padding(.top, 16)
-                .padding(.bottom, 24)
+                .padding(.top, 20)
+                .padding(.bottom, 36)
                 .background(Color.primary)
                 .cornerRadius(16)
                 .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
@@ -67,7 +68,20 @@ struct MainView: View {
             .cornerRadius(8)
             .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
             
-            NavigationLink(destination: DictionaryView(vm: dictionaryVM, player: player),isActive: $dictionaryVM.showDictionary) {
+            NavigationLink(destination: DictionaryView(vm: vm, player: player),isActive: $vm.showDictionary) {
+            }
+            
+            NavigationLink(destination: Learn1View(viewModel: viewModel, vm: vm), isActive: $viewModel.learn1Show) {
+                Text("").hidden()
+            }
+            NavigationLink(destination: CheckpointView(viewModel: challengeVM), isActive: $viewModel.checkPointShow) {
+                Text("").hidden()
+            }
+            NavigationLink(destination: CheckpointView(viewModel: challengeVM), isActive: $challengeVM.show) {
+                Text("").hidden()
+            }
+            NavigationLink(destination: ChallengeDoneView(viewModel: challengeVM), isActive: $challengeVM.showDone) {
+                Text("")
             }
             
         }

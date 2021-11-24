@@ -21,66 +21,92 @@ struct Learn2View: View {
 
     var body: some View {
         ZStack(alignment: .bottom) {
-            VStack {
-                ZStack(alignment: .topTrailing){
-                    CameraView(bindedValue: $comingFromUIKitVC) {
-                        overlayPoints = $0;
+            ZStack(alignment: .top) {
+                VStack {
+                    ZStack {
+                        CameraView(bindedValue: $comingFromUIKitVC) {
+                            overlayPoints = $0;
+                        }
+                        HStack{
+                            Spacer()
+                            Image("ic_rectangle_white")
+                                .padding()
+                            Spacer()
+                        }
+                    }.padding(.top, 100)
+                    
+                    HStack {
+                        Spacer()
+                        Text(viewModel.dataLearn.letter)
+                            .foregroundColor(.text)
+                            .bold()
+                            .font(.custom("ScheherazadeNew-Regular", size: 52, relativeTo: .largeTitle))
+                        Spacer()
                     }
+                    .padding(.vertical)
+                    .background(Color.white.opacity(0.8))
+                    .cornerRadius(12)
+                    .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
+                    .padding()
+                    .onTapGesture {
+                        isShow = true
+                    }
+                    
+                    Spacer()
+//                    HStack(alignment: .bottom){
+//                        Image("img_cactus1")
+//                        Spacer()
+//                        Image("img_cactus3")
+//                        Image("img_cactus2")
+                        
+//                    }.padding(.horizontal)
+                }
+                HStack{
                     Image("ic_camera")
                         .resizable()
                         .frame(width: 48, height: 36)
                         .padding()
-                }
-                Text(viewModel.dataLearn.letter)
-                    .foregroundColor(.text)
-                    .bold()
-                    .font(.system(size: 72))
-                    .padding()
-                Spacer()
-                HStack(alignment: .bottom){
-                    Image("img_cactus1")
                     Spacer()
-                    Image("img_cactus3")
-                    Image("img_cactus2")
-                    
-                }.padding(.horizontal)
-                
+                }
+                .padding(.top, 100)
+                .padding()
+                title
             }
             
-            HStack {
-                Spacer()
-                if isCheckpoint {
-                    Image("ic_checklist")
-                        .resizable()
-                        .frame(width: 36, height: 36)
-                        .padding(.all, 30)
-                        .background(Color.secondary)
-                        .cornerRadius(99)
-                        .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
-                        .onTapGesture {
-                            PersistneceController.shared.unlockNextLearn(title: viewModel.title)
-                            viewModel.learn1Show = false
-                            viewModel.checkPointShow = true
-                        }
-                } else {
-                    Image("ic_checklist")
-                        .resizable()
-                        .frame(width: 36, height: 36)
-                        .padding(.all, 30)
-                        .background(Color.secondary)
-                        .cornerRadius(99)
-                        .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
-                        .onTapGesture {
-                            PersistneceController.shared.unlockNextLearn(title: viewModel.title)
-                            viewModel.title = nextLearn.letter
-                            viewModel.dataLearn = nextLearn
-                            viewModel.learn1Show = false
-                            viewModel.learn1Show = true
-                        }
-                }
-            }
-            .padding(.horizontal)
-            .padding(.bottom, 48)
+//            HStack {
+//                Spacer()
+//                if isCheckpoint {
+//                    Image("ic_checklist")
+//                        .resizable()
+//                        .frame(width: 36, height: 36)
+//                        .padding(.all, 30)
+//                        .background(Color.secondary)
+//                        .cornerRadius(99)
+//                        .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
+//                        .onTapGesture {
+//                            PersistneceController.shared.unlockNextLearn(title: viewModel.title)
+//                            viewModel.learn1Show = false
+//                            viewModel.checkPointShow = true
+//                            viewModel.page = 1
+//                        }
+//                } else {
+//                    Image("ic_checklist")
+//                        .resizable()
+//                        .frame(width: 36, height: 36)
+//                        .padding(.all, 30)
+//                        .background(Color.secondary)
+//                        .cornerRadius(99)
+//                        .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
+//                        .onTapGesture {
+//                            PersistneceController.shared.unlockNextLearn(title: viewModel.title)
+//                            viewModel.title = nextLearn.letter
+//                            viewModel.dataLearn = nextLearn
+//                            viewModel.page = 1
+//                        }
+//                }
+//            }
+//            .padding(.horizontal)
+//            .padding(.bottom, 48)
             
 //            CorrectView(isShow: $isShow)
             
@@ -99,11 +125,48 @@ struct Learn2View: View {
                 }
             }
             
-            
+            if isShow {
+                CorrectView(isShow: $isShow, isCheckpoint: $isCheckpoint, nextLearn: $nextLearn, viewModel: viewModel, vm: vm)
+            }
         }
-        .background(Color.third)
-        .edgesIgnoringSafeArea(.bottom)
-        .navigationBarTitle("Latihan", displayMode: .inline)
+        .background(Color.greenLight)
+        .edgesIgnoringSafeArea(.vertical)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
+    }
+    
+    var title: some View {
+        ZStack {
+            HStack {
+                Spacer()
+                Image("ic_latihan")
+                    .resizable()
+                    .frame(width: 36, height: 48)
+                Spacer()
+            }
+            HStack {
+                Button {
+                    viewModel.page = 1
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.text)
+                        .padding(.vertical, 14)
+                        .padding(.horizontal)
+                        .background(Color.secondary)
+                        .cornerRadius(99)
+                        .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
+                        .padding(.horizontal)
+                }
+
+                Spacer()
+            }
+
+        }
+        .padding(.top, 48)
+        .padding(.bottom)
+        .background(Color.colorGreen)
+        .cornerRadius(12)
+        .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
     }
     
 }
@@ -112,4 +175,4 @@ struct Learn2View: View {
 //    static var previews: some View {
 //        Learn2View()
 //    }
-//}
+//} test
