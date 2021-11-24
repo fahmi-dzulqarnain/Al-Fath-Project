@@ -35,7 +35,7 @@ struct HurufView: View {
                         progress = 66
                     }
             }
-            CorrectView(isShow: $isShow)
+//            CorrectView(isShow: $isShow)
         }
         .padding(.bottom, 32)
         .navigationBarHidden(true)
