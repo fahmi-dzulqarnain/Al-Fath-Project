@@ -36,7 +36,6 @@
 		0E8BBD7727186EFA00AA1377 /* DictionaryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD7627186EFA00AA1377 /* DictionaryListView.swift */; };
 		0E8BBD7A27186F6C00AA1377 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD7927186F6C00AA1377 /* SettingsView.swift */; };
 		0E8C11EA2728072F0092D9B2 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C11E92728072F0092D9B2 /* VideoView.swift */; };
-		0E9394A0274CF3800002AEAA /* LearnNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93949F274CF3800002AEAA /* LearnNewView.swift */; };
 		0EC81E8D2738C35C00AAC6A8 /* GamesDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0EC81E8B2738C35C00AAC6A8 /* GamesDB.xcdatamodeld */; };
 		0EC81E8F2738C47E00AAC6A8 /* Presistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC81E8E2738C47E00AAC6A8 /* Presistence.swift */; };
 		0EC81E912738C4D800AAC6A8 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC81E902738C4D800AAC6A8 /* Constans.swift */; };
@@ -92,7 +91,6 @@
 		0E8BBD7627186EFA00AA1377 /* DictionaryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryListView.swift; sourceTree = "<group>"; };
 		0E8BBD7927186F6C00AA1377 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0E8C11E92728072F0092D9B2 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
-		0E93949F274CF3800002AEAA /* LearnNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnNewView.swift; sourceTree = "<group>"; };
 		0EC81E8C2738C35C00AAC6A8 /* JourneyEntity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JourneyEntity.xcdatamodel; sourceTree = "<group>"; };
 		0EC81E8E2738C47E00AAC6A8 /* Presistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presistence.swift; sourceTree = "<group>"; };
 		0EC81E902738C4D800AAC6A8 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
@@ -305,7 +303,6 @@
 			children = (
 				0EC81E932738C97D00AAC6A8 /* Learn1View.swift */,
 				0E2028FF273B977300CF291B /* Learn2View.swift */,
-				0E93949F274CF3800002AEAA /* LearnNewView.swift */,
 			);
 			path = LearnJouney;
 			sourceTree = "<group>";
@@ -470,7 +467,6 @@
 				0E3B1F1F27329238006A991D /* Challenge3View.swift in Sources */,
 				0EC81E8F2738C47E00AAC6A8 /* Presistence.swift in Sources */,
 				0E7052F7273AAA0D002ABCE3 /* LearnViewModel.swift in Sources */,
-				0E9394A0274CF3800002AEAA /* LearnNewView.swift in Sources */,
 				E7D88389273BE0A0006E80E8 /* CameraView.swift in Sources */,
 				0E4ADCE32741EFC400C23D11 /* ProgressBarView.swift in Sources */,
 				3F6FD47C270ED21F000BC39D /* Al_Fath_Project.xcdatamodeld in Sources */,

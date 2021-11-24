@@ -175,4 +175,4 @@ struct Learn2View: View {
 //    static var previews: some View {
 //        Learn2View()
 //    }
-//}
+//} test
