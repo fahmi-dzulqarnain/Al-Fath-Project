@@ -27,11 +27,11 @@ struct ProgressBarView: View {
                 HStack{
                     Spacer()
                     Circle()
-                        .fill(.white)
+                        .fill(Color.white)
                         .frame(width: 6, height: 6)
                     Spacer()
                     Circle()
-                        .fill(.white)
+                        .fill(Color.white)
                         .frame(width: 6, height: 6)
                     Spacer()
                 }
