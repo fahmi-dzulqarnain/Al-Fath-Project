@@ -22,6 +22,21 @@ struct PersistneceController {
         }
     }
     
+    func fetchLearn() -> [JourneyEntity] {
+        let context = container.viewContext
+        let request : NSFetchRequest<JourneyEntity> = JourneyEntity.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+        var learn: [JourneyEntity] = []
+        
+        do {
+            learn = try context.fetch(request)
+        }
+        catch {
+            print("Error fetching data produk")
+        }
+        return learn
+    }
+    
     func getById(id: NSManagedObjectID) -> JourneyEntity? {
         do {
             return try container.viewContext.existingObject(with: id) as? JourneyEntity
@@ -100,7 +115,7 @@ struct PersistneceController {
         // Get all data learn
         let request : NSFetchRequest<JourneyEntity> = JourneyEntity.fetchRequest()
         request.sortDescriptors = []
-        request.predicate = NSPredicate(format: "id = %@", id)
+        request.predicate = NSPredicate(format: "id == \(id+1)")
         
         do
         {

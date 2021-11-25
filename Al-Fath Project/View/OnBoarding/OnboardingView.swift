@@ -13,7 +13,7 @@ struct OnboardingView: View {
     @ObservedObject var viewModel: OnBoardingViewModel
     @Environment(\.managedObjectContext) private var viewContext
     
-    @State var isFirstTime = UserDefaults.standard.isFirstTime()
+    @AppStorage("isFirstTime") private var isFirstTime = false
     @State private var selection = 0
     @State var isShow = false
     
