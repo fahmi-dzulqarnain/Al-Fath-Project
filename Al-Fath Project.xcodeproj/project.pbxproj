@@ -52,6 +52,7 @@
 		3FB3DBF72744DB0B00F8EB3D /* LearnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3DBF62744DB0B00F8EB3D /* LearnModel.swift */; };
 		3FB3DBF92744F89100F8EB3D /* DictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3DBF82744F89100F8EB3D /* DictionaryModel.swift */; };
 		3FB3DBFB27450C2C00F8EB3D /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3DBFA27450C2C00F8EB3D /* OnBoardingViewModel.swift */; };
+		3FBF5F7A274F8F42006D7BA1 /* ScheherazadeNew-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF5F79274F8F42006D7BA1 /* ScheherazadeNew-Bold.ttf */; };
 		440CF2FB2743BD4D00D38241 /* DictionaryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CF2FA2743BD4D00D38241 /* DictionaryListViewModel.swift */; };
 		445670DC2744991900CFC99F /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445670DB2744991900CFC99F /* DictionaryView.swift */; };
 		E7ACE39C273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E7ACE39B273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel */; };
@@ -110,6 +111,7 @@
 		3FB3DBF62744DB0B00F8EB3D /* LearnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnModel.swift; sourceTree = "<group>"; };
 		3FB3DBF82744F89100F8EB3D /* DictionaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryModel.swift; sourceTree = "<group>"; };
 		3FB3DBFA27450C2C00F8EB3D /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
+		3FBF5F79274F8F42006D7BA1 /* ScheherazadeNew-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ScheherazadeNew-Bold.ttf"; path = "../../../../Downloads/Scheherazade_New/ScheherazadeNew-Bold.ttf"; sourceTree = "<group>"; };
 		440CF2FA2743BD4D00D38241 /* DictionaryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryListViewModel.swift; sourceTree = "<group>"; };
 		445670DB2744991900CFC99F /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
 		E7ACE39B273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HandPose_Cobacoba.mlmodel; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 		0E5A39C327414C1800C5380F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				3FBF5F79274F8F42006D7BA1 /* ScheherazadeNew-Bold.ttf */,
 				0E5A39C827414C4100C5380F /* ScheherazadeNew-Regular.ttf */,
 				0E5A39C627414C3800C5380F /* m_plus_rounded_bold.ttf */,
 				0E5A39C427414C2C00C5380F /* m_plus_rounded_regular.ttf */,
@@ -435,6 +438,7 @@
 			files = (
 				0E5A39C527414C2C00C5380F /* m_plus_rounded_regular.ttf in Resources */,
 				0E45E26327479DC60041A28F /* ta.mp4 in Resources */,
+				3FBF5F7A274F8F42006D7BA1 /* ScheherazadeNew-Bold.ttf in Resources */,
 				3F6FD477270ED21F000BC39D /* Preview Assets.xcassets in Resources */,
 				3F6FD474270ED21F000BC39D /* Assets.xcassets in Resources */,
 				0E45E26427479DC60041A28F /* tsa.mp4 in Resources */,
