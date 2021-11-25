@@ -14,11 +14,9 @@ struct MainView: View {
     @ObservedObject var viewModel = LearnViewModel()
     @ObservedObject var vm = DictionaryListViewModel()
     @ObservedObject var challengeVM = ChallengeViewModel()
-    var player: AVPlayer
     
     init() {
         UITabBar.appearance().backgroundColor = UIColor(Color.primary)
-        player = AVPlayer()
     }
     
     var body: some View {
@@ -68,7 +66,7 @@ struct MainView: View {
             .cornerRadius(8)
             .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
             
-            NavigationLink(destination: DictionaryView(vm: vm, player: player),isActive: $vm.showDictionary) {
+            NavigationLink(destination: DictionaryView(vm: vm),isActive: $vm.showDictionary) {
             }
             
             NavigationLink(destination: Learn1View(viewModel: viewModel, vm: vm), isActive: $viewModel.learn1Show) {
