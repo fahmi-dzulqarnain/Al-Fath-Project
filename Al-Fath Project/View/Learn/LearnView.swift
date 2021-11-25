@@ -122,7 +122,7 @@ struct ButtonLearn : View {
             })
             {
                 Text(title)
-                    .font(.system(size: 36).bold())
+                    .font(Font.custom(Constans.textArab, size: 36).bold())
                     .frame(width: 78, height: 78)
                     .foregroundColor(.white)
                     .background(Color(red: 0.86, green: 0.67, blue: 0.36))
@@ -141,7 +141,7 @@ struct ButtonLearn : View {
             })
             {
                 Text(title)
-                    .font(.system(size: 36).bold())
+                    .font(Font.custom(Constans.textArab, size: 36).bold())
                     .frame(width: 78, height: 78)
                     .foregroundColor(.white)
                     .background(
