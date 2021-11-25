@@ -57,6 +57,7 @@ struct ButtonDictionary : View {
         Button(action: {
             vm.showDictionary = true
             vm.dictionaryData = data
+            Global.videoName = data.videoName
         }) {
             ZStack {
                 Circle()
