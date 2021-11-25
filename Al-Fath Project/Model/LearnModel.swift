@@ -8,6 +8,7 @@
 import Foundation
 
 struct LearnModel {
+    var id: Int16 = 0
     var isLock: Bool = false
     var isCheckpoint: Bool = false
     var points: Int? = nil

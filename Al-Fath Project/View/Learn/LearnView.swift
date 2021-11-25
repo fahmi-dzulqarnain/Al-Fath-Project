@@ -10,7 +10,8 @@ import SwiftUI
 struct LearnView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: [])
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \JourneyEntity.id, ascending: true)])
     private var journey: FetchedResults<JourneyEntity>
     @ObservedObject var viewModel: LearnViewModel
     @ObservedObject var vm: DictionaryListViewModel
