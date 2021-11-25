@@ -87,6 +87,7 @@ struct OnboardingView: View {
     
     func setData(item: LearnModel) {
         let journey = JourneyEntity(context: viewContext)
+        journey.id = item.id
         journey.isLock = item.isLock
         journey.isCheckpoint = item.isCheckpoint
         journey.title = item.title
