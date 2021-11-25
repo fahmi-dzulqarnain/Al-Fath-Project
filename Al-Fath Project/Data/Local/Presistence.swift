@@ -93,4 +93,32 @@ struct PersistneceController {
             print(error)
         }
     }
+    
+    func unlockNextLearnWithId(id : Int16) {
+        let context = container.viewContext
+        
+        // Get all data learn
+        let request : NSFetchRequest<JourneyEntity> = JourneyEntity.fetchRequest()
+        request.sortDescriptors = []
+        request.predicate = NSPredicate(format: "id = %@", id)
+        
+        do
+        {
+            let nextLearn = try context.fetch(request)
+   
+            let objectUpdate = nextLearn[0] as NSManagedObject
+                objectUpdate.setValue(false, forKey: "isLock")
+                do{
+                    try context.save()
+                }
+                catch
+                {
+                    print(error)
+                }
+            }
+        catch
+        {
+            print(error)
+        }
+    }
 }
