@@ -46,3 +46,7 @@ class DictionaryListViewModel: ObservableObject {
     ]
     
 }
+
+struct Global {
+     static var videoName: String = "alif"
+}
