@@ -60,6 +60,8 @@ extension Color {
     public static var colorGreen = Color("ColorGreen")
     public static var greenLight = Color("ColorGreenLight")
     public static var blue = Color("ColorBlue")
+    public static var greyLight = Color("ColorGreyLight")
+    public static var gold = Color("ColorGold")
 }
 
 extension Array {

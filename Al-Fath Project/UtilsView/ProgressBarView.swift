@@ -9,19 +9,58 @@ import SwiftUI
 
 struct ProgressBarView: View {
     var percent: CGFloat = 70
+    var pos = 1
     
     var body: some View {
         let multiplier = (UIScreen.main.bounds.width - 32) / 100
         
         VStack {
+            
+            HStack{
+                Spacer()
+                ZStack(alignment: .center){
+                    Image("img_check1")
+                        .resizable()
+                        .frame(width: 24, height: 20)
+                        .foregroundColor(pos == 0 ? .white : .greyLight)
+                }.frame(width: 100)
+                Spacer()
+                ZStack(alignment: .center){
+                    if pos > 1 {
+                        Image("img_check2_")
+                            .resizable()
+                            .frame(width: 24, height: 20)
+                    } else {
+                        Image("img_check2")
+                            .resizable()
+                            .frame(width: 24, height: 20)
+                    }
+                    
+                }.frame(width: 100)
+                Spacer()
+                ZStack(alignment: .center){
+                    if pos > 2 {
+                        Image("img_check3_")
+                            .resizable()
+                            .frame(width: 24, height: 20)
+                    } else {
+                        Image("img_check3")
+                            .resizable()
+                            .frame(width: 24, height: 20)
+                    }
+                }.frame(width: 100)
+                Spacer()
+            }
+            .padding(.bottom, 2)
+            
             ZStack(alignment: .leading){
                 RoundedRectangle(cornerRadius: 60, style: .continuous)
                     .frame(height: 15)
-                    .foregroundColor(.text)
+                    .foregroundColor(.greyLight)
                 RoundedRectangle(cornerRadius: 60, style: .continuous)
                     .frame(width: percent * multiplier, height: 15, alignment: .leading)
                     .background(
-                        LinearGradient(gradient: Gradient(colors: [Color.blue]), startPoint: .leading, endPoint: .trailing)
+                        LinearGradient(gradient: Gradient(colors: [Color.gold]), startPoint: .leading, endPoint: .trailing)
                             .clipShape(RoundedRectangle(cornerRadius: 60, style: .continuous)))
                     .foregroundColor(.clear)
                 HStack{
@@ -36,24 +75,7 @@ struct ProgressBarView: View {
                     Spacer()
                 }
             }
-            HStack{
-                Spacer()
-                ZStack(alignment: .center){
-                    Text("Huruf")
-                        .font(.system(size: 12))
-                }.frame(width: 100)
-                Spacer()
-                ZStack(alignment: .center){
-                    Text("Kata")
-                        .font(.system(size: 12))
-                }.frame(width: 100)
-                Spacer()
-                ZStack(alignment: .center){
-                    Text("Pencocokan")
-                        .font(.system(size: 12))
-                }.frame(width: 100)
-                Spacer()
-            }
+           
         }
         
     }
