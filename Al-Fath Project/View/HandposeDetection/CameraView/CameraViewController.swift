@@ -203,7 +203,7 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             let output = try self.model.prediction(poses: keyPoinMultiArray)
 //                self.predictionLabel = output.label
 //                self.sharedVM.labelHurufPredict = output.label
-//            self.customDelegate?.didUpdateWithValue(output.label)
+            self.customDelegate?.didUpdateWithValue(output.label)
 //            print("Hasil prediksi: \(output.label)")
             
             let confidence = output.labelProbabilities[output.label]!
