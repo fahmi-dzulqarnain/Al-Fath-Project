@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CameraView: UIViewControllerRepresentable {
     
-    @Binding var bindedValue: String
+    let bindedValue: String
+    let onTrue: ()-> Void
     var pointsProcessorHandler: (([CGPoint]) -> Void)?
     
     func makeUIViewController(context: Context) -> CameraViewController {
@@ -35,7 +36,9 @@ struct CameraView: UIViewControllerRepresentable {
            }
 
            func didUpdateWithValue(_ value: String) {
-               parent.bindedValue = value
+               if parent.bindedValue == value{
+                   self.parent.onTrue()
+               }
            }
        }
 }

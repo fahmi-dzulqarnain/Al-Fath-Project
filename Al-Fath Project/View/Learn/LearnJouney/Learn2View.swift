@@ -24,9 +24,12 @@ struct Learn2View: View {
             ZStack(alignment: .top) {
                 VStack {
                     ZStack {
-                        CameraView(bindedValue: $comingFromUIKitVC) {
+                        CameraView(bindedValue: viewModel.dataLearn.videoName, onTrue: {
+                            isShow = true
+                        }) {
                             overlayPoints = $0;
                         }
+
                         HStack{
                             Spacer()
                             Image("ic_rectangle_white")
@@ -37,7 +40,7 @@ struct Learn2View: View {
                     
                     HStack {
                         Spacer()
-                        Text(viewModel.dataLearn.letter + comingFromUIKitVC)
+                        Text(viewModel.dataLearn.videoName + comingFromUIKitVC)
                             .foregroundColor(.text)
                             .bold()
                             .font(.custom("ScheherazadeNew-Regular", size: 52, relativeTo: .largeTitle))
@@ -48,8 +51,10 @@ struct Learn2View: View {
                     .cornerRadius(12)
                     .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
                     .padding()
-                    .onTapGesture {
-                        isShow = true
+                    .onAppear {
+                        if viewModel.dataLearn.videoName == comingFromUIKitVC {
+                            isShow = true
+                        }
                     }
                     
                     Spacer()
