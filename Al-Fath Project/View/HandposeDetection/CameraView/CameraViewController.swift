@@ -28,17 +28,18 @@ final class CameraViewController: UIViewController {
     private var cameraFeedSession: AVCaptureSession?
     private let handPoseRequest: VNDetectHumanHandPoseRequest = {
         let request = VNDetectHumanHandPoseRequest()
-        request.maximumHandCount = 2
+        request.maximumHandCount = 1
+        request.revision = VNDetectHumanHandPoseRequestRevision1
         return request
     }()
     
     var pointsProcessorHandler: (([CGPoint]) -> Void)?
     
     // Core ML model
-    private let model: HandPose_SignLangAr = {
+    private let model: HP_ModelV9 = {
         do {
             let config = MLModelConfiguration()
-            return try HandPose_SignLangAr(configuration: config)
+            return try HP_ModelV9(configuration: config)
         } catch {
             print(error)
             fatalError("Couldn't create SleepCalculator")
@@ -140,7 +141,6 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         let handler = VNImageRequestHandler(
             cmSampleBuffer: sampleBuffer,
-            orientation: .up,
             options: [:]
         )
         do {
@@ -149,11 +149,13 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             
             // Continue only when at least a hand was detected in the frame. We're interested in maximum of two hands.
             guard
-                let results = handPoseRequest.results?.prefix(2),
+                let results = handPoseRequest.results,
                 !results.isEmpty
             else {
                 return
             }
+            
+            let handObservation = results.first
             
             var recognizedPoints: [VNRecognizedPoint] = []
             
@@ -179,37 +181,45 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                 }
             }
             
+            guard let keyPoinMultiArray = try? handObservation?.keypointsMultiArray() else { fatalError()}
+            
             // Get the highest confidence
-            let higestConfidenceFingerTips = results.filter {
-                $0.confidence > 0.9
-                
-            }
+//            let higestConfidenceFingerTips = results.filter {
+//                $0.confidence > 0.9
+//
+//            }
             
             // CoreML prediction
             // 1. Harus dapeting joinst dari finger dalam bentuk MLMultiArray
             
-            guard let jointsFinger = try? higestConfidenceFingerTips.first?.keypointsMultiArray() else {
-                return
-            }
+//            guard let jointsFinger = try? higestConfidenceFingerTips.first?.keypointsMultiArray() else {
+//                return
+//            }
             
             // 2. Masukin joints dari ke prediction model
             
             
-            if let output = try? self.model.prediction(poses: jointsFinger) {
+            
+            let output = try self.model.prediction(poses: keyPoinMultiArray)
 //                self.predictionLabel = output.label
 //                self.sharedVM.labelHurufPredict = output.label
-                self.customDelegate?.didUpdateWithValue(output.label)
-                print("Hasil prediksi: \(output.label)")
+            self.customDelegate?.didUpdateWithValue(output.label)
+//            print("Hasil prediksi: \(output.label)")
+            
+            let confidence = output.labelProbabilities[output.label]!
+            
+            if confidence > 0.9 {
+                print("Hasil prediksi: \(output.label) Conf: \(output.labelProbabilities)")
             }
             
             
-            fingerTips = recognizedPoints.filter {
-                // Ignore low confidence points.
-                $0.confidence > 0.9
-            }.map {
-                // Convert points from Vision coordinates to AVFoundation coordinates.
-                CGPoint(x: $0.location.x, y: 1 - $0.location.y)
-            }
+//            fingerTips = recognizedPoints.filter {
+//                // Ignore low confidence points.
+//                $0.confidence > 0.9
+//            }.map {
+//                // Convert points from Vision coordinates to AVFoundation coordinates.
+//                CGPoint(x: $0.location.x, y: 1 - $0.location.y)
+//            }
             
             
             
