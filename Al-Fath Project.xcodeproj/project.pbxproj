@@ -53,12 +53,20 @@
 		3FB3DBFB27450C2C00F8EB3D /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3DBFA27450C2C00F8EB3D /* OnBoardingViewModel.swift */; };
 		440CF2FB2743BD4D00D38241 /* DictionaryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CF2FA2743BD4D00D38241 /* DictionaryListViewModel.swift */; };
 		445670DC2744991900CFC99F /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445670DB2744991900CFC99F /* DictionaryView.swift */; };
+		E727FD772750C6A900677C70 /* HP_ModelV5.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E727FD762750C6A900677C70 /* HP_ModelV5.mlmodel */; };
+		E76986B7274F2B6200A2C143 /* HP_ModelV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E76986B6274F2B6200A2C143 /* HP_ModelV2.mlmodel */; };
+		E76F4C98274F73F40024B203 /* ModelHijaiyahV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E76F4C97274F73F40024B203 /* ModelHijaiyahV3.mlmodel */; };
+		E76F4C9A274F74200024B203 /* HP_ModelV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E76F4C99274F74200024B203 /* HP_ModelV3.mlmodel */; };
+		E76F4C9C274F87540024B203 /* HP_ModelV4.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E76F4C9B274F87540024B203 /* HP_ModelV4.mlmodel */; };
 		E7ACE39C273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E7ACE39B273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel */; };
 		E7D88385273BDEE6006E80E8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D88384273BDEE6006E80E8 /* CameraViewController.swift */; };
 		E7D88387273BDFF1006E80E8 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D88386273BDFF1006E80E8 /* CameraPreview.swift */; };
 		E7D88389273BE0A0006E80E8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D88388273BE0A0006E80E8 /* CameraView.swift */; };
 		E7D8838B273BE166006E80E8 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D8838A273BE166006E80E8 /* AppError.swift */; };
 		E7DE2EDF273FD36800090DE6 /* HandPose_SignLangAr.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E7DE2EDE273FD36800090DE6 /* HandPose_SignLangAr.mlmodel */; };
+		E7EC568A27538CB500BF19D9 /* HP_ModelV7.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E7EC568927538CB500BF19D9 /* HP_ModelV7.mlmodel */; };
+		E7EC568C2753A68000BF19D9 /* HP_ModelV8.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E7EC568B2753A68000BF19D9 /* HP_ModelV8.mlmodel */; };
+		E7EC568E27545DD500BF19D9 /* HP_ModelV9.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E7EC568D27545DD500BF19D9 /* HP_ModelV9.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,12 +118,20 @@
 		3FB3DBFA27450C2C00F8EB3D /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
 		440CF2FA2743BD4D00D38241 /* DictionaryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryListViewModel.swift; sourceTree = "<group>"; };
 		445670DB2744991900CFC99F /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
+		E727FD762750C6A900677C70 /* HP_ModelV5.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HP_ModelV5.mlmodel; sourceTree = "<group>"; };
+		E76986B6274F2B6200A2C143 /* HP_ModelV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HP_ModelV2.mlmodel; sourceTree = "<group>"; };
+		E76F4C97274F73F40024B203 /* ModelHijaiyahV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ModelHijaiyahV3.mlmodel; sourceTree = "<group>"; };
+		E76F4C99274F74200024B203 /* HP_ModelV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HP_ModelV3.mlmodel; sourceTree = "<group>"; };
+		E76F4C9B274F87540024B203 /* HP_ModelV4.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HP_ModelV4.mlmodel; sourceTree = "<group>"; };
 		E7ACE39B273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HandPose_Cobacoba.mlmodel; sourceTree = "<group>"; };
 		E7D88384273BDEE6006E80E8 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		E7D88386273BDFF1006E80E8 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		E7D88388273BE0A0006E80E8 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		E7D8838A273BE166006E80E8 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		E7DE2EDE273FD36800090DE6 /* HandPose_SignLangAr.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HandPose_SignLangAr.mlmodel; sourceTree = "<group>"; };
+		E7EC568927538CB500BF19D9 /* HP_ModelV7.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HP_ModelV7.mlmodel; sourceTree = "<group>"; };
+		E7EC568B2753A68000BF19D9 /* HP_ModelV8.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HP_ModelV8.mlmodel; sourceTree = "<group>"; };
+		E7EC568D27545DD500BF19D9 /* HP_ModelV9.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HP_ModelV9.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,6 +372,14 @@
 		E7D88380273BD581006E80E8 /* HandposeDetection */ = {
 			isa = PBXGroup;
 			children = (
+				E7EC568D27545DD500BF19D9 /* HP_ModelV9.mlmodel */,
+				E7EC568B2753A68000BF19D9 /* HP_ModelV8.mlmodel */,
+				E7EC568927538CB500BF19D9 /* HP_ModelV7.mlmodel */,
+				E727FD762750C6A900677C70 /* HP_ModelV5.mlmodel */,
+				E76F4C9B274F87540024B203 /* HP_ModelV4.mlmodel */,
+				E76F4C99274F74200024B203 /* HP_ModelV3.mlmodel */,
+				E76F4C97274F73F40024B203 /* ModelHijaiyahV3.mlmodel */,
+				E76986B6274F2B6200A2C143 /* HP_ModelV2.mlmodel */,
 				E7DE2EDE273FD36800090DE6 /* HandPose_SignLangAr.mlmodel */,
 				E7ACE39B273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel */,
 				E7D88383273BDEB3006E80E8 /* CameraView */,
@@ -453,20 +477,26 @@
 				0E8BBD7727186EFA00AA1377 /* DictionaryListView.swift in Sources */,
 				3F6FD479270ED21F000BC39D /* Persistence.swift in Sources */,
 				0E8BBD7027186B6E00AA1377 /* LearnView.swift in Sources */,
+				E7EC568E27545DD500BF19D9 /* HP_ModelV9.mlmodel in Sources */,
 				E7D88387273BDFF1006E80E8 /* CameraPreview.swift in Sources */,
 				E7DE2EDF273FD36800090DE6 /* HandPose_SignLangAr.mlmodel in Sources */,
 				0E63CF69272AA3B0008D129A /* Extension.swift in Sources */,
+				E76F4C9C274F87540024B203 /* HP_ModelV4.mlmodel in Sources */,
 				0E8BBD7A27186F6C00AA1377 /* SettingsView.swift in Sources */,
 				0EC81E912738C4D800AAC6A8 /* Constans.swift in Sources */,
+				E76F4C98274F73F40024B203 /* ModelHijaiyahV3.mlmodel in Sources */,
 				445670DC2744991900CFC99F /* DictionaryView.swift in Sources */,
 				0EF2BA852733C654006A797C /* ChallengeViewModel.swift in Sources */,
 				0EC81E8D2738C35C00AAC6A8 /* GamesDB.xcdatamodeld in Sources */,
 				0E1BEF17273004150058D9EE /* UserViewModel.swift in Sources */,
 				3FB3DBF72744DB0B00F8EB3D /* LearnModel.swift in Sources */,
+				E7EC568A27538CB500BF19D9 /* HP_ModelV7.mlmodel in Sources */,
 				0EC81E942738C97D00AAC6A8 /* Learn1View.swift in Sources */,
 				0E3B1F1F27329238006A991D /* Challenge3View.swift in Sources */,
 				0EC81E8F2738C47E00AAC6A8 /* Presistence.swift in Sources */,
+				E76F4C9A274F74200024B203 /* HP_ModelV3.mlmodel in Sources */,
 				0E7052F7273AAA0D002ABCE3 /* LearnViewModel.swift in Sources */,
+				E727FD772750C6A900677C70 /* HP_ModelV5.mlmodel in Sources */,
 				E7D88389273BE0A0006E80E8 /* CameraView.swift in Sources */,
 				0E4ADCE32741EFC400C23D11 /* ProgressBarView.swift in Sources */,
 				3F6FD47C270ED21F000BC39D /* Al_Fath_Project.xcdatamodeld in Sources */,
@@ -479,6 +509,7 @@
 				0E3B1F2227329870006A991D /* GamesModel.swift in Sources */,
 				0E8C11EA2728072F0092D9B2 /* VideoView.swift in Sources */,
 				0E202900273B977300CF291B /* Learn2View.swift in Sources */,
+				E76986B7274F2B6200A2C143 /* HP_ModelV2.mlmodel in Sources */,
 				3F6FD472270ED21C000BC39D /* ContentView.swift in Sources */,
 				3FB3DBFB27450C2C00F8EB3D /* OnBoardingViewModel.swift in Sources */,
 				0E8BBD6D27186A5700AA1377 /* MainView.swift in Sources */,
@@ -490,6 +521,7 @@
 				0E63CF66272AA1A0008D129A /* OnboardingView.swift in Sources */,
 				E7ACE39C273D1F6100E388F2 /* HandPose_Cobacoba.mlmodel in Sources */,
 				0E4ADCE52741FB0100C23D11 /* HurufView.swift in Sources */,
+				E7EC568C2753A68000BF19D9 /* HP_ModelV8.mlmodel in Sources */,
 				0E4ADCE92741FB3000C23D11 /* PencocokanView.swift in Sources */,
 				3FB3DBF92744F89100F8EB3D /* DictionaryModel.swift in Sources */,
 			);
@@ -621,7 +653,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Al-Fath Project/Preview Content\"";
-				DEVELOPMENT_TEAM = Z8L38KRZAK;
+				DEVELOPMENT_TEAM = 43D74ZX25H;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Al-Fath Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -643,7 +675,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Al-Fath Project/Preview Content\"";
-				DEVELOPMENT_TEAM = Z8L38KRZAK;
+				DEVELOPMENT_TEAM = 43D74ZX25H;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Al-Fath Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

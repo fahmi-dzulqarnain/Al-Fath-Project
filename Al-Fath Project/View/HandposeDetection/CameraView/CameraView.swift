@@ -20,7 +20,7 @@ struct CameraView: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ vc: CameraViewController, context: Context) {
-        print("the bindedValue updated: \(bindedValue)")
+        print("the bindedValue: \(bindedValue)")
     }
     
     func makeCoordinator() -> Coordinator {
