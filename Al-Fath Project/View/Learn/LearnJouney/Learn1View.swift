@@ -11,9 +11,16 @@ struct Learn1View: View {
     @ObservedObject var viewModel: LearnViewModel
     @ObservedObject var vm: DictionaryListViewModel
     
-    @State var player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "ba", ofType: "mp4")!))
-//    @State var player = AVPlayer()
+//    @State var player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: viewMOdel.videoName, ofType: "mp4")!))
+    @State var player = AVPlayer()
    
+    struct video {
+        var videoName = "alif"
+    }
+    
+//    init (){
+//        player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: viewModel.title, ofType: "mp4")!))
+//    }
     
     var body: some View {
         ZStack {
@@ -38,11 +45,7 @@ struct Learn1View: View {
     var page1: some View {
         ZStack(alignment: .bottom) {
             
-            content(data: viewModel.dataLearn).onAppear {
-//                player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: viewModel.dataLearn.videoName, ofType: "mp4")!))
-//                player.play()
-            }
-            
+            content(data: viewModel.dataLearn)
             HStack {
                 Button(action: {
                     player.seek(to: .zero)
@@ -84,12 +87,15 @@ struct Learn1View: View {
         ZStack(alignment: .top) {
             VStack{
 //                VideoPlayer(player: player).frame(height: 495)
-                AVPlayerControllerRepresented(player: player)
-                    .frame(height: 495)
-                    .onAppear {
-                        player.play()
-                    }
-                       
+                if !data.videoName.isEmpty {
+                    AVPlayerControllerRepresented(player: AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: data.videoName, ofType: "mp4")!)) )
+                        .frame(height: 495)
+                        .padding(.top, 16)
+                        .onAppear {
+                            player.play()
+                        }
+                }
+                
                 VStack{
                     Text(data.letter)
                         .foregroundColor(.text)
@@ -106,7 +112,9 @@ struct Learn1View: View {
                 .background(Color.white.opacity(0.8))
                 .cornerRadius(12)
                 .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
-                .padding()
+                .padding(.horizontal)
+                .padding(.bottom)
+                .padding(.top, 8)
 
                 Spacer()
 //                HStack(alignment: .bottom){

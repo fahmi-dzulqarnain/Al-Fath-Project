@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct HurufView: View {
+    @ObservedObject var viewModel: ChallengeViewModel
     @Binding var selected: Int
     @Binding var progress: CGFloat
+    @Binding var pos: Int
     @State private var overlayPoints: [CGPoint] = []
     @State private var comingFromUIKitVC = ""
     @State var isShow = false
@@ -17,30 +19,43 @@ struct HurufView: View {
     var body: some View {
         ZStack{
             VStack {
-                ZStack(alignment: .topTrailing){
+                ZStack {
                     CameraView(bindedValue: $comingFromUIKitVC) {
                         overlayPoints = $0;
                     }
-                    Image("ic_camera")
-                        .resizable()
-                        .frame(width: 48, height: 36)
-                        .padding()
-                }
-                Text("ب")
-                    .foregroundColor(.text)
-                    .bold()
-                    .font(.system(size: 72))
-                    .onTapGesture {
-                        selected = 1
-                        progress = 66
+                    HStack{
+                        Spacer()
+                        Image("ic_rectangle_white")
+                            .padding()
+                        Spacer()
                     }
+                }.padding(.top, 100)
+                
+                HStack {
+                    Spacer()
+                    Text(viewModel.huruf)
+                        .foregroundColor(.text)
+                        .bold()
+                        .font(.custom("ScheherazadeNew-Regular", size: 52, relativeTo: .largeTitle))
+                    Spacer()
+                }
+                .padding(.vertical)
+                .background(Color.white.opacity(0.8))
+                .cornerRadius(12)
+                .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
+                .padding()
+                .onTapGesture {
+                    selected = 1
+                    progress = 45
+                    pos = 2
+                }
             }
 //            CorrectView(isShow: $isShow)
         }
         .padding(.bottom, 32)
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
-        .background(Color.primary)
+        .background(Color.greenLight)
         .edgesIgnoringSafeArea(.vertical)
         
     }

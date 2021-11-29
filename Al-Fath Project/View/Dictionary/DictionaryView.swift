@@ -107,6 +107,9 @@ struct AVPlayerControllerRepresented : UIViewControllerRepresentable {
         let controller = AVPlayerViewController()
         controller.player = player
         controller.showsPlaybackControls = false
+        controller.player?.isMuted = true
+        controller.player?.play()
+        print(player.currentItem)
         return controller
     }
     

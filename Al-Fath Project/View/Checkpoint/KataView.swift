@@ -8,47 +8,77 @@
 import SwiftUI
 
 struct KataView: View {
+    @ObservedObject var viewModel: ChallengeViewModel
     @Binding var selected: Int
     @Binding var progress: CGFloat
+    @Binding var pos: Int
     @State private var overlayPoints: [CGPoint] = []
     @State private var comingFromUIKitVC = ""
     
     var body: some View {
-        VStack{
-            ZStack(alignment: .topTrailing){
-                CameraView(bindedValue: $comingFromUIKitVC) {
-                    overlayPoints = $0;
+        ZStack{
+            VStack {
+                ZStack {
+                    CameraView(bindedValue: $comingFromUIKitVC) {
+                        overlayPoints = $0;
+                    }
+                    HStack{
+                        Spacer()
+                        Image("ic_rectangle_white")
+                            .padding()
+                        Spacer()
+                    }
+                }.padding(.top, 100)
+                
+                HStack() {
+                    Spacer()
+                    Text(viewModel.kata.huruf1)
+                        .foregroundColor(.text)
+                        .bold()
+                        .font(.custom("ScheherazadeNew-Regular", size: 32, relativeTo: .largeTitle))
+                    Image("ic_plus")
+                        .padding(.horizontal, 24)
+                    Text(viewModel.kata.huruf2)
+                        .foregroundColor(.text)
+                        .bold()
+                        .font(.custom("ScheherazadeNew-Regular", size: 32, relativeTo: .largeTitle))
+                    Spacer()
                 }
-                Image("ic_camera")
-                    .resizable()
-                    .frame(width: 48, height: 36)
-                    .padding()
-            }
-            HStack{
-                Text("ت")
-                    .foregroundColor(.text)
-                    .bold()
-                    .font(.system(size: 72))
-                Image("img_line")
-                Text("ب")
-                    .foregroundColor(.text)
-                    .bold()
-                    .font(.system(size: 72))
-            }
-            Text("بت")
-                .foregroundColor(.text)
-                .bold()
-                .font(.system(size: 72))
+                .padding(.vertical, 6)
+                .background(Color.white.opacity(0.8))
+                .cornerRadius(12)
+                .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                
+                HStack {
+                    Spacer()
+                    Text(viewModel.kata.kata)
+                        .foregroundColor(.text)
+                        .bold()
+                        .font(.custom("ScheherazadeNew-Regular", size: 52, relativeTo: .largeTitle))
+                    Spacer()
+                }
+                .background(Color.white.opacity(0.8))
+                .cornerRadius(12)
+                .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
+                .padding()
                 .onTapGesture {
                     selected = 2
-                    progress = 100
+                    progress = 80
+                    pos = 3
                 }
+                   
+                
+            }
+//            CorrectView(isShow: $isShow)
         }
         .padding(.bottom, 32)
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
-        .background(Color.primary)
+        .background(Color.greenLight)
         .edgesIgnoringSafeArea(.vertical)
+        
     }
 }
 

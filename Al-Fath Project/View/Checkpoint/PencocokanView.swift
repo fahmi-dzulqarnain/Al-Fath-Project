@@ -34,7 +34,7 @@ struct PencocokanView: View {
                                 .padding(.vertical, 8)
                                 Spacer()
                             }
-                            .background(viewModel.data[index].isChoose ? Color.blue : Color.primary)
+                            .background(viewModel.data[index].isChoose ? Color.blue : Color.greenLight)
                             .cornerRadius(8)
                             .padding(.horizontal, 8)
                             .padding(.vertical, 8)
@@ -84,7 +84,7 @@ struct PencocokanView: View {
                                 onDefault()
                             })
                         }
-                        .background(viewModel.data[index].isHidden ? Color.green : Color.primary)
+                        .background(viewModel.data[index].isHidden ? Color.green : Color.greenLight)
                     }
                 }
                 
@@ -98,7 +98,7 @@ struct PencocokanView: View {
                                         .frame(width: 90, height: 150)
                                 }
                             }
-                            .background(viewModel.data2[index].isChoose ? Color.blue : Color.primary)
+                            .background(viewModel.data2[index].isChoose ? Color.blue : Color.greenLight)
                             .cornerRadius(8)
                             .padding(.horizontal, 2)
                             .padding(.vertical, 4)
@@ -147,7 +147,7 @@ struct PencocokanView: View {
                             })
                         }
                         .padding(.horizontal, 4)
-                        .background(viewModel.data2[index].isHidden ? Color.green : Color.primary)
+                        .background(viewModel.data2[index].isHidden ? Color.green : Color.greenLight)
                     }
                 }
                 
