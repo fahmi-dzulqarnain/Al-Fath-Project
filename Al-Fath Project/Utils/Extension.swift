@@ -26,11 +26,20 @@ extension UserDefaults{
     func isHaptic()-> Bool {
         return bool(forKey: UserDefaultsKeys.isHaptic.rawValue)
     }
+    
+    func setNotifyPractice(value: Bool) {
+        set(value, forKey: UserDefaultsKeys.isNotifyPractice.rawValue)
+    }
+
+    func isNotifyPractice()-> Bool {
+        return bool(forKey: UserDefaultsKeys.isNotifyPractice.rawValue)
+    }
 }
 
 enum UserDefaultsKeys : String {
     case isFirstTime
     case isHaptic
+    case isNotifyPractice
 }
 
 extension View {
@@ -49,7 +58,10 @@ extension Color {
     public static var third = Color("ColorThird")
     public static var text = Color("ColorText")
     public static var colorGreen = Color("ColorGreen")
+    public static var greenLight = Color("ColorGreenLight")
     public static var blue = Color("ColorBlue")
+    public static var greyLight = Color("ColorGreyLight")
+    public static var gold = Color("ColorGold")
 }
 
 extension Array {

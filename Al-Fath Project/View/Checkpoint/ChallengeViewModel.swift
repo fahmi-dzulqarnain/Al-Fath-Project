@@ -12,6 +12,8 @@ class ChallengeViewModel: ObservableObject {
     @Published var title = ""
     @Published var show = false
     @Published var showDone = false
+    @Published var huruf = "ا"
+    @Published var kata = KataModel(huruf1: "ب", huruf2: "ت", kata: "تب")
     @Published var data: [GamesModel] = []
     @Published var data2: [GamesModel] = []
     
@@ -20,16 +22,32 @@ class ChallengeViewModel: ObservableObject {
     }
     
     func randomQuiz() {
-        let number = Int.random(in: 1...3)
+        let number = Int.random(in: 1...5)
         switch number {
         case 1:
             quiz1()
-//        case 2:
-//            data = quiz2()
-//        case 3:
-//            data = quiz3()
+            huruf = "ا"
+            kata = KataModel(huruf1: "ب", huruf2: "ت", kata: "تب")
+        case 2:
+            quiz1()
+            huruf = "ب"
+            kata = KataModel(huruf1: "ت", huruf2: "ث", kata: "ثت")
+        case 3:
+            quiz1()
+            huruf = "ت"
+            kata = KataModel(huruf1: "ث", huruf2: "ج", kata: "جث")
+        case 4:
+            quiz1()
+            huruf = "ث"
+            kata = KataModel(huruf1: "ج", huruf2: "ت", kata: "تج")
+        case 5:
+            quiz1()
+            huruf = "ج"
+            kata = KataModel(huruf1: "١", huruf2: "ب", kata: "با")
         default:
             quiz1()
+            huruf = "ا"
+            kata = KataModel(huruf1: "ب", huruf2: "ت", kata: "تب")
         }
         
     }
@@ -54,5 +72,10 @@ class ChallengeViewModel: ObservableObject {
         
     }
     
+    struct KataModel {
+        var huruf1: String = ""
+        var huruf2: String = ""
+        var kata: String = ""
+    }
  
 }

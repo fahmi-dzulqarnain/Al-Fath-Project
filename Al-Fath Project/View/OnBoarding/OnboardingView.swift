@@ -13,7 +13,7 @@ struct OnboardingView: View {
     @ObservedObject var viewModel: OnBoardingViewModel
     @Environment(\.managedObjectContext) private var viewContext
     
-    @State var isFirstTime = UserDefaults.standard.isFirstTime()
+    @AppStorage("isFirstTime") private var isFirstTime = false
     @State private var selection = 0
     @State var isShow = false
     
@@ -87,6 +87,7 @@ struct OnboardingView: View {
     
     func setData(item: LearnModel) {
         let journey = JourneyEntity(context: viewContext)
+        journey.id = item.id
         journey.isLock = item.isLock
         journey.isCheckpoint = item.isCheckpoint
         journey.title = item.title

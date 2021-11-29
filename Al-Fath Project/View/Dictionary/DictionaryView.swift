@@ -12,7 +12,7 @@ import AVKit
 struct DictionaryView: View {
     
     var vm: DictionaryListViewModel
-    let player: AVPlayer
+    let player: AVPlayer = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: Global.videoName, ofType: "mp4")!))
     let noFirstPositionLetter = ["ة" ,"و" ,"ز" ,"ر" , "ذ" ,"د" ,"ا"]
     let differentPositionLetter = ["ة" ,"و" ,"ز" ,"ر" , "ذ" ,"د"]
     let gridItems = [
@@ -22,6 +22,7 @@ struct DictionaryView: View {
     
     var body: some View {
         VStack (alignment: HorizontalAlignment.center) {
+            title
             AVPlayerControllerRepresented(player: player)
                 .onAppear {
                     player.play()
@@ -68,13 +69,47 @@ struct DictionaryView: View {
         }
         .background(Color("ColorPrimary"))
         .ignoresSafeArea()
+        .navigationBarHidden(true)
+        .navigationBarTitle("", displayMode: .inline)
+    }
+    
+    var title: some View {
+        ZStack {
+            HStack {
+                Spacer()
+                Image("ic_menghafal")
+                    .resizable()
+                    .frame(width: 48, height: 48)
+                Spacer()
+            }
+            HStack {
+                Button {
+                    vm.showDictionary = false
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.text)
+                        .padding(.vertical, 14)
+                        .padding(.horizontal)
+                        .background(Color.secondary)
+                        .cornerRadius(99)
+                        .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
+                        .padding(.horizontal)
+                }
+
+                Spacer()
+            }
+        }
+        .padding(.top, 48)
+        .padding(.bottom)
+        .background(Color.colorGreen)
+        .cornerRadius(12)
+        .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
     }
 }
 
 struct DictionaryView_Previews: PreviewProvider {
     static var previews: some View {
-        DictionaryView(vm: DictionaryListViewModel(),
-                       player: AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: DictionaryListViewModel().dictionaryData.videoName, ofType: "mp4")!)))
+        DictionaryView(vm: DictionaryListViewModel())
     }
 }
 
@@ -107,6 +142,9 @@ struct AVPlayerControllerRepresented : UIViewControllerRepresentable {
         let controller = AVPlayerViewController()
         controller.player = player
         controller.showsPlaybackControls = false
+        controller.player?.isMuted = true
+        controller.player?.play()
+        print(player.currentItem)
         return controller
     }
     

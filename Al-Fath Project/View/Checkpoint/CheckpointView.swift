@@ -10,55 +10,45 @@ import SwiftUI
 struct CheckpointView: View {
 //    @Binding var isShow:Bool
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @State var progress: CGFloat = 33
+    @State var progress: CGFloat = 15
     @State private var selection = 0
+    @State var pos = 1
     @ObservedObject var viewModel: ChallengeViewModel
     
     var body: some View {
-        ZStack {
-            VStack {
-                VStack{
-                    HStack {
-                        Image("ic_close")
-                            .resizable()
-                            .frame(width: 16, height: 16)
-                            .onTapGesture {
-    //                            isShow = false
-                                presentationMode.wrappedValue.dismiss()
-                            }
-                        Spacer()
-                    }
-                    ProgressBarView(percent: progress)
-                }.padding()
-                
-                if selection == 0 {
-                    HurufView(selected: $selection, progress: $progress)
-                } else if selection == 1 {
-                    KataView(selected: $selection, progress: $progress)
-                } else if selection == 2 {
-                    PencocokanView(viewModel: viewModel)
+        ZStack(alignment: .top) {
+            if selection == 0 {
+                HurufView(viewModel: viewModel, selected: $selection, progress: $progress, pos: $pos)
+            } else if selection == 1 {
+                KataView(viewModel: viewModel, selected: $selection, progress: $progress, pos: $pos)
+            } else if selection == 2 {
+                PencocokanView(viewModel: viewModel).padding(.top, 150)
+            }
+            
+            VStack{
+                HStack {
+                    Image("ic_close")
+                        .resizable()
+                        .frame(width: 16, height: 16)
+                        .foregroundColor(Color.white)
+                        .onTapGesture {
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                    Spacer()
                 }
-                
-//                TabView(selection : $selection){
-//                    HurufView(selected: $selection, progress: $progress).tag(0)
-//                    KataView(selected: $selection, progress: $progress).tag(1)
-//                    PencocokanView().tag(2)
-//                }
-//                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-//                .animation(.easeInOut)
-//                .transition(.slide)
+                ProgressBarView(percent: progress, pos: pos)
             }
             .padding(.top, 48)
-            .onAppear(perform: {
-                viewModel.randomQuiz()
-            })
-            
-            
+            .padding()
+            .background(Color.colorGreen)
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
-        .background(Color.primary)
+        .background(Color.greenLight)
         .edgesIgnoringSafeArea(.vertical)
+        .onAppear(perform: {
+            viewModel.randomQuiz()
+        })
     }
 }
 
