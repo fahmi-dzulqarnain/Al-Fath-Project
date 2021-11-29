@@ -20,7 +20,11 @@ struct HurufView: View {
         ZStack{
             VStack {
                 ZStack {
-                    CameraView(bindedValue: $comingFromUIKitVC) {
+                    CameraView(bindedValue: viewModel.latin.lowercased(), onTrue: {
+                        selected = 1
+                        progress = 45
+                        pos = 2
+                    }) {
                         overlayPoints = $0;
                     }
                     HStack{
@@ -44,13 +48,7 @@ struct HurufView: View {
                 .cornerRadius(12)
                 .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
                 .padding()
-                .onTapGesture {
-                    selected = 1
-                    progress = 45
-                    pos = 2
-                }
             }
-//            CorrectView(isShow: $isShow)
         }
         .padding(.bottom, 32)
         .navigationBarHidden(true)

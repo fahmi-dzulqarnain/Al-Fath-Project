@@ -19,7 +19,11 @@ struct KataView: View {
         ZStack{
             VStack {
                 ZStack {
-                    CameraView(bindedValue: $comingFromUIKitVC) {
+                    CameraView(bindedValue: viewModel.kata.latin2, onTrue: {
+                        selected = 2
+                        progress = 80
+                        pos = 3
+                    }) {
                         overlayPoints = $0;
                     }
                     HStack{
@@ -63,15 +67,8 @@ struct KataView: View {
                 .cornerRadius(12)
                 .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
                 .padding()
-                .onTapGesture {
-                    selected = 2
-                    progress = 80
-                    pos = 3
-                }
-                   
-                
+        
             }
-//            CorrectView(isShow: $isShow)
         }
         .padding(.bottom, 32)
         .navigationBarHidden(true)
