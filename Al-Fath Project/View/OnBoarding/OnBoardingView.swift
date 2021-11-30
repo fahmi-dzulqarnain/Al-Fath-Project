@@ -102,7 +102,6 @@ struct OnboardingView: View {
         journey.isLock = item.isLock
         journey.isCheckpoint = item.isCheckpoint
         journey.title = item.title
-        journey.latin = item.latin
         journey.points = Int16(item.points ?? 0)
         PersistneceController.shared.save()
     }
