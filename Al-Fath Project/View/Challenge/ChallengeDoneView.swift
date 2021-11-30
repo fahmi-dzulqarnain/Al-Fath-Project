@@ -29,9 +29,10 @@ struct ChallengeDoneView: View {
                 Button {
                     viewModel.showDone = false
                 } label: {
-                    Image("ic_close")
+                    Image(systemName: "xmark.circle.fill")
                         .resizable()
-                        .frame(width: 16, height: 16)
+                        .frame(width: 24, height: 24)
+                        .foregroundColor(Color.black)
                         .padding()
                 }
                 Spacer()

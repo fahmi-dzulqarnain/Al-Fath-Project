@@ -24,7 +24,4 @@ class LearnViewModel: ObservableObject {
     @Published var navLearn1: Bool = false
     @Published var player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "alif", ofType: "mp4")!))
     
-    func setVideo() {
-        player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: dataLearn.videoName, ofType: "mp4")!))
-    }
 }
