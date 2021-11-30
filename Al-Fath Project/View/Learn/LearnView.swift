@@ -16,19 +16,19 @@ struct LearnView: View {
     @ObservedObject var viewModel: LearnViewModel
     @ObservedObject var vm: DictionaryListViewModel
     @ObservedObject var challengeVM: ChallengeViewModel
+    
+    let colorsGradient = [
+        LinearGradient(gradient: Gradient(colors: [Color(red: 0.95, green: 0.47, blue: 0.42), Color(red: 0.80, green: 0.34, blue: 0.26)]), startPoint: .topLeading, endPoint: .bottom),
+        LinearGradient(gradient: Gradient(colors: [Color(red: 0.31, green: 0.87, blue: 0.42), Color(red: 0.35, green: 0.64, blue: 0.40)]), startPoint: .topLeading, endPoint: .bottom),
+        LinearGradient(gradient: Gradient(colors: [Color(red: 0.17, green: 0.77, blue: 0.96), Color(red: 0.17, green: 0.59, blue: 0.84)]), startPoint: .topLeading, endPoint: .bottom),
+        LinearGradient(gradient: Gradient(colors: [Color(red: 0.72, green: 0.49, blue: 0.90), Color(red: 0.57, green: 0.24, blue: 0.94)]), startPoint: .topLeading, endPoint: .bottom),
+        LinearGradient(gradient: Gradient(colors: [Color(red: 0.95, green: 0.47, blue: 0.42), Color(red: 0.80, green: 0.34, blue: 0.26)]), startPoint: .topLeading, endPoint: .bottom)
+    ]
 
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: -180, alignment: nil),
         GridItem(.flexible(), spacing: -180, alignment: nil),
         GridItem(.flexible(), spacing: -180, alignment: nil)
-    ]
-    
-    let colors = [
-        Gradient(colors: [Color(red: 0.95, green: 0.47, blue: 0.42), Color(red: 0.80, green: 0.34, blue: 0.26)]),
-        Gradient(colors: [Color(red: 0.31, green: 0.87, blue: 0.42), Color(red: 0.35, green: 0.64, blue: 0.40)]),
-        Gradient(colors: [Color(red: 0.17, green: 0.77, blue: 0.96), Color(red: 0.17, green: 0.59, blue: 0.84)]),
-        Gradient(colors: [Color(red: 0.72, green: 0.49, blue: 0.90), Color(red: 0.57, green: 0.24, blue: 0.94)]),
-        Gradient(colors: [Color(red: 0.95, green: 0.47, blue: 0.42), Color(red: 0.80, green: 0.34, blue: 0.26)])
     ]
     
     var body: some View {
@@ -79,25 +79,25 @@ struct LearnView: View {
         generator.notificationOccurred(.success)
     }
     
-    func selectButtonColor(index: Int) -> Gradient {
+    func selectButtonColor(index: Int) -> LinearGradient {
         let currentIndex = index + 1
         if ((currentIndex % 5) == 0) {
-            return colors[4]
+            return colorsGradient[4]
             }
             else if ((currentIndex % 4) == 0) {
-                return colors[3]
+                return colorsGradient[3]
                 }
             else if ((currentIndex % 3) == 0) {
-                return colors[2]
+                return colorsGradient[2]
                 }
             else if ((currentIndex % 2) == 0) {
-                return colors[1]
+                return colorsGradient[1]
                 }
             else if ((currentIndex % 1) == 0) {
-                return colors[0]
+                return colorsGradient[0]
                 }
             else {
-                return colors[0]
+                return colorsGradient[0]
             }
         }
 }
@@ -115,7 +115,7 @@ struct ButtonLearn : View {
     var viewModel : LearnViewModel
     var title : String
     var isLocked : Bool
-    let bgColor : Gradient
+    let bgColor : LinearGradient
     
     var body: some View {
         if isLocked {
@@ -146,7 +146,7 @@ struct ButtonLearn : View {
                     .frame(width: 78, height: 78)
                     .foregroundColor(.white)
                     .background(
-                        LinearGradient(gradient: bgColor, startPoint: .topLeading, endPoint: .bottom)
+                        bgColor
                     )
                     .clipShape(Circle())
                     .overlay(

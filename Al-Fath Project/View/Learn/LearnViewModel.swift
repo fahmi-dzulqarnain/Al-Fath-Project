@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 import AVFoundation
+import SwiftUI
 
 class LearnViewModel: ObservableObject {
     
@@ -26,5 +27,4 @@ class LearnViewModel: ObservableObject {
     func setVideo() {
         player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: dataLearn.videoName, ofType: "mp4")!))
     }
-    
 }
