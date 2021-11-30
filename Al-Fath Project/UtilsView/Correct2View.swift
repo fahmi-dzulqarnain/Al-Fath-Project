@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import CoreHaptics
 
 struct Correct2View: View {
     @Binding var isShow: Bool
     @Binding var isNext: Bool
     let onNext: ()-> Void
     let onTap: ()-> Void
+    @State var engine: CHHapticEngine?
     
     var body: some View {
         VStack{
@@ -52,8 +54,21 @@ struct Correct2View: View {
         .edgesIgnoringSafeArea(.all)
         .onTapGesture {
             self.onTap()
-        }
+        }.onAppear {
+            prepareHaptics()
+            complexSuccess(engine: engine)
+         }
     }
+    func prepareHaptics() {
+          guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+
+          do {
+              engine = try CHHapticEngine()
+              try engine?.start()
+          } catch {
+              print("There was an error creating the engine: \(error.localizedDescription)")
+          }
+        }
 }
 
 //struct Correct2View_Previews: PreviewProvider {

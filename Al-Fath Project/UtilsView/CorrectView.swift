@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AVKit
+import CoreHaptics
 
 struct CorrectView: View {
     @Binding var isShow: Bool
@@ -14,7 +15,7 @@ struct CorrectView: View {
     @Binding var nextLearn: DictionaryData
     @ObservedObject var viewModel: LearnViewModel
     @ObservedObject var vm: DictionaryListViewModel
-    
+    @State var engine: CHHapticEngine?
     
     var body: some View {
         VStack{
@@ -64,5 +65,21 @@ struct CorrectView: View {
         .onTapGesture {
             isShow.toggle()
         }
+        .onAppear {
+           prepareHaptics()
+           complexSuccess(engine: engine)
+        }
+
     }
+    
+    func prepareHaptics() {
+          guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+
+          do {
+              engine = try CHHapticEngine()
+              try engine?.start()
+          } catch {
+              print("There was an error creating the engine: \(error.localizedDescription)")
+          }
+      }
 }
