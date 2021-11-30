@@ -71,14 +71,6 @@ struct LearnView: View {
        .navigationBarHidden(true)
        .navigationBarTitle("", displayMode: .inline)
     }
-        
-    func simpleSuccess() {
-        if !UserDefaults.standard.isHaptic() {
-            return
-        }
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.success)
-    }
     
     func selectButtonColor(index: Int) -> LinearGradient {
         let currentIndex = index + 1
