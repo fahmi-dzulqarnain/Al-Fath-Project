@@ -58,7 +58,7 @@ struct MainView: View {
                 }
                 .padding(.top, 20)
                 .padding(.bottom, 36)
-                .background(Color.primary)
+                .background(Color(red: 0.86, green: 0.96, blue: 0.62))
                 .cornerRadius(16)
                 .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
             }

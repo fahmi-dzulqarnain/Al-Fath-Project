@@ -12,13 +12,13 @@ struct IndexView: View {
     @Binding var currentIndex: Int
     
     
-    private let circleSize: CGFloat = 16
-    private let circleSpacing: CGFloat = 12
+    private let circleSize: CGFloat = 18
+    private let circleSpacing: CGFloat = 14
     
-    private let primaryColor = Color.black
-    private let secondaryColor = Color.gray.opacity(0.6)
+    private let primaryColor = Color.orange
+    private let secondaryColor = Color.white.opacity(0.6)
     
-    private let smallScale: CGFloat = 0.6
+    private let smallScale: CGFloat = 0.8
     
     var body: some View {
       HStack(spacing: 4) {

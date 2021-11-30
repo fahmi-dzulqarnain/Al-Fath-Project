@@ -25,10 +25,14 @@ struct SettingsView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .center) {
+                Spacer(minLength: 24)
                 Image("abdullah")
                     .resizable()
                     .frame(width: 70, height: 70)
-                    .padding(.top, 32)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 14)
+                            .stroke(Color.orange, lineWidth: 4)
+                    ).background(RoundedRectangle(cornerRadius: 14).fill(Color.primary))
                 Text("Abdullah")
                     .font(.system(size: 18))
                     .bold()
@@ -90,7 +94,7 @@ struct SettingsView: View {
                 .padding(.bottom, 80)
             
         }
-        .background(Color("ColorSecondary"))
+        .background(Color.greenLight)
         .edgesIgnoringSafeArea(.top)
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
