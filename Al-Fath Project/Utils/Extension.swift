@@ -34,12 +34,30 @@ extension UserDefaults{
     func isNotifyPractice()-> Bool {
         return bool(forKey: UserDefaultsKeys.isNotifyPractice.rawValue)
     }
+    
+    func setTutorLearn(value: Bool) {
+        set(value, forKey: UserDefaultsKeys.isTutorLearn.rawValue)
+    }
+    
+    func isTutorLearn()-> Bool {
+        return bool(forKey: UserDefaultsKeys.isTutorLearn.rawValue)
+    }
+    
+    func setTutorPoint(value: Bool) {
+        set(value, forKey: UserDefaultsKeys.isTutorPoint.rawValue)
+    }
+    
+    func isTutorPoint()-> Bool {
+        return bool(forKey: UserDefaultsKeys.isTutorPoint.rawValue)
+    }
 }
 
 enum UserDefaultsKeys : String {
     case isFirstTime
     case isHaptic
     case isNotifyPractice
+    case isTutorLearn
+    case isTutorPoint
 }
 
 extension View {

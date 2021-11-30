@@ -13,5 +13,6 @@ struct LearnModel {
     var isCheckpoint: Bool = false
     var points: Int? = nil
     var title: String = ""
+    var latin: String = ""
     var dictionary: DictionaryModel = DictionaryModel(letter: "", latin: "", videoName: "")
 }

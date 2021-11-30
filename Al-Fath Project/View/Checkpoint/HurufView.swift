@@ -15,21 +15,23 @@ struct HurufView: View {
     @State private var overlayPoints: [CGPoint] = []
     @State private var comingFromUIKitVC = ""
     @State var isShow = false
+    @State var showCorrect = false
+    @State var isNext = true
     
     var body: some View {
         ZStack{
             VStack {
                 ZStack {
                     CameraView(bindedValue: viewModel.latin.lowercased(), onTrue: {
-                        selected = 1
-                        progress = 45
-                        pos = 2
+                        showCorrect = true
                     }) {
                         overlayPoints = $0;
                     }
                     HStack{
                         Spacer()
-                        Image("ic_rectangle_white")
+                        Image("ic_rectangle_white2")
+                            .resizable()
+                            .scaledToFit()
                             .padding()
                         Spacer()
                     }
@@ -48,6 +50,17 @@ struct HurufView: View {
                 .cornerRadius(12)
                 .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
                 .padding()
+            }
+            if showCorrect {
+                Correct2View(isShow: $showCorrect, isNext: $isNext) {
+                    selected = 1
+                    progress = 45
+                    pos = 2
+                } onTap: {
+                    
+                }
+
+                
             }
         }
         .padding(.bottom, 32)

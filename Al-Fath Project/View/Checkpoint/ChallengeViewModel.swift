@@ -84,6 +84,8 @@ class ChallengeViewModel: ObservableObject {
         var huruf2: String = ""
         var latin1: String = ""
         var latin2: String = ""
+        var correct1: Bool = false
+        var correct2: Bool = false
         var kata: String = ""
     }
  

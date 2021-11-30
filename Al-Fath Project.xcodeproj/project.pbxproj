@@ -36,13 +36,14 @@
 		0E8BBD7727186EFA00AA1377 /* DictionaryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD7627186EFA00AA1377 /* DictionaryListView.swift */; };
 		0E8BBD7A27186F6C00AA1377 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BBD7927186F6C00AA1377 /* SettingsView.swift */; };
 		0E8C11EA2728072F0092D9B2 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C11E92728072F0092D9B2 /* VideoView.swift */; };
+		0EB4886A2756109000C065C9 /* GamesDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0EB488682756109000C065C9 /* GamesDB.xcdatamodeld */; };
+		0EB4886F275622D200C065C9 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB4886E275622D200C065C9 /* TutorialView.swift */; };
+		0EB4887127562A2E00C065C9 /* Correct2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB4887027562A2E00C065C9 /* Correct2View.swift */; };
 		0EC81E8F2738C47E00AAC6A8 /* Presistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC81E8E2738C47E00AAC6A8 /* Presistence.swift */; };
 		0EC81E912738C4D800AAC6A8 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC81E902738C4D800AAC6A8 /* Constans.swift */; };
 		0EC81E942738C97D00AAC6A8 /* Learn1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC81E932738C97D00AAC6A8 /* Learn1View.swift */; };
 		0EF2BA852733C654006A797C /* ChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2BA842733C654006A797C /* ChallengeViewModel.swift */; };
 		0EF2BA872733DE5E006A797C /* ChallengeDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2BA862733DE5E006A797C /* ChallengeDoneView.swift */; };
-		3F0D9BA727557BA4004A7E1C /* GamesDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F0D9BA527557BA4004A7E1C /* GamesDB.xcdatamodeld */; };
-		3F0D9BA927557C74004A7E1C /* ScheherazadeNew-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0D9BA827557C74004A7E1C /* ScheherazadeNew-Bold.ttf */; };
 		3F6FD470270ED21C000BC39D /* Al_Fath_ProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FD46F270ED21C000BC39D /* Al_Fath_ProjectApp.swift */; };
 		3F6FD472270ED21C000BC39D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FD471270ED21C000BC39D /* ContentView.swift */; };
 		3F6FD474270ED21F000BC39D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6FD473270ED21F000BC39D /* Assets.xcassets */; };
@@ -101,13 +102,14 @@
 		0E8BBD7627186EFA00AA1377 /* DictionaryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryListView.swift; sourceTree = "<group>"; };
 		0E8BBD7927186F6C00AA1377 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0E8C11E92728072F0092D9B2 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		0EB488692756109000C065C9 /* JourneyEntity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JourneyEntity.xcdatamodel; sourceTree = "<group>"; };
+		0EB4886E275622D200C065C9 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		0EB4887027562A2E00C065C9 /* Correct2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Correct2View.swift; sourceTree = "<group>"; };
 		0EC81E8E2738C47E00AAC6A8 /* Presistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presistence.swift; sourceTree = "<group>"; };
 		0EC81E902738C4D800AAC6A8 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		0EC81E932738C97D00AAC6A8 /* Learn1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn1View.swift; sourceTree = "<group>"; };
 		0EF2BA842733C654006A797C /* ChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewModel.swift; sourceTree = "<group>"; };
 		0EF2BA862733DE5E006A797C /* ChallengeDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDoneView.swift; sourceTree = "<group>"; };
-		3F0D9BA627557BA4004A7E1C /* JourneyEntity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JourneyEntity.xcdatamodel; sourceTree = "<group>"; };
-		3F0D9BA827557C74004A7E1C /* ScheherazadeNew-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ScheherazadeNew-Bold.ttf"; path = "../../../../Downloads/Scheherazade_New/ScheherazadeNew-Bold.ttf"; sourceTree = "<group>"; };
 		3F6FD46C270ED21C000BC39D /* Al-Fath Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Al-Fath Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6FD46F270ED21C000BC39D /* Al_Fath_ProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Al_Fath_ProjectApp.swift; sourceTree = "<group>"; };
 		3F6FD471270ED21C000BC39D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -173,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				0E5A39C827414C4100C5380F /* ScheherazadeNew-Regular.ttf */,
-				3F0D9BA827557C74004A7E1C /* ScheherazadeNew-Bold.ttf */,
 				0E5A39C627414C3800C5380F /* m_plus_rounded_bold.ttf */,
 				0E5A39C427414C2C00C5380F /* m_plus_rounded_regular.ttf */,
 			);
@@ -204,8 +205,10 @@
 			children = (
 				0E63CF6B272AABF8008D129A /* IndexView.swift */,
 				0E5A39BE27414AC600C5380F /* CorrectView.swift */,
+				0EB4887027562A2E00C065C9 /* Correct2View.swift */,
 				0E4ADCE22741EFC400C23D11 /* ProgressBarView.swift */,
 				0E314453274BA49000F45086 /* SpaceView.swift */,
+				0EB4886E275622D200C065C9 /* TutorialView.swift */,
 			);
 			path = UtilsView;
 			sourceTree = "<group>";
@@ -314,7 +317,7 @@
 		0EC81E8A2738C2FE00AAC6A8 /* Local */ = {
 			isa = PBXGroup;
 			children = (
-				3F0D9BA527557BA4004A7E1C /* GamesDB.xcdatamodeld */,
+				0EB488682756109000C065C9 /* GamesDB.xcdatamodeld */,
 				0EC81E8E2738C47E00AAC6A8 /* Presistence.swift */,
 			);
 			path = Local;
@@ -462,7 +465,6 @@
 			files = (
 				0E5A39C527414C2C00C5380F /* m_plus_rounded_regular.ttf in Resources */,
 				0E45E26327479DC60041A28F /* ta.mp4 in Resources */,
-				3F0D9BA927557C74004A7E1C /* ScheherazadeNew-Bold.ttf in Resources */,
 				3F6FD477270ED21F000BC39D /* Preview Assets.xcassets in Resources */,
 				3F6FD474270ED21F000BC39D /* Assets.xcassets in Resources */,
 				0E45E26427479DC60041A28F /* tsa.mp4 in Resources */,
@@ -498,6 +500,7 @@
 				3FB3DBF72744DB0B00F8EB3D /* LearnModel.swift in Sources */,
 				E7EC568A27538CB500BF19D9 /* HP_ModelV7.mlmodel in Sources */,
 				0EC81E942738C97D00AAC6A8 /* Learn1View.swift in Sources */,
+				0EB4887127562A2E00C065C9 /* Correct2View.swift in Sources */,
 				0E3B1F1F27329238006A991D /* Challenge3View.swift in Sources */,
 				3F7B9A45274E49920077527B /* SettingsViewModel.swift in Sources */,
 				0EC81E8F2738C47E00AAC6A8 /* Presistence.swift in Sources */,
@@ -511,7 +514,7 @@
 				0E5A39C227414BCB00C5380F /* CheckpointView.swift in Sources */,
 				0E4ADCE72741FB1800C23D11 /* KataView.swift in Sources */,
 				0E8BBD7327186E9700AA1377 /* ChallengeView.swift in Sources */,
-				3F0D9BA727557BA4004A7E1C /* GamesDB.xcdatamodeld in Sources */,
+				0EB4886A2756109000C065C9 /* GamesDB.xcdatamodeld in Sources */,
 				0EF2BA872733DE5E006A797C /* ChallengeDoneView.swift in Sources */,
 				E7D88385273BDEE6006E80E8 /* CameraViewController.swift in Sources */,
 				0E3B1F2227329870006A991D /* GamesModel.swift in Sources */,
@@ -521,6 +524,7 @@
 				3F6FD472270ED21C000BC39D /* ContentView.swift in Sources */,
 				3FB3DBFB27450C2C00F8EB3D /* OnBoardingViewModel.swift in Sources */,
 				0E8BBD6D27186A5700AA1377 /* MainView.swift in Sources */,
+				0EB4886F275622D200C065C9 /* TutorialView.swift in Sources */,
 				3F6FD470270ED21C000BC39D /* Al_Fath_ProjectApp.swift in Sources */,
 				440CF2FB2743BD4D00D38241 /* DictionaryListViewModel.swift in Sources */,
 				0E63CF6C272AABF8008D129A /* IndexView.swift in Sources */,
@@ -722,14 +726,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		3F0D9BA527557BA4004A7E1C /* GamesDB.xcdatamodeld */ = {
+		0EB488682756109000C065C9 /* GamesDB.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				3F0D9BA627557BA4004A7E1C /* JourneyEntity.xcdatamodel */,
+				0EB488692756109000C065C9 /* JourneyEntity.xcdatamodel */,
 			);
-			currentVersion = 3F0D9BA627557BA4004A7E1C /* JourneyEntity.xcdatamodel */;
+			currentVersion = 0EB488692756109000C065C9 /* JourneyEntity.xcdatamodel */;
 			name = GamesDB.xcdatamodeld;
-			path = ../../../../../Downloads/GamesDB.xcdatamodeld;
+			path = ../../../../../../../Downloads/GamesDB.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

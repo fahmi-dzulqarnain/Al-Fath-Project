@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct CorrectView: View {
     @Binding var isShow: Bool
@@ -44,9 +45,10 @@ struct CorrectView: View {
                                 viewModel.page = 1
                             } else {
                                 PersistneceController.shared.unlockNextLearn(title: viewModel.title)
-                               viewModel.title = nextLearn.letter
-                               viewModel.dataLearn = nextLearn
-                               viewModel.page = 1
+                                viewModel.title = nextLearn.letter
+                                viewModel.dataLearn = nextLearn
+                                viewModel.player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: nextLearn.videoName, ofType: "mp4")!))
+                                viewModel.page = 1
                             }
                         }
                 }
@@ -57,8 +59,8 @@ struct CorrectView: View {
             Spacer()
 
         }
-        .background(isShow ? Color.white.opacity(0.7) : Color.clear).edgesIgnoringSafeArea(.all)
-        .edgesIgnoringSafeArea(.bottom)
+        .background(Color.white.opacity(0.7))
+        .edgesIgnoringSafeArea(.all)
         .onTapGesture {
             isShow.toggle()
         }

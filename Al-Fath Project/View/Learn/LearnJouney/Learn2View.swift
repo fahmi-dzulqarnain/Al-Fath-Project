@@ -17,6 +17,7 @@ struct Learn2View: View {
     @State var nextLearn = DictionaryData(letter: "", latin: "", videoName: "", code: 0)
     
     @State var isShow = false
+    @State var showTutor = true
     @State var isCheckpoint = false
 
     var body: some View {
@@ -32,7 +33,9 @@ struct Learn2View: View {
 
                         HStack{
                             Spacer()
-                            Image("ic_rectangle_white")
+                            Image("ic_rectangle_white2")
+                                .resizable()
+                                .scaledToFit()
                                 .padding()
                             Spacer()
                         }
@@ -133,6 +136,14 @@ struct Learn2View: View {
             if isShow {
                 CorrectView(isShow: $isShow, isCheckpoint: $isCheckpoint, nextLearn: $nextLearn, viewModel: viewModel, vm: vm)
             }
+            
+            if !UserDefaults.standard.isTutorLearn() {
+                if showTutor {
+                    TutorialView(isShow: $showTutor)
+                }
+                
+            }
+            
         }
         .background(Color.greenLight)
         .edgesIgnoringSafeArea(.vertical)

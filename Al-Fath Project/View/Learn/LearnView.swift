@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct LearnView: View {
     
@@ -54,7 +55,7 @@ struct LearnView: View {
                     ForEach(Array(journey.enumerated()), id: \.offset) { index, data in
                         Text("")
                         if (!data.isCheckpoint) {
-                            ButtonLearn(viewModel: viewModel, title: data.title ?? "", isLocked: data.isLock, bgColor: selectButtonColor(index: index))
+                            ButtonLearn(viewModel: viewModel, title: data.title ?? "", latin: data.latin ?? "", isLocked: data.isLock, bgColor: selectButtonColor(index: index))
                         } else {
                             ButtonCheckPointLearn(viewModel: challengeVM, title: data.title ?? "", isLocked: data.isLock)
                         }
@@ -106,6 +107,7 @@ struct ButtonLearn : View {
     
     var viewModel : LearnViewModel
     var title : String
+    var latin: String
     var isLocked : Bool
     let bgColor : LinearGradient
     
@@ -130,6 +132,7 @@ struct ButtonLearn : View {
         } else {
             Button(action: {
                 viewModel.title = title
+                viewModel.player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: latin, ofType: "mp4")!))
                 viewModel.learn1Show = true
             })
             {

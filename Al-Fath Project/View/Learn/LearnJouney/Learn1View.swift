@@ -10,9 +10,10 @@ import AVKit
 struct Learn1View: View {
     @ObservedObject var viewModel: LearnViewModel
     @ObservedObject var vm: DictionaryListViewModel
+    @State var showCorrect = false
     
 //    @State var player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: viewMOdel.videoName, ofType: "mp4")!))
-    @State var player = AVPlayer()
+//    @State var player = AVPlayer()
    
     struct video {
         var videoName = "alif"
@@ -48,8 +49,8 @@ struct Learn1View: View {
             content(data: viewModel.dataLearn)
             HStack {
                 Button(action: {
-                    player.seek(to: .zero)
-                    player.play()
+                    viewModel.player.seek(to: .zero)
+                    viewModel.player.play()
                 }, label: {
                     Image("ic_replay")
                         .resizable()
@@ -88,11 +89,11 @@ struct Learn1View: View {
             VStack{
 //                VideoPlayer(player: player).frame(height: 495)
                 if !data.videoName.isEmpty {
-                    AVPlayerControllerRepresented(player: AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: data.videoName, ofType: "mp4")!)) )
+                    AVPlayerControllerRepresented(player: viewModel.player )
                         .frame(height: 495)
                         .padding(.top, 16)
                         .onAppear {
-                            player.play()
+                            viewModel.player.play()
                         }
                 }
                 
