@@ -43,7 +43,7 @@ struct Learn2View: View {
                     
                     HStack {
                         Spacer()
-                        Text(viewModel.dataLearn.videoName + comingFromUIKitVC)
+                        Text(viewModel.dataLearn.letter)
                             .foregroundColor(.text)
                             .bold()
                             .font(.custom("ScheherazadeNew-Regular", size: 52, relativeTo: .largeTitle))
