@@ -6,18 +6,19 @@
 //
 
 import SwiftUI
+import CoreHaptics
 
 struct ChallengeDoneView: View {
     @ObservedObject var viewModel: ChallengeViewModel
+    @State var engine: CHHapticEngine?
     
     var body: some View {
         ZStack(alignment: .top) {
             
             VStack{
                 Spacer()
-                Image("ic_trophy")
-                    .resizable()
-                    .frame(width: 150, height: 150)
+                LottieView(name: "congratulation", loopMode: .playOnce)
+                    .frame(width: 250, height: 250)
                     .padding()
                 Text("Alhamdulillah Kamu bisa!")
                     .bold()
@@ -37,8 +38,21 @@ struct ChallengeDoneView: View {
                 }
                 Spacer()
             }
-        }
+        }.onAppear {
+            prepareHaptics()
+            complexSuccess(engine: engine)
+         }
     }
+    func prepareHaptics() {
+          guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+
+          do {
+              engine = try CHHapticEngine()
+              try engine?.start()
+          } catch {
+              print("There was an error creating the engine: \(error.localizedDescription)")
+          }
+      }
 }
 
 //struct ChallengeDoneView_Previews: PreviewProvider {
