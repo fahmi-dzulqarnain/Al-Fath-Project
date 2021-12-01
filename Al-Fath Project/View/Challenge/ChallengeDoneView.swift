@@ -17,7 +17,7 @@ struct ChallengeDoneView: View {
             
             VStack{
                 Spacer()
-                LottieView(name: "congratulation", loopMode: .playOnce)
+                LottieView(name: "trophy", loopMode: .playOnce)
                     .frame(width: 250, height: 250)
                     .padding()
                 Text("Alhamdulillah Kamu bisa!")
