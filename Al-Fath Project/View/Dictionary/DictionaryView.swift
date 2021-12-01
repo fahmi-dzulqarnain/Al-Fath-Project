@@ -22,14 +22,14 @@ struct DictionaryView: View {
     ]
     
     var body: some View {
-        VStack (alignment: HorizontalAlignment.center) {
-            title
+        ZStack(alignment: .top) {
+        VStack {
             AVPlayerControllerRepresented(player: player)
                 .onAppear {
                     player.play()
                 }
-                .scaledToFill()
-                .frame(height: 364)
+                .frame(height: 400)
+                .padding(.top, 90)
                 .cornerRadius(20)
                 .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 2, y: 2)
                 .overlay(isUrlEmpty(url: url ?? "") ? Text("Akan Segera hadir").foregroundColor(.white) : Text(""))
@@ -78,6 +78,8 @@ struct DictionaryView: View {
             .padding(.horizontal, 20)
             
             Spacer()
+        }
+            title
         }
         .background(Color.greenLight)
         .ignoresSafeArea()
