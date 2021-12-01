@@ -22,9 +22,8 @@ struct CorrectView: View {
             Spacer()
             VStack{
                 Spacer()
-                Image("ic_trophy")
-                    .resizable()
-                    .frame(width: 150, height: 150)
+                LottieView(name: "congratulation", loopMode: .playOnce)
+                    .frame(width: 250, height: 250)
                     .padding()
                 Text("Alhamdulillah Kamu bisa!")
                     .bold()
