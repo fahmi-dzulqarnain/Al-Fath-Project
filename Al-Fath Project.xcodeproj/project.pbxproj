@@ -48,6 +48,7 @@
 		3F58B3C7275740F000B91C32 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F58B3C6275740F000B91C32 /* LottieView.swift */; };
 		3F58B3CA2757411F00B91C32 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3F58B3C92757411F00B91C32 /* Lottie */; };
 		3F58B3CC2757492600B91C32 /* trophy.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F58B3CB2757492600B91C32 /* trophy.json */; };
+		3F58B3CE2757818E00B91C32 /* ScheherazadeNew-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F58B3CD2757818E00B91C32 /* ScheherazadeNew-Bold.ttf */; };
 		3F6FD470270ED21C000BC39D /* Al_Fath_ProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FD46F270ED21C000BC39D /* Al_Fath_ProjectApp.swift */; };
 		3F6FD472270ED21C000BC39D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FD471270ED21C000BC39D /* ContentView.swift */; };
 		3F6FD474270ED21F000BC39D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6FD473270ED21F000BC39D /* Assets.xcassets */; };
@@ -117,6 +118,7 @@
 		3F58B3C4275740C900B91C32 /* congratulation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = congratulation.json; sourceTree = "<group>"; };
 		3F58B3C6275740F000B91C32 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		3F58B3CB2757492600B91C32 /* trophy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trophy.json; sourceTree = "<group>"; };
+		3F58B3CD2757818E00B91C32 /* ScheherazadeNew-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ScheherazadeNew-Bold.ttf"; path = "../../../../Downloads/Scheherazade_New 2/ScheherazadeNew-Bold.ttf"; sourceTree = "<group>"; };
 		3F6FD46C270ED21C000BC39D /* Al-Fath Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Al-Fath Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6FD46F270ED21C000BC39D /* Al_Fath_ProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Al_Fath_ProjectApp.swift; sourceTree = "<group>"; };
 		3F6FD471270ED21C000BC39D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		0E5A39C327414C1800C5380F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				3F58B3CD2757818E00B91C32 /* ScheherazadeNew-Bold.ttf */,
 				0E5A39C827414C4100C5380F /* ScheherazadeNew-Regular.ttf */,
 				0E5A39C627414C3800C5380F /* m_plus_rounded_bold.ttf */,
 				0E5A39C427414C2C00C5380F /* m_plus_rounded_regular.ttf */,
@@ -497,6 +500,7 @@
 				0E5A39C927414C4100C5380F /* ScheherazadeNew-Regular.ttf in Resources */,
 				0E45E26027479DC60041A28F /* ba.mp4 in Resources */,
 				3F58B3C5275740C900B91C32 /* congratulation.json in Resources */,
+				3F58B3CE2757818E00B91C32 /* ScheherazadeNew-Bold.ttf in Resources */,
 				0E45E26127479DC60041A28F /* alif.mp4 in Resources */,
 				0E45E26227479DC60041A28F /* jim.mp4 in Resources */,
 				0E5A39C727414C3800C5380F /* m_plus_rounded_bold.ttf in Resources */,
