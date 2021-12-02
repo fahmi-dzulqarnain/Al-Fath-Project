@@ -19,6 +19,8 @@ final class CameraViewController: UIViewController {
     
     var customDelegate: CustomDelegate?
     
+    var numbers: [String] = ["Background"]
+    
     private var cameraView: CameraPreview { view as! CameraPreview }
     
     private let videoDataOutputQueue = DispatchQueue(
@@ -183,43 +185,22 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             
             guard let keyPoinMultiArray = try? handObservation?.keypointsMultiArray() else { fatalError()}
             
-            // Get the highest confidence
-//            let higestConfidenceFingerTips = results.filter {
-//                $0.confidence > 0.9
-//
-//            }
-            
-            // CoreML prediction
-            // 1. Harus dapeting joinst dari finger dalam bentuk MLMultiArray
-            
-//            guard let jointsFinger = try? higestConfidenceFingerTips.first?.keypointsMultiArray() else {
-//                return
-//            }
-            
-            // 2. Masukin joints dari ke prediction model
-            
-            
-            
             let output = try self.model.prediction(poses: keyPoinMultiArray)
-//                self.predictionLabel = output.label
-//                self.sharedVM.labelHurufPredict = output.label
-            self.customDelegate?.didUpdateWithValue(output.label)
-//            print("Hasil prediksi: \(output.label)")
-            
             let confidence = output.labelProbabilities[output.label]!
             
             if confidence > 0.9 {
-                print("Hasil prediksi: \(output.label) Conf: \(output.labelProbabilities)")
+                print("Hasil prediksi: \(output.label)")
+                if (numbers.first == output.label) {
+                    numbers.append(output.label)
+                    // TO DO prediksi benar 10 kali dalam list number maka benar.
+                    if (numbers.count >= 10) {
+                        self.customDelegate?.didUpdateWithValue(output.label)
+                    }
+                } else {
+                    numbers.removeAll()
+                    numbers.append(output.label)
+                }
             }
-            
-            
-//            fingerTips = recognizedPoints.filter {
-//                // Ignore low confidence points.
-//                $0.confidence > 0.9
-//            }.map {
-//                // Convert points from Vision coordinates to AVFoundation coordinates.
-//                CGPoint(x: $0.location.x, y: 1 - $0.location.y)
-//            }
             
             
             
